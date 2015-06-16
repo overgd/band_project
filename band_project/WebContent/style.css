@@ -1,0 +1,18 @@
+@CHARSET "EUC-KR";
+body {
+	margin: 0px;
+}
+.index {
+	width: 100%;
+	height: 100%
+}
+.top {
+	
+	background-color: #7B68EE;
+}
+.main {
+	
+}
+.bottom {
+	background-color: #7B68EE;
+}
