@@ -1,6 +1,9 @@
 @CHARSET "EUC-KR";
 body {
 	margin: 0px;
+	background-image: url(images/bg/9.JPG);
+	background-repeat: repeat;
+	background-size: 1600px 900px;
 }
 .index {
 	width: 100%;
@@ -12,7 +15,7 @@ body {
 }
 .top {
 	height: 100px;
-	background-color: #CC0033;
+	background-color: #ffffff;  
 }
 .top.menu {
 	text-align: left;
@@ -24,8 +27,8 @@ body {
 
 }
 .bottom {
-	background-color: #CC0033;
-	height: 100px;
+	background-color: #ffffff;
+	height: 80px;
 	clear: left; 
 	float: left; 
 	left: 0;
