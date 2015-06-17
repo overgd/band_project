@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title>DYNAMIC</title>
 <link type="text/css" rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -18,38 +18,42 @@
 	<div class="top" align="center">
 		<table class="top.table">
 		<tr>
-			<td width="800px"></td>
+			<td width="500px"></td>
 			<td class="top.menu">
-			<a href="index.jsp?MAIN=free/list_reviews.jsp">정보공유</a>
+			<jsp:include page="top/topForm.html"/>
 			</td>
 			<td width="3500px" align="center">
 			</td>
 			<td class="top.login">
 			<jsp:include page="login/loginForm.html"/>
 			</td>
-			<td width="800px"></td>
+			<td width="500px"></td>
 		</tr> 
 		</table>
 	</div>
 	<div class="main">
 	<table>
 		<tr>
-			<td width="800px"></td>
-			<td width="5000px">
+			<td width="500px"></td>
+			<td width="3000px">
 			<c:if test="${param.MAIN != null }">
 			<jsp:include page="${param.MAIN }"/>
 			</c:if>
 			</td>
-			<td width="800px"></td>
+			<td width="500px"></td>
 		</tr>
 	</table>
 	</div>
 	<div class="bottom">
 	<table class="bottom.table">
 		<tr>
-			<td width="800px"></td>
-			<td width="5000px">BOTTOM.MENU</td>
-			<td width="800px"></td>
+			<td width="500px"></td>
+			<td width="5000px">
+			<c:if test="${param.BOTTOM != null }">
+			<jsp:include page="${param.BOTTOM }"/>
+			</c:if>
+			</td>
+			<td width="500px"></td>
 		</tr>
 	</table>
 	</div>
