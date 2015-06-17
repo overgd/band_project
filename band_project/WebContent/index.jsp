@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,12 +20,12 @@
 		<tr>
 			<td width="800px"></td>
 			<td class="top.menu">
-			TOP.MENU
+			<a href="index.jsp?MAIN=free/list_reviews.jsp">정보공유</a>
 			</td>
-			<td width="5000px" align="center">
+			<td width="3500px" align="center">
 			</td>
 			<td class="top.login">
-			TOP.LOGIN
+			<jsp:include page="login/loginForm.html"/>
 			</td>
 			<td width="800px"></td>
 		</tr> 
@@ -34,7 +35,11 @@
 	<table>
 		<tr>
 			<td width="800px"></td>
-			<td width="5000px">MAIN</td>
+			<td width="5000px">
+			<c:if test="${param.MAIN != null }">
+			<jsp:include page="${param.MAIN }"/>
+			</c:if>
+			</td>
 			<td width="800px"></td>
 		</tr>
 	</table>

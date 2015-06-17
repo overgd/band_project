@@ -21,10 +21,11 @@ body {
 	text-align: left;
 }
 .top.loginform {
+	padding-right: 50px;
 	text-align: right;
 }
 .main {
-
+	margin: 60px;
 }
 .bottom {
 	background-color: #ffffff;
