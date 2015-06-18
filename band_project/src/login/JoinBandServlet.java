@@ -41,11 +41,11 @@ public class JoinBandServlet extends HttpServlet {
 		
 		Band band = new Band();
 		
-		String id = (String)request.getAttribute("id");
-		String password = (String)request.getAttribute("password");
-		String name = (String)request.getAttribute("name");
-		String email = (String)request.getAttribute("email");
-		String genre = (String)request.getAttribute("genre");
+		String id = (String)request.getParameter("id");
+		String password = (String)request.getParameter("password");
+		String name = (String)request.getParameter("name");
+		String email = (String)request.getParameter("email");
+		String genre = (String)request.getParameter("genre");
 		
 		band.setId(id);
 		band.setPassword(password);
@@ -59,7 +59,9 @@ public class JoinBandServlet extends HttpServlet {
 		
 		crud.insertBandUser(band);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=joinresult.jsp");
+		request.setAttribute("name", name);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/joinresult.jsp");
 		rd.forward(request, response);
 		
 	}
