@@ -27,6 +27,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>JoinBandServlet</servlet-name>
-    <url-pattern>/JoinBandServlet</url-pattern>
+    <url-pattern>/joinband.do</url-pattern>
   </servlet-mapping>
 </web-app>

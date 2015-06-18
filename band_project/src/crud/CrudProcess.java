@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import login_model.Band;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -26,6 +28,30 @@ public class CrudProcess {
 		return builder.build(inputStream);
 		
 	}
+	
+	public Integer insertBandUser(Band band) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".insertBandUser";
+			
+			int result = sqlsession.insert(stmt, band);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+	
+	}
+	
 	
 }
 
