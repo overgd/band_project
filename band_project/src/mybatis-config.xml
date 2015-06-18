@@ -18,7 +18,8 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="configurations/LoginMapper.xml"/>
+		<mapper resource="configurations/LoginMapper.xml"/><mapper
+			resource="configurations/AlbumMapper.xml" />
 	</mappers>
 </configuration>
 

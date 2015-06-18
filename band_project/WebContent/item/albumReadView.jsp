@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,22 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="2">
+<table border="1">
 	<tr>
 		<td>앨범번호</td>
-		<td>앨범이미지</td>
-		<td>앨범제목</td>
-		<td>앨범가격</td>
-		<td>장바구니</td>
+		<td>${ai.albumid }</td>
 	</tr>
 	<tr>
-		<td>1</td>
-		<td>앨범이미지</td>
-		<td>장미여관</td>
-		<td>10000</td>
-		<td><input type="button" name="cartadd" value="담기"/></td>
+		<td>앨범제목</td>
+		<td>${ai.title} </td>
+	</tr>
+	<tr>
+		<td>앨범가격</td>
+		<td>${ai.price }</td>
+	</tr>
+	<tr>
+		<td>앨범내용</td>
+		<td>${ai.content }</td>
 	</tr>
 </table>
-<a href="albumWriteForm.jsp">앨범등록</a>
 </body>
 </html>

@@ -39,4 +39,14 @@
     <servlet-name>JoinBandIdCheck</servlet-name>
     <url-pattern>/bandidcheck.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlbumPostServlet</display-name>
+    <servlet-name>AlbumPostServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumPostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumPostServlet</servlet-name>
+    <url-pattern>/item/album-post</url-pattern>
+  </servlet-mapping>
 </web-app>

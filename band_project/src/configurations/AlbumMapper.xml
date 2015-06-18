@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="configurations.AlbumMapper">
+<cache/>
+	<insert id="insertAlbumInfo" parameterType="item_model.AInfo">
+	insert into album_info(album_id,title, price,content,band_id)
+	values(#{albumid},#{title},#{price},#{content},'void')
+	</insert>
+</mapper>
