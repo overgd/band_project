@@ -12,7 +12,7 @@ BAND 가입
 <tr>
 	<td width="200px">아이디 : </td>
 	<td><input type="text" name="id"/></td>
-	<td><input type="button" name="idcheck" onclick=""></td>
+	<td><input type="button" name="idcheck" onclick="bandidcheck.do"></td>
 </tr>
 <tr>
 	<td>비밀번호 : </td>

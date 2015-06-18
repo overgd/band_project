@@ -37,6 +37,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>JoinBandIdCheck</servlet-name>
-    <url-pattern>/JoinBandIdCheck</url-pattern>
+    <url-pattern>/bandidcheck.do</url-pattern>
   </servlet-mapping>
 </web-app>
