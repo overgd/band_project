@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="configurations.MyMapper">
+<mapper namespace="configurations.LoginMapper">
 <cache/>
 	<insert id="insertBandUser" parameterType="login_model.Band">
 	insert into banduser_info values(#{id}, #{password}, #{name}, #{email}, #{genre}, #{content}, #{image_name}) 
 	</insert>
+	<select id="selectBandUserID" resultType="String">
+	select id from banduser_info
+	</select>
 </mapper>

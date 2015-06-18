@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import crud.CrudProcess;
+import login_crud.CrudProcess;
 import login_model.Band;
 
 /**
@@ -36,9 +36,10 @@ public class JoinBandServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		request.setCharacterEncoding("euc-kr");
 		
+		CrudProcess crud = new CrudProcess();
 		Band band = new Band();
 		
 		String id = (String)request.getParameter("id");
@@ -46,7 +47,7 @@ public class JoinBandServlet extends HttpServlet {
 		String name = (String)request.getParameter("name");
 		String email = (String)request.getParameter("email");
 		String genre = (String)request.getParameter("genre");
-		
+
 		band.setId(id);
 		band.setPassword(password);
 		band.setName(name);
@@ -54,8 +55,6 @@ public class JoinBandServlet extends HttpServlet {
 		band.setGenre(genre);
 		band.setContent("");
 		band.setImage_name("");
-		
-		CrudProcess crud = new CrudProcess();
 		
 		crud.insertBandUser(band);
 		

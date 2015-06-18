@@ -29,4 +29,14 @@
     <servlet-name>JoinBandServlet</servlet-name>
     <url-pattern>/joinband.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JoinBandIdCheck</display-name>
+    <servlet-name>JoinBandIdCheck</servlet-name>
+    <servlet-class>login.JoinBandIdCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinBandIdCheck</servlet-name>
+    <url-pattern>/JoinBandIdCheck</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,4 +1,4 @@
-package crud;
+package login_crud;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class CrudProcess {
 	
-	private final String namespace = "configurations.MyMapper";
+	private final String namespace = "configurations.LoginMapper";
 	
 	private SqlSessionFactory getSqlSessionFactory(){
 		
@@ -50,6 +50,20 @@ public class CrudProcess {
 			sqlsession.close();
 		}
 	
+	}
+	
+	public String selectBandUserID() {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectBandUserID";
+			String result = sqlsession.selectOne(stmt);
+			return result;
+		}finally {
+			sqlsession.close();
+		}
+		
 	}
 	
 	
