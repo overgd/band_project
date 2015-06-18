@@ -19,4 +19,14 @@
     <servlet-name>ListFree</servlet-name>
     <url-pattern>/ListFree</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JoinBandServlet</display-name>
+    <servlet-name>JoinBandServlet</servlet-name>
+    <servlet-class>login.JoinBandServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JoinBandServlet</servlet-name>
+    <url-pattern>/JoinBandServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
