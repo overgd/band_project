@@ -52,13 +52,13 @@ public class CrudProcess {
 	
 	}
 	
-	public String selectBandUserID() {
+	public List selectBandUserID() {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectBandUserID";
-			String result = sqlsession.selectOne(stmt);
+			List<String> result = sqlsession.selectList(stmt);
 			return result;
 		}finally {
 			sqlsession.close();
@@ -66,6 +66,19 @@ public class CrudProcess {
 		
 	}
 	
+	public List selectFanUserID() {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectFanUserID";
+			List<String> result = sqlsession.selectList(stmt);
+			return result;
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
 	
 }
 

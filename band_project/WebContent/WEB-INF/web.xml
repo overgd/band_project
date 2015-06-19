@@ -31,13 +31,13 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>JoinBandIdCheck</display-name>
-    <servlet-name>JoinBandIdCheck</servlet-name>
-    <servlet-class>login.JoinBandIdCheck</servlet-class>
+    <display-name>JoinIdCheck</display-name>
+    <servlet-name>JoinIdCheck</servlet-name>
+    <servlet-class>login.JoinIdCheck</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>JoinBandIdCheck</servlet-name>
-    <url-pattern>/bandidcheck.do</url-pattern>
+    <servlet-name>JoinIdCheck</servlet-name>
+    <url-pattern>/bandidcheck</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

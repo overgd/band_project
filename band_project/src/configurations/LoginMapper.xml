@@ -9,4 +9,7 @@
 	<select id="selectBandUserID" resultType="String">
 	select id from banduser_info
 	</select>
+	<select id="selectFanUserID" resultType="String">
+	select id from fanuser_info
+	</select>
 </mapper>
