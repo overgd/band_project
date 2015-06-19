@@ -49,8 +49,6 @@ public class LoginServlet extends HttpServlet {
 		
 		String usercheck = crud.selectLoginUserCheck(id);
 		
-		
-		
 		if(usercheck != null) {
 			
 			HttpSession session = request.getSession();
@@ -68,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 			
 		}
 		if(result == "NOK") {
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/loginConfirm.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/loginFail.jsp");
 			rd.forward(request, response);
 		}
 		

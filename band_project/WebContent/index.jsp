@@ -25,12 +25,17 @@
 			<td width="3000px" align="center">
 			</td>
 			<td width="250px" class="top.login">
-			<c:if test="${param.LOGIN == null }">
-				<jsp:include page="login/loginForm.html"/>
-			</c:if>
-			<c:if test="${param.LOGIN != null }">
-				<jsp:include page="${param.LOGIN }"/>
-			</c:if>
+			<c:choose>
+				<c:when test="${sessionScope.ID == null }">
+					<jsp:include page="login/loginForm.html"/>
+				</c:when>
+				<c:when test="${sessionScope.ID != null }">
+					<jsp:include page="login/loginConfirm.jsp?ID=${sessionScope.ID }"/>
+				</c:when>
+				<c:when test="${param.LOGIN != null }">
+					<jsp:include page="${param.LOGIN }"/>
+				</c:when>
+			</c:choose>
 			</td>
 			<td width="500px"></td>
 		</tr> 
