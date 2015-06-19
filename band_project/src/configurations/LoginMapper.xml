@@ -18,10 +18,10 @@
 	<select id="selectIDPasswordFanUser" parameterType="String" resultType="String">
 	select password from fanuser_info where id=#{id}
 	</select>
-	<select id="selectFanUserInfo" parameterType="String" resultType="String">
+	<select id="selectFanUserInfo" parameterType="String" resultType="login_model.Fan">
 	select ID, PASSWORD, EMAIL, NAME, GENDER, PHONE, BIRTH from fanuser_info where id=#{id}
 	</select>
-	<select id="selectBandUserInfo" parameterType="String" resultType="String">
+	<select id="selectBandUserInfo" parameterType="String" resultType="login_model.Band">
 	select ID, PASSWORD, EMAIL, NAME, GENRE from banduser_info where id=#{id}
 	</select>
 </mapper>

@@ -2,16 +2,18 @@ package login_crud;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.List;
 
 import login_model.Band;
+import login_model.Fan;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class CrudProcess {
+public class CrudProcess implements Serializable {
 	
 	private final String namespace = "configurations.LoginMapper";
 	
@@ -107,13 +109,13 @@ public class CrudProcess {
 		
 	}
 	
-	public List selectFanUserInfo(String id) {
+	public Fan selectFanUserInfo(String id) {
 	
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectFanUserInfo";
-			List result = sqlsession.selectList(stmt, id);
+			Fan result = sqlsession.selectOne(stmt, id);
 			
 			if(result == null) {
 				return null;
@@ -126,13 +128,13 @@ public class CrudProcess {
 		
 	}
 	
-	public List selectBandUserInfo(String id) {
+	public Band selectBandUserInfo(String id) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectBandUserInfo";
-			List result = sqlsession.selectList(stmt, id);
+			Band result = sqlsession.selectOne(stmt, id);
 			
 			if(result == null) {
 				return null;

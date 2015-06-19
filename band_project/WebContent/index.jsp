@@ -24,16 +24,13 @@
 			</td>
 			<td width="3000px">
 			</td>
-			<td width="500px" class="top.login">
+			<td width="10%" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>
 				</c:when>
 				<c:when test="${sessionScope.ID != null }">
 					<jsp:include page="login/loginConfirm.jsp?ID=${sessionScope.ID }"/>
-				</c:when>
-				<c:when test="${param.LOGIN != null }">
-					<jsp:include page="${param.LOGIN }"/>
 				</c:when>
 			</c:choose>
 			</td>

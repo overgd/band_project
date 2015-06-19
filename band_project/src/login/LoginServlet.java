@@ -1,7 +1,6 @@
 package login;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import login_crud.CrudProcess;
+import login_model.Band;
+import login_model.Fan;
 
 /**
  * Servlet implementation class LoginServlet
@@ -45,7 +46,6 @@ public class LoginServlet extends HttpServlet {
 		CrudProcess crud = new CrudProcess();
 		
 		String usercheck = crud.selectLoginUserCheck(id);
-		System.out.println(usercheck.charAt(0));
 		
 		if(usercheck != null) {
 			
@@ -56,25 +56,28 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			
 			if(bnfcheck == 'f') {
-				List selectinfo = crud.selectFanUserInfo(id);
-				info = (String[])selectinfo.toArray(new String[selectinfo.size()]);
-				System.out.println(info.length);
-				session.setAttribute("GENDER", info[4]);
-				session.setAttribute("PHONE", info[5]);
-				session.setAttribute("BIRTH", info[6]);
+				
+				Fan selectinfo = crud.selectFanUserInfo(id);
+				
+				session.setAttribute("NAME", selectinfo.getName());
+				session.setAttribute("GENDER", selectinfo.getGender());
+				session.setAttribute("PHONE", selectinfo.getPhone());
+				session.setAttribute("BIRTH", selectinfo.getBirth());
 				div = "f";
+				session.setAttribute("DIV", div);
 				
 			}else if(bnfcheck == 'b') {
-				List selectinfo = crud.selectBandUserInfo(id);
-				info = (String[])selectinfo.toArray(new String[selectinfo.size()]);
-				System.out.println(info.length);
-				session.setAttribute("GENRE", info[4]);
+				
+				Band selectinfo = crud.selectBandUserInfo(id);
+				
+				session.setAttribute("NAME", selectinfo.getName());
+				session.setAttribute("GENRE", selectinfo.getGenre());
 				div = "b";
+				session.setAttribute("DIV", div);
+				
 			}
-			
 			session.setAttribute("ID", id);
-			session.setAttribute("NAME", info[3]);
-			session.setAttribute("DIV", div);
+			
 			
 			result = "OK";
 			

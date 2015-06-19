@@ -1,6 +1,8 @@
 package login_model;
 
-public class Band {
+import java.io.Serializable;
+
+public class Band implements Serializable {
 
 	private String id;
 	private String password;
