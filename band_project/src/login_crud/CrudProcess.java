@@ -80,6 +80,33 @@ public class CrudProcess {
 		
 	}
 	
+	public String selectLoginUserCheck(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			
+			String stmt1 = namespace+".selectIDPasswordBandUser";
+			String stmt2 = namespace+".selectIDPasswordFanUser";
+			
+			String result1 = sqlsession.selectOne(stmt1, id);
+			String result2 = sqlsession.selectOne(stmt2, id);
+			
+			if(result1 != "") {
+				return result1;
+			}
+			if(result2 != "") {
+				return result2;
+			}
+			
+			return null;
+			
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
 }
 
 

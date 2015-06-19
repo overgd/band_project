@@ -19,13 +19,18 @@
 		<table class="top.table">
 		<tr>
 			<td width="500px"></td>
-			<td class="top.menu">
+			<td width="250px" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
-			<td width="3500px" align="center">
+			<td width="3000px" align="center">
 			</td>
-			<td class="top.login">
-			<jsp:include page="login/loginForm.html"/>
+			<td width="250px" class="top.login">
+			<c:if test="${param.LOGIN == null }">
+				<jsp:include page="login/loginForm.html"/>
+			</c:if>
+			<c:if test="${param.LOGIN != null }">
+				<jsp:include page="${param.LOGIN }"/>
+			</c:if>
 			</td>
 			<td width="500px"></td>
 		</tr> 
@@ -37,7 +42,7 @@
 			<td width="500px"></td>
 			<td width="3000px">
 			<c:if test="${param.MAIN != null }">
-			<jsp:include page="${param.MAIN }"/>
+				<jsp:include page="${param.MAIN }"/>
 			</c:if>
 			</td>
 			<td width="500px"></td>
@@ -50,7 +55,7 @@
 			<td width="500px"></td>
 			<td width="5000px">
 			<c:if test="${param.BOTTOM != null }">
-			<jsp:include page="${param.BOTTOM }"/>
+				<jsp:include page="${param.BOTTOM }"/>
 			</c:if>
 			</td>
 			<td width="500px"></td>

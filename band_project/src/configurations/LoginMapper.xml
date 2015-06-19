@@ -12,4 +12,10 @@
 	<select id="selectFanUserID" resultType="String">
 	select id from fanuser_info
 	</select>
+	<select id="selectIDPasswordBandUser" parameterType="String" resultType="String">
+	select password from banduser_info where id=#{id}
+	</select>
+	<select id="selectIDPasswordFanUser" parameterType="String" resultType="String">
+	select password from fanuser_info where id=#{id}
+	</select>
 </mapper>
