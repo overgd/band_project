@@ -100,6 +100,9 @@ function submitcheck() {
 	else if(password != repassword) {
 		alert("비밀번호가 같지 않습니다.");
 		return false;
+	}else {
+		alert("가입되셨습니다.");
+		return true;
 	}
 	
 }

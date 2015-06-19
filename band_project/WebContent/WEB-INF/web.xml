@@ -69,4 +69,24 @@
     <servlet-name>JoinFanServlet</servlet-name>
     <url-pattern>/joinfan.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>login.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ModifyUserInfoServlet</display-name>
+    <servlet-name>ModifyUserInfoServlet</servlet-name>
+    <servlet-class>login.ModifyUserInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModifyUserInfoServlet</servlet-name>
+    <url-pattern>/modifyuserinfo.do</url-pattern>
+  </servlet-mapping>
 </web-app>

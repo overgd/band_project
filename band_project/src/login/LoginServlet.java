@@ -47,31 +47,33 @@ public class LoginServlet extends HttpServlet {
 		
 		String usercheck = crud.selectLoginUserCheck(id);
 		
-		if(usercheck != null) {
+		if(usercheck == "FOK" || usercheck == "BOK") {
 			
 			char bnfcheck = usercheck.charAt(0);
 			String div = null;
-			String[] info = null;
 			
 			HttpSession session = request.getSession();
 			
-			if(bnfcheck == 'f') {
+			if(bnfcheck == 'F') {
 				
-				Fan selectinfo = crud.selectFanUserInfo("f."+id);
+				Fan selectinfo = crud.selectFanUserInfo(id);
 				
 				session.setAttribute("NAME", selectinfo.getName());
 				session.setAttribute("GENDER", selectinfo.getGender());
 				session.setAttribute("PHONE", selectinfo.getPhone());
 				session.setAttribute("BIRTH", selectinfo.getBirth());
+				session.setAttribute("EMAIL", selectinfo.getEmail());
 				div = "f";
 				session.setAttribute("DIV", div);
 				
-			}else if(bnfcheck == 'b') {
 				
-				Band selectinfo = crud.selectBandUserInfo("b."+id);
+			}else if(bnfcheck == 'B') {
+				
+				Band selectinfo = crud.selectBandUserInfo(id);
 				
 				session.setAttribute("NAME", selectinfo.getName());
 				session.setAttribute("GENRE", selectinfo.getGenre());
+				session.setAttribute("EMAIL", selectinfo.getEmail());
 				div = "b";
 				session.setAttribute("DIV", div);
 				

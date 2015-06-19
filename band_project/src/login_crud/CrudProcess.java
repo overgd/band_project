@@ -126,10 +126,10 @@ public class CrudProcess implements Serializable {
 			String result2 = sqlsession.selectOne(stmt2, "f."+id);
 			
 			if(result1 != null) {
-				return result1;
+				return "BOK";
 			}
 			if(result2 != null) {
-				return result2;
+				return "FOK";
 			}
 			
 			return null;
@@ -146,7 +146,7 @@ public class CrudProcess implements Serializable {
 		
 		try {
 			String stmt = namespace+".selectFanUserInfo";
-			Fan result = sqlsession.selectOne(stmt, id);
+			Fan result = sqlsession.selectOne(stmt, "f."+id);
 			
 			if(result == null) {
 				return null;
@@ -165,7 +165,7 @@ public class CrudProcess implements Serializable {
 		
 		try {
 			String stmt = namespace+".selectBandUserInfo";
-			Band result = sqlsession.selectOne(stmt, id);
+			Band result = sqlsession.selectOne(stmt, "b."+id);
 			
 			if(result == null) {
 				return null;
@@ -178,6 +178,51 @@ public class CrudProcess implements Serializable {
 		
 	}
 	
+	public Integer updateFanUserInfo(Fan fan) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateFanUserInfo";
+			
+			int result = sqlsession.insert(stmt, fan);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+		
+	}
+	
+	public Integer updateBandUserInfo(Band band) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateBandUserInfo";
+			
+			int result = sqlsession.insert(stmt, band);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+		
+	}
 }
 
 

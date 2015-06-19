@@ -10,20 +10,25 @@
 <table>
 	<tr>
 		<td>
-		${ID }님 환영합니다!!
+		${sessionScope.ID }님 환영합니다!!
 		</td>
 		<td>
-		<input type="button" value="로그아웃" onclick=""/>
+		<input type="button" value="로그아웃" onclick="logout()"/>
 		</td>
 	</tr>
 	<tr>
 		<td>
-		<a href="index.jsp?MAIN=login/mypage.html">마이페이지</a>
+		<a href="index.jsp?MAIN=login/mypage.jsp">마이페이지</a>
 		</td>
 		<td>
 		장바구니
 		</td>
 	</tr>
 </table>
+<script type="text/javascript">
+function logout() {
+	location.href("logout.do");
+}
+</script>
 </body>
 </html>
