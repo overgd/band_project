@@ -31,8 +31,16 @@ FAN 가입
 	<td><input type="text" name="email"/></td>
 </tr>
 <tr>
-	<td>장르 : </td>
-	<td><input type="text" name="genre"/></td>
+	<td>생년월일 : </td>
+	<td><input type="text" name="birth"/></td>
+</tr>
+<tr>
+	<td>성별 : </td>
+	<td><input type="text" name="gender"/></td>
+</tr>
+<tr>
+	<td>휴대폰 번호 : </td>
+	<td><input type="text" name="phone"/></td>
 </tr>
 </table>
 <input type="submit" value="가입하기"/>
@@ -46,7 +54,7 @@ var check;
 function idcheck() {
 	
 	var id = form.id.value;
-	newWindow=open("bandidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
+	newWindow=open("joinidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
 }
 
 function formreset() {
@@ -56,7 +64,9 @@ function formreset() {
 	form.repassword.value= "";
 	form.name.value= "";
 	form.email.value= "";
-	form.genre.value= "";
+	form.birth.value= "";
+	form.gender.value= "";
+	form.phone.value= "";
 	
 }
 
@@ -70,7 +80,9 @@ function submitcheck() {
 	var repassword = form.repassword.value;
 	var name = form.name.value;
 	var email = form.email.value;
-	var genre = form.genre.value;
+	var birth = form.birth.value;
+	var gender = form.gender.value;
+	var phone = form.phone.value;
 	
 	if(check == "") {
 		alert("ID 중복확인을 하세요.");
@@ -80,7 +92,7 @@ function submitcheck() {
 		alert("ID가 중복됩니다.");
 		return false;
 	}
-	if(id == "" || password == "" || repassword == "" || name == "" || email == "" || genre == "") {
+	if(id == "" || password == "" || repassword == "" || name == "" || email == "" || birth == "" || gender == "" || phone == "") {
 		alert("입력되지 않은 폼이 있습니다.");
 		return false;
 	}

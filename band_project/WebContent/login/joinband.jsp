@@ -46,7 +46,7 @@ var check;
 function idcheck() {
 	
 	var id = form.id.value;
-	newWindow=open("bandidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
+	newWindow=open("joinidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
 }
 
 function formreset() {

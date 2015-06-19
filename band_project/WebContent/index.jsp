@@ -18,13 +18,13 @@
 	<div class="top" align="center">
 		<table class="top.table">
 		<tr>
-			<td width="10%"></td>
+			<td width="5%"></td>
 			<td width="10%" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
 			<td width="3000px">
 			</td>
-			<td width="10%" class="top.login">
+			<td width="15%" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>
@@ -34,33 +34,33 @@
 				</c:when>
 			</c:choose>
 			</td>
-			<td width="10%"></td>
+			<td width="5%"></td>
 		</tr> 
 		</table>
 	</div>
 	<div class="main">
 	<table>
 		<tr>
-			<td width="500px"></td>
+			<td width="5%"></td>
 			<td width="3000px">
 			<c:if test="${param.MAIN != null }">
 				<jsp:include page="${param.MAIN }"/>
 			</c:if>
 			</td>
-			<td width="500px"></td>
+			<td width="5%"></td>
 		</tr>
 	</table>
 	</div>
 	<div class="bottom">
 	<table class="bottom.table">
 		<tr>
-			<td width="500px"></td>
+			<td width="5%"></td>
 			<td width="5000px">
 			<c:if test="${param.BOTTOM != null }">
 				<jsp:include page="${param.BOTTOM }"/>
 			</c:if>
 			</td>
-			<td width="500px"></td>
+			<td width="5%"></td>
 		</tr>
 	</table>
 	</div>

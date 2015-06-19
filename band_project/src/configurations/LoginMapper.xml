@@ -6,11 +6,14 @@
 	<insert id="insertBandUser" parameterType="login_model.Band">
 	insert into banduser_info values(#{id}, #{password}, #{name}, #{email}, #{genre}, #{content}, #{image_name}) 
 	</insert>
-	<select id="selectBandUserID" resultType="String">
-	select id from banduser_info
+	<insert id="insertFanUser" parameterType="login_model.Fan">
+	insert into fanuser_info values(#{id}, #{password}, #{email}, #{name}, #{gender}, #{phone}, #{birth}) 
+	</insert>
+	<select id="selectBandUserID" parameterType="String" resultType="String">
+	select id from banduser_info where id=#{id}
 	</select>
-	<select id="selectFanUserID" resultType="String">
-	select id from fanuser_info
+	<select id="selectFanUserID" parameterType="String" resultType="String">
+	select id from fanuser_info where id=#{id}
 	</select>
 	<select id="selectIDPasswordBandUser" parameterType="String" resultType="String">
 	select password from banduser_info where id=#{id}

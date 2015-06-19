@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 			
 			if(bnfcheck == 'f') {
 				
-				Fan selectinfo = crud.selectFanUserInfo(id);
+				Fan selectinfo = crud.selectFanUserInfo("f."+id);
 				
 				session.setAttribute("NAME", selectinfo.getName());
 				session.setAttribute("GENDER", selectinfo.getGender());
@@ -68,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 				
 			}else if(bnfcheck == 'b') {
 				
-				Band selectinfo = crud.selectBandUserInfo(id);
+				Band selectinfo = crud.selectBandUserInfo("b."+id);
 				
 				session.setAttribute("NAME", selectinfo.getName());
 				session.setAttribute("GENRE", selectinfo.getGenre());
@@ -80,21 +80,15 @@ public class LoginServlet extends HttpServlet {
 			
 			
 			result = "OK";
-			
-		}else {
-			result = "NOK";
-		}
-		
-		if(result == "OK") {
-
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?LOGIN=login/loginConfirm.jsp");
 			rd.forward(request, response);
 			
-		}
-		if(result == "NOK") {
+		}else {
+			result = "NOK";
 			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/loginFail.jsp");
 			rd.forward(request, response);
 		}
+		
 		
 	}
 

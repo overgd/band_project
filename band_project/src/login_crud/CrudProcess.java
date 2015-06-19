@@ -54,28 +54,59 @@ public class CrudProcess implements Serializable {
 	
 	}
 	
-	public List selectBandUserID() {
+	public Integer insertFanUser(Fan fan) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".insertFanUser";
+			
+			int result = sqlsession.insert(stmt, fan);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+	
+	}
+	
+	public String selectBandUserID(String id) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectBandUserID";
-			List<String> result = sqlsession.selectList(stmt);
-			return result;
+			String result = sqlsession.selectOne(stmt, id);
+			if(result == null){
+				return null;
+			}else {
+				return result;
+			}
 		}finally {
 			sqlsession.close();
 		}
 		
 	}
 	
-	public List selectFanUserID() {
+	public String selectFanUserID(String id) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectFanUserID";
-			List<String> result = sqlsession.selectList(stmt);
-			return result;
+			String result = sqlsession.selectOne(stmt, id);
+			if(result == null){
+				return null;
+			}else {
+				return result;
+			}
 		}finally {
 			sqlsession.close();
 		}
@@ -91,8 +122,8 @@ public class CrudProcess implements Serializable {
 			String stmt1 = namespace+".selectIDPasswordBandUser";
 			String stmt2 = namespace+".selectIDPasswordFanUser";
 			
-			String result1 = sqlsession.selectOne(stmt1, id);
-			String result2 = sqlsession.selectOne(stmt2, id);
+			String result1 = sqlsession.selectOne(stmt1, "b."+id);
+			String result2 = sqlsession.selectOne(stmt2, "f."+id);
 			
 			if(result1 != "") {
 				return result1;

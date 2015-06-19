@@ -32,27 +32,20 @@ public class JoinIdCheck extends HttpServlet {
 		CrudProcess crud = new CrudProcess();
 		
 		String id = (String)request.getParameter("id");
-		List selectbandid = crud.selectBandUserID();
-		List selectfanid = crud.selectFanUserID();
+		String bandid = "b."+id;
+		String fanid = "f."+id;
+		String selectbandid = crud.selectBandUserID(bandid);
+		String selectfanid = crud.selectFanUserID(fanid);
 		
-		String[] bandid = (String[])selectbandid.toArray(new String[selectbandid.size()]); 
-		String[] fanid = (String[])selectfanid.toArray(new String[selectfanid.size()]); 
 		String result = "true";
+	
+		if(bandid.equals(selectbandid)) {
+			result = "false";
+		}
+		if(fanid.equals(selectfanid)) {
+			result = "false";
+		}
 
-		for(int cnt = 0; cnt < bandid.length; cnt++) {
-			System.out.println(bandid[cnt]);
-			if(id.equals(bandid[cnt])) {
-				result = "false";
-				
-			}
-		}
-		for(int cnt = 0; cnt < fanid.length; cnt++) {
-			System.out.println(fanid[cnt]);
-			if(id.equals(fanid[cnt])) {
-				result = "false";
-			}
-		}
-		
 		RequestDispatcher rd = request.getRequestDispatcher("login/idcheck.jsp?result="+result);
 		rd.forward(request, response);
 	}
