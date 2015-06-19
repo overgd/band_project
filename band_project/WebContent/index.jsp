@@ -18,13 +18,13 @@
 	<div class="top" align="center">
 		<table class="top.table">
 		<tr>
-			<td width="500px"></td>
-			<td align="left" width="250px" class="top.menu">
+			<td width="10%"></td>
+			<td width="10%" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
 			<td width="3000px">
 			</td>
-			<td width="250px" class="top.login">
+			<td width="500px" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>
@@ -37,7 +37,7 @@
 				</c:when>
 			</c:choose>
 			</td>
-			<td width="500px"></td>
+			<td width="10%"></td>
 		</tr> 
 		</table>
 	</div>
