@@ -107,6 +107,44 @@ public class CrudProcess {
 		
 	}
 	
+	public List selectFanUserInfo(String id) {
+	
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectFanUserInfo";
+			List result = sqlsession.selectList(stmt, id);
+			
+			if(result == null) {
+				return null;
+			}else {
+				return result;
+			}
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
+	public List selectBandUserInfo(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectBandUserInfo";
+			List result = sqlsession.selectList(stmt, id);
+			
+			if(result == null) {
+				return null;
+			}else {
+				return result;
+			}
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
 }
 
 

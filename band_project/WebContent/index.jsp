@@ -19,10 +19,10 @@
 		<table class="top.table">
 		<tr>
 			<td width="500px"></td>
-			<td width="250px" class="top.menu">
+			<td align="left" width="250px" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
-			<td width="3000px" align="center">
+			<td width="3000px">
 			</td>
 			<td width="250px" class="top.login">
 			<c:choose>
