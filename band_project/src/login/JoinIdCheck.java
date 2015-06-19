@@ -29,6 +29,7 @@ public class JoinIdCheck extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		CrudProcess crud = new CrudProcess();
 		
 		String id = (String)request.getParameter("id");
@@ -44,6 +45,8 @@ public class JoinIdCheck extends HttpServlet {
 		}
 		if(fanid.equals(selectfanid)) {
 			result = "false";
+		}else if(id == "") {
+			result = "empty";
 		}
 
 		RequestDispatcher rd = request.getRequestDispatcher("login/idcheck.jsp?result="+result);

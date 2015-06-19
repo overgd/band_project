@@ -7,7 +7,7 @@
 <title>FAN 가입</title>
 </head>
 FAN 가입
-<form name="form" action="joinfan.do" method="post" onsubmit="javascript:submitcheck()">
+<form name="form" action="joinfan.do" method="post" onsubmit="return submitcheck()">
 <table cellpadding="10px">
 <tr>
 	<td width="200px">아이디 : </td>
@@ -55,6 +55,7 @@ function idcheck() {
 	
 	var id = form.id.value;
 	newWindow=open("joinidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
+
 }
 
 function formreset() {
@@ -88,16 +89,17 @@ function submitcheck() {
 		alert("ID 중복확인을 하세요.");
 		return false;
 	}
-	if(check == c_f) {
+	else if(check == c_f) {
 		alert("ID가 중복됩니다.");
 		return false;
 	}
-	if(id == "" || password == "" || repassword == "" || name == "" || email == "" || birth == "" || gender == "" || phone == "") {
+	else if(id == "" || password == "" || repassword == "" || name == "" || email == "" || birth == "" || gender == "" || phone == "") {
 		alert("입력되지 않은 폼이 있습니다.");
 		return false;
 	}
-	if(password != repassword) {
+	else if(password != repassword) {
 		alert("비밀번호가 같지 않습니다.");
+		return false;
 	}
 	
 }

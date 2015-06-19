@@ -10,7 +10,7 @@
 <table>
 	<tr>
 		<td>
-		${ID }님환영합니다!!
+		${ID }님 환영합니다!!
 		</td>
 		<td>
 		<input type="button" value="로그아웃" onclick=""/>

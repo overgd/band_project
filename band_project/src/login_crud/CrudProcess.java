@@ -125,10 +125,10 @@ public class CrudProcess implements Serializable {
 			String result1 = sqlsession.selectOne(stmt1, "b."+id);
 			String result2 = sqlsession.selectOne(stmt2, "f."+id);
 			
-			if(result1 != "") {
+			if(result1 != null) {
 				return result1;
 			}
-			if(result2 != "") {
+			if(result2 != null) {
 				return result2;
 			}
 			
