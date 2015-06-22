@@ -189,7 +189,7 @@
     <servlet-name>WriteServlet</servlet-name>
     <url-pattern>/free.write.do</url-pattern>
   </servlet-mapping>
-<servlet>
+  <servlet>
     <description></description>
     <display-name>ListFree</display-name>
     <servlet-name>ListFree</servlet-name>
@@ -198,5 +198,15 @@
   <servlet-mapping>
     <servlet-name>ListFree</servlet-name>
     <url-pattern>/ListFree</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BandIntroServlet</display-name>
+    <servlet-name>BandIntroServlet</servlet-name>
+    <servlet-class>band.BandIntroServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BandIntroServlet</servlet-name>
+    <url-pattern>/bandintro.do</url-pattern>
   </servlet-mapping>
 </web-app>

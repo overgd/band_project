@@ -25,7 +25,7 @@
 	select ID, PASSWORD, EMAIL, NAME, GENDER, PHONE, BIRTH from fanuser_info where id=#{id}
 	</select>
 	<select id="selectBandUserInfo" parameterType="String" resultType="login_model.Band">
-	select ID, PASSWORD, EMAIL, NAME, GENRE from banduser_info where id=#{id}
+	select ID, PASSWORD, EMAIL, NAME, GENRE, CONTENT, IMAGE_NAME from banduser_info where id=#{id}
 	</select>
 	<update id="updateFanUserInfo" parameterType="login_model.Fan">
 	update fanuser_info set PASSWORD=#{password}, EMAIL=#{email}, NAME=#{name}, GENDER=#{gender}, PHONE=#{phone}, BIRTH=#{birth} where id=#{id}

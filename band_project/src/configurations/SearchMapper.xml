@@ -4,6 +4,9 @@
 <mapper namespace="configurations.SearchMapper">
 <cache/>
 	<select id="selectBandInfoToName" parameterType="String" resultType="login_model.Band">
-	select id, name, email, genre, content, image_name from banduser_info where lower(name) like '%'||#{name}||'%' or upper(name) like '%'||#{name}||'%'
+	select id, name, genre from banduser_info where lower(name) like '%'||#{name}||'%' or upper(name) like '%'||#{name}||'%'
+	</select>
+	<select id="selectBandIntroToId" parameterType="String" resultType="login_model.Band">
+	select id, name, genre, content, image_name from banduser_info where id = #{id}
 	</select>
 </mapper>
