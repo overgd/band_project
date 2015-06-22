@@ -1,7 +1,6 @@
 package band;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,15 +12,15 @@ import login_model.Band;
 import band_crud.CrudProcess;
 
 /**
- * Servlet implementation class SearchBandServlet
+ * Servlet implementation class BandIntroServlet
  */
-public class SearchBandServlet extends HttpServlet {
+public class BandIntroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchBandServlet() {
+    public BandIntroServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,6 +30,18 @@ public class SearchBandServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String id = request.getParameter("ID");
+		CrudProcess crud = new CrudProcess();
+
+		Band band = crud.selectBandIntroToId(id);
+		
+		id = id.substring(2);
+		
+		request.setAttribute("BAND", band);
+		request.setAttribute("ID", id);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
+		rd.forward(request, response);
 		
 	}
 
@@ -38,30 +49,7 @@ public class SearchBandServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		request.setCharacterEncoding("euc-kr");
-		String name = request.getParameter("bandname");
-		CrudProcess crud = new CrudProcess();
-		
-		List bandlist = crud.selectBandInfoToName(name);
-		
-		if(bandlist != null) {
-
-			Band[] band = new Band[bandlist.size()];
-			
-			for(int cnt = 0; cnt < bandlist.size(); cnt++) {
-				band[cnt] = (Band)bandlist.get(cnt);
-			}
-			
-			request.setAttribute("LISTSIZE", band.length);
-			request.setAttribute("LISTRESULT", band);
-		
-		}else {
-			request.setAttribute("LISTSIZE", null);
-			request.setAttribute("LISTRESULT", null);
-		}
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/searchResult.jsp");
-		rd.forward(request, response);
+		// TODO Auto-generated method stub
 	}
 
 }

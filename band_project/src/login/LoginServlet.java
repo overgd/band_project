@@ -65,6 +65,11 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("EMAIL", selectinfo.getEmail());
 				div = "f";
 				session.setAttribute("DIV", div);
+				session.setAttribute("ID", id);
+				
+				result = "OK";
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?LOGIN=login/loginConfirm.jsp");
+				rd.forward(request, response);
 				
 				
 			}else if(bnfcheck == 'B') {
@@ -76,14 +81,15 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("EMAIL", selectinfo.getEmail());
 				div = "b";
 				session.setAttribute("DIV", div);
+				session.setAttribute("ID", id);
+				
+				request.setAttribute("BAND", selectinfo);
+				
+				result = "OK";
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp?LOGIN=login/loginConfirm.jsp");
+				rd.forward(request, response);
 				
 			}
-			session.setAttribute("ID", id);
-			
-			
-			result = "OK";
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?LOGIN=login/loginConfirm.jsp");
-			rd.forward(request, response);
 			
 		}else {
 			result = "NOK";
