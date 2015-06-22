@@ -8,8 +8,8 @@
 	</select>
 	<insert id="insertWritingInfo" parameterType="free_model.Writing">
 	insert into freeboard_info values(
-	#{writingid},#{groupid},#{orderno},#{parentid},#{writingdate},
-	#{writername},#{imagename},#{title})
+	#{writingid},#{groupid},#{parentid},#{orderno},#{writername},
+	#{imagename},#{title},#{writingdate})
 	</insert>
 	<insert id="insertWritingContent" parameterType="free_model.WritingContent">
 	insert into freeboard_content values(#{writingid},#{content})

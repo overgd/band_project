@@ -89,11 +89,11 @@ public class WriteServlet extends HttpServlet {
 		String orgPath = uploadPath + "/" + fileName;
 		File orgFile = new File(orgPath);
 		File newFile = new File(tmpPath);
-		ImageUtility.resize(orgFile, newFile, 30, ImageUtility.RATIO);
+		ImageUtility.resize(orgFile, newFile, 50, ImageUtility.RATIO);
 		writing.setWritingdate(new Timestamp(System.currentTimeMillis()).toString());
 		writing.setImagename(fileName);
 		HttpSession session = request.getSession();
-		writing.setWritername(session.getId());
+		writing.setWritername((String)session.getAttribute("ID"));
 		writing.setTitle(multiPart.getParameter("title"));
 		writing.setContent(multiPart.getParameter("content"));
 		try{
