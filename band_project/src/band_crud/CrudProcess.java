@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import login_model.Band;
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -33,7 +35,7 @@ public class CrudProcess {
 		
 		try {
 			String stmt = namespace+".selectBandInfoToName";
-			List result = sqlsession.selectList(stmt, name);
+			List<Band> result = sqlsession.selectList(stmt, name);
 			if(result == null){
 				return null;
 			}else {

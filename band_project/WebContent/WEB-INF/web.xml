@@ -11,16 +11,6 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>ListFree</display-name>
-    <servlet-name>ListFree</servlet-name>
-    <servlet-class>free.ListFree</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ListFree</servlet-name>
-    <url-pattern>/ListFree</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>JoinBandServlet</display-name>
     <servlet-name>JoinBandServlet</servlet-name>
     <servlet-class>login.JoinBandServlet</servlet-class>
@@ -108,5 +98,105 @@
   <servlet-mapping>
     <servlet-name>SearchBandServlet</servlet-name>
     <url-pattern>/searchband.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteServlet</display-name>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>free_servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/free-delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteWritingServlet</display-name>
+    <servlet-name>DeleteWritingServlet</servlet-name>
+    <servlet-class>free_servlet.DeleteWritingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteWritingServlet</servlet-name>
+    <url-pattern>/free.delete.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ListServlet</display-name>
+    <servlet-name>ListServlet</servlet-name>
+    <servlet-class>free_servlet.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListServlet</servlet-name>
+    <url-pattern>/free-list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadServlet</display-name>
+    <servlet-name>ReadServlet</servlet-name>
+    <servlet-class>free_servlet.ReadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadServlet</servlet-name>
+    <url-pattern>/free-read</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReplyServlet</display-name>
+    <servlet-name>ReplyServlet</servlet-name>
+    <servlet-class>free_servlet.ReplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReplyServlet</servlet-name>
+    <url-pattern>/free-reply</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateServlet</display-name>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>free_servlet.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/free-update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateWritingServlet</display-name>
+    <servlet-name>UpdateWritingServlet</servlet-name>
+    <servlet-class>free_servlet.UpdateWritingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateWritingServlet</servlet-name>
+    <url-pattern>/free.update.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WriteFormServlet</display-name>
+    <servlet-name>WriteFormServlet</servlet-name>
+    <servlet-class>free_servlet.WriteFormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WriteFormServlet</servlet-name>
+    <url-pattern>/free-write</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WriteServlet</display-name>
+    <servlet-name>WriteServlet</servlet-name>
+    <servlet-class>free_servlet.WriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WriteServlet</servlet-name>
+    <url-pattern>/free.write.do</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>ListFree</display-name>
+    <servlet-name>ListFree</servlet-name>
+    <servlet-class>free.ListFree</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListFree</servlet-name>
+    <url-pattern>/ListFree</url-pattern>
   </servlet-mapping>
 </web-app>
