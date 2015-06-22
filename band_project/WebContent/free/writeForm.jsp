@@ -8,10 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:redirect url="bbs-write"/>
+<c:redirect url="free-write"/>
 <script type="text/javascript">
 function goWrite(){
-	document.move.action="bbs-write";
+	document.move.action="free-write";
 	document.move.submit();
 }
 </script>

@@ -45,7 +45,7 @@
    </c:if>
    <tr>
       <td colspan = "4" align = "right">
-      <a href = "bbs-write">[한마디 등록]</a></td>
+      <a href = "free-write">[한마디 등록]</a></td>
    </tr>
 </table>
 <c:if test="${count >0 }">
@@ -69,7 +69,7 @@
 </c:if>
 <script type="text/javascript">
 function goPage(pageNo){
-	document.move.action="bbs-list";
+	document.move.action="free-list";
 	document.move.page.value=pageNo;
 	document.move.submit();
 }
@@ -77,7 +77,7 @@ function goView(id){
 	console.log(id);
 	if(id==null){alert("글번호가 없습니다.");}
 	else{
-		document.move.action="bbs-read";
+		document.move.action="free-read";
 		document.move.id.value = id;
 		document.move.submit();
 	}

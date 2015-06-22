@@ -32,22 +32,22 @@
 		<a href="javascript:goReply()">[답글]</a>
 		<a href="javascript:goModify()">[수정]</a>
 		<a href="javascript:goDelete()">[삭제]</a>
-		<a href="bbs-list">[목록]</a>
+		<a href="free-list">[목록]</a>
 	</td>
 </tr>
 </table>
 </c:if>
 <script type="text/javascript">
 function goReply(){
-	document.move.action="bbs-reply";
+	document.move.action="free-reply";
 	document.move.submit();
 }	
 function goDelete(){
-	document.move.action="bbs-delete";
+	document.move.action="free-delete";
 	document.move.submit();
 }
 function goModify(){
-	document.move.action="bbs-update";
+	document.move.action="free-update";
 	document.move.submit();
 }
 </script>

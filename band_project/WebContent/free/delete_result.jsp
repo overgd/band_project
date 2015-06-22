@@ -11,13 +11,13 @@
 <c:if test="${empty id }">
 <script type="text/javascript">
 alert("삭제되었습니다.");
-location.href="bbs-list";
+location.href="free-list";
 </script>
 </c:if>
 <c:if test="${! empty id }">
 <script type="text/javascript">
 alert("삭제되지 않았습니다.");
-location.href="bbs-read?id=${id}";
+location.href="free-read?id=${id}";
 </script>
 </c:if>
 </body>
