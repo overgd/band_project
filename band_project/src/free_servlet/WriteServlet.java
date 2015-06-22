@@ -9,12 +9,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.swing.text.html.HTML;
 
+import free_crud.CrudProcess;
 import free_model.SequenceManager;
 import free_model.Writing;
 import free_util.ImageUtility;
 import free_util.MultipartUploading;
-import free_crud.CrudProcess;
 
 /**
  * Servlet implementation class WriteServlet
@@ -87,14 +89,15 @@ public class WriteServlet extends HttpServlet {
 		String orgPath = uploadPath + "/" + fileName;
 		File orgFile = new File(orgPath);
 		File newFile = new File(tmpPath);
-		ImageUtility.resize(orgFile, newFile, 50, ImageUtility.RATIO);
+		ImageUtility.resize(orgFile, newFile, 30, ImageUtility.RATIO);
 		writing.setWritingdate(new Timestamp(System.currentTimeMillis()).toString());
 		writing.setImagename(fileName);
-		writing.setWritername(multiPart.getParameter("writername"));
+		HttpSession session = request.getSession();
+		writing.setWritername(session.getId());
 		writing.setTitle(multiPart.getParameter("title"));
 		writing.setContent(multiPart.getParameter("content"));
 		try{
-			writing.setWritingid(SequenceManager.nextId("writing_info"));
+			writing.setWritingid(SequenceManager.nextId("freeboard_info"));
 		}catch(Exception e){}
 		crud.insertWritingInfo(writing);
 		crud.insertWritingContent(writing);

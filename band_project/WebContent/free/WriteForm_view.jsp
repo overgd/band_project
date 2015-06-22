@@ -49,7 +49,7 @@ function validate(form){
 	</td>
 </tr>
 </table>	
-<input type="hidden" name="writername" size="10"/>		
+<input type="hidden" name="writername" size="10" value="session.getId()"/>		
 <input type="hidden" name="email" size="30"/>	
 </form>				
 </body>
