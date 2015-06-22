@@ -99,4 +99,14 @@
     <servlet-name>DeleteUserInfoServlet</servlet-name>
     <url-pattern>/deleteuser.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SearchBandServlet</display-name>
+    <servlet-name>SearchBandServlet</servlet-name>
+    <servlet-class>band.SearchBandServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchBandServlet</servlet-name>
+    <url-pattern>/searchband.do</url-pattern>
+  </servlet-mapping>
 </web-app>

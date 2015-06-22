@@ -3,34 +3,34 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="configurations.FreeMapper">
 <cache/>
-<select id="selectLastId" parameterType="String" resultType="Integer">
-select last_id from id_sequence where table_name = #{name}
-</select>
-<insert id="insertWritingInfo" parameterType="Writing">
-insert into freeboard_info values(
-#{writingid},#{groupid},#{orderno},#{parentid},#{writingdate},
-#{writername},#{imagename},#{title})
-</insert>
-<insert id="insertWritingContent" parameterType="WritingContent">
-insert into freeboard_content values(#{writingid},#{content})
-</insert>
-<insert id="insertSequenceManager" parameterType="IdSequence">
-insert into id_sequence values(#{name}, #{lastid})
-</insert>
-<update id="updateSequenceManager" parameterType="IdSequence">
-update id_sequence set last_id=#{lastid} where table_name = #{name}
-</update>
-<select id="selectMaxGroupId" resultType="Integer">
-select max(group_id) from freeboard_info
-</select>
-	<select id="selectBBSList" resultType="Writing">
+	<select id="selectLastId" parameterType="String" resultType="Integer">
+	select last_id from id_sequence where table_name = #{name}
+	</select>
+	<insert id="insertWritingInfo" parameterType="free_model.Writing">
+	insert into freeboard_info values(
+	#{writingid},#{groupid},#{orderno},#{parentid},#{writingdate},
+	#{writername},#{imagename},#{title})
+	</insert>
+	<insert id="insertWritingContent" parameterType="free_model.WritingContent">
+	insert into freeboard_content values(#{writingid},#{content})
+	</insert>
+	<insert id="insertSequenceManager" parameterType="free_model.IdSequence">
+	insert into id_sequence values(#{name}, #{lastid})
+	</insert>
+	<update id="updateSequenceManager" parameterType="free_model.IdSequence">
+	update id_sequence set last_id=#{lastid} where table_name = #{name}
+	</update>
+	<select id="selectMaxGroupId" resultType="Integer">
+	select max(group_id) from freeboard_info
+	</select>
+	<select id="selectBBSList" resultType="free_model.Writing">
 	select <include refid="BaseColumns"/> from freeboard_info order by group_id desc, order_no asc
 	</select>
 	<sql id="BaseColumns">
 	writing_id as writingid, group_id as groupid, order_id as orderno, parent_id as parentid, writing_date as writingdate,
 	writer_id as writername, image_name as imagename, title as title
 	</sql>
-	<select id="selectWritingInfo" parameterType="Integer" resultType="Writing">
+	<select id="selectWritingInfo" parameterType="Integer" resultType="free_model.Writing">
 	select  <include refid="BaseColumns"/> from freeboard_info
 	where writing_id = #{writingid}
 	</select>
@@ -43,33 +43,33 @@ select max(group_id) from freeboard_info
 	<delete id="deleteWritingContent" parameterType="Integer">
 	delete from freeboard_content where writing_id = #{writingid}
 	</delete>
-	<update id="updateWritingInfo" parameterType="Writing">
+	<update id="updateWritingInfo" parameterType="free_model.Writing">
 	update freeboard_info set writer_name = #{writername},
     image_name =#{imagename}, title = #{title}
 	where writing_id = #{writingid}
 	</update>
-	<update id="updateWritingContent" parameterType="Writing">
+	<update id="updateWritingContent" parameterType="free_model.Writing">
 	update freeboard_content set content = #{content}
 	where writing_id = #{writingid}
 	</update>
-	<select id="selectMaxGroupIdReply" parameterType="Writing" resultType="Integer">
+	<select id="selectMaxGroupIdReply" parameterType="free_model.Writing" resultType="Integer">
 	select max(order_no) from freeboard_info
 	where group_id = #{groupid} and parent_id = #{parentid}
 	</select>
 	<select id="selectCount" resultType="Integer">
 	select count(*) from freeboard_info
 	</select>
-	<select id="selectWritingInfoWithRange"  parameterType="free_model.Condition" resultType="Writing">
+	<select id="selectWritingInfoWithRange"  parameterType="free_model.Condition" resultType="free_model.Writing">
 	select <include refid="BaseColumns"/> from
 	(select a.*, rownum rn from
 	(select * from freeboard_info order by group_id desc, order_id asc) a)
 	where rn between #{startRow} and #{endRow}
 	</select>
-	<update id="updateOrderNoReply" parameterType="Writing">
+	<update id="updateOrderNoReply" parameterType="free_model.Writing">
 	update freeboard_info set order_no = order_no +1
 	where group_id = #{groupid} and order_no >= #{orderno}
 	</update>
-	<select id="selectMaxOrderNo" parameterType="Writing" resultType="Integer">
+	<select id="selectMaxOrderNo" parameterType="free_model.Writing" resultType="Integer">
 	select max(order_no) from freeboard_info where group_id = #{groupid}
 	</select>
 </mapper>
