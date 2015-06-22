@@ -33,4 +33,10 @@
 	<update id="updateBandUserInfo" parameterType="login_model.Band">
 	update fanuser_info set PASSWORD=#{password}, EMAIL=#{email}, NAME=#{name}, GENRE=#{genre} where id=#{id}
 	</update>
+	<delete id="deleteFanUserInfo" parameterType="String">
+	delete from fanuser_info where id = #{id}
+	</delete>
+	<delete id="deleteBandUserInfo" parameterType="String">
+	delete from banduser_info where id = #{id}
+	</delete>
 </mapper>

@@ -89,4 +89,14 @@
     <servlet-name>ModifyUserInfoServlet</servlet-name>
     <url-pattern>/modifyuserinfo.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteUserInfoServlet</display-name>
+    <servlet-name>DeleteUserInfoServlet</servlet-name>
+    <servlet-class>login.DeleteUserInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserInfoServlet</servlet-name>
+    <url-pattern>/deleteuser.do</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -223,6 +223,50 @@ public class CrudProcess implements Serializable {
 		}
 		
 	}
+	
+	public Integer deleteFanUserInfo(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".deleteFanUserInfo";
+			
+			int result = sqlsession.delete(stmt, "f."+id);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+	}
+	
+	public Integer deleteBandUserInfo(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".deleteBandUserInfo";
+			
+			int result = sqlsession.delete(stmt, "b."+id);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+	}
 }
 
 

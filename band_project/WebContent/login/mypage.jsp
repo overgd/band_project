@@ -17,6 +17,20 @@ ${sessionScope.NAME }님의 마이페이지<br/>
 	<a href="index.jsp?MAIN=login/modifybanduser.jsp">정보 수정</a>
 </c:when>
 </c:choose>
-<a href="">회원 탈퇴</a>
+<a href="deleteuser.do" onclick="return deleteuser()">회원 탈퇴</a>
 </body>
+<script type="text/javascript">
+function deleteuser() {
+	
+	var del;
+	del=confirm("정말로 탈퇴하시겠습니까?");
+	
+	if(del) {
+		return true;
+	}else {
+		return false;
+	}
+		
+}
+</script>
 </html>
