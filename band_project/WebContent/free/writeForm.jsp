@@ -8,6 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:redirect url="list"/>
+<c:redirect url="bbs-write"/>
+<script type="text/javascript">
+function goWrite(){
+	document.move.action="bbs-write";
+	document.move.submit();
+}
+</script>
+<form name="move" method="post">
+</form>
 </body>
 </html>
