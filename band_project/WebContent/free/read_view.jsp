@@ -17,7 +17,7 @@
 	<td>제목</td><td>${writing.title }</td>
 </tr>
 <tr>
-	<td>작성자</td><td>${writing.writername }</td>
+	<td>작성자</td><td>${ID }</td>
 </tr>
 <tr>
 	<td colspan="2"><img src="upload_files/${writing.imagename }" alt="이미지" width="150" border="0"></td>

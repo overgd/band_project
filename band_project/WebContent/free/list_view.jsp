@@ -72,7 +72,7 @@ function goPage(pageNo){
 	document.move.page.value=pageNo;
 	document.move.submit();
 }
-function goView(){
+function goView(id){
 	console.log(id);
 	if(id==null){alert("글번호가 없습니다.");}
 	else{

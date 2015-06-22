@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import free_model.Writing;
 import free_crud.CrudProcess;
@@ -29,7 +30,8 @@ public class ReadServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String writeId = request.getParameter("id");
+		HttpSession session = request.getSession();
+		String writeId = request.getParameter((String)session.getAttribute("ID"));
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(Integer.parseInt(writeId));
 		String content = crud.selectWritingContent(Integer.parseInt(writeId));
