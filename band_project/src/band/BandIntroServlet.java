@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import login_model.Band;
 import band_crud.CrudProcess;
@@ -29,7 +30,9 @@ public class BandIntroServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		HttpSession session = request.getSession();
+		
 		String id = request.getParameter("ID");
 		CrudProcess crud = new CrudProcess();
 
@@ -39,6 +42,8 @@ public class BandIntroServlet extends HttpServlet {
 		
 		request.setAttribute("BAND", band);
 		request.setAttribute("ID", id);
+		session.setAttribute("BID", id);
+		session.setAttribute("BNAME", band.getName());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp&BOTTOM=bottom/bottomMenu.jsp");
 		rd.forward(request, response);

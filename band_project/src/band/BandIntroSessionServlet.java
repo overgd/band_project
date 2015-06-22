@@ -39,6 +39,8 @@ public class BandIntroSessionServlet extends HttpServlet {
 		
 		request.setAttribute("BAND", band);
 		request.setAttribute("ID", id);
+		session.setAttribute("BID", id);
+		session.setAttribute("BNAME", band.getName());
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
 		rd.forward(request, response);

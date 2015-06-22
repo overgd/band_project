@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${ID }
+${BID }
 <table>
 		<tr>
 			<td width="6600px"></td>
