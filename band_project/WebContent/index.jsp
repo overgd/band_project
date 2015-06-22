@@ -43,9 +43,14 @@
 		<tr>
 			<td width="5%"></td>
 			<td width="3000px">
-			<c:if test="${param.MAIN != null }">
-				<jsp:include page="${param.MAIN }"/>
-			</c:if>
+			<c:choose>
+				<c:when test="${param.MAIN != null }">
+					<jsp:include page="${param.MAIN }"/>
+				</c:when>
+				<c:when test="${sessionScope.ID != null }">
+					<c:redirect url="bandintrosession"/>
+				</c:when>
+			</c:choose>
 			</td>
 			<td width="5%"></td>
 		</tr>
@@ -56,9 +61,14 @@
 		<tr>
 			<td width="5%"></td>
 			<td width="5000px">
-			<c:if test="${param.BOTTOM != null }">
-				<jsp:include page="${param.BOTTOM }"/>
-			</c:if>
+			<c:choose>
+				<c:when test="${param.BOTTOM != null }">
+					<jsp:include page="${param.BOTTOM }"/>
+				</c:when>
+				<c:when test="${sessionScope.ID != null }">
+					<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.ID }"/>
+				</c:when>
+			</c:choose>
 			</td>
 			<td width="5%"></td>
 		</tr>

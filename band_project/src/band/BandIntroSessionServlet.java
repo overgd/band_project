@@ -7,20 +7,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import login_model.Band;
 import band_crud.CrudProcess;
 
 /**
- * Servlet implementation class BandIntroServlet
+ * Servlet implementation class BandIntroSessionServlet
  */
-public class BandIntroServlet extends HttpServlet {
+public class BandIntroSessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BandIntroServlet() {
+    public BandIntroSessionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,18 +30,17 @@ public class BandIntroServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String id = request.getParameter("ID");
-		CrudProcess crud = new CrudProcess();
-
-		Band band = crud.selectBandIntroToId(id);
 		
-		id = id.substring(2);
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("ID");
+		CrudProcess crud = new CrudProcess();
+		
+		Band band = crud.selectBandIntroToId("b."+id);
 		
 		request.setAttribute("BAND", band);
 		request.setAttribute("ID", id);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp&BOTTOM=bottom/bottomMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
 		rd.forward(request, response);
 		
 	}

@@ -113,7 +113,7 @@ public class CrudProcess implements Serializable {
 		
 	}
 	
-	public String selectLoginUserCheck(String id) {
+	public String selectLoginUserCheck(String id, String pwd) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
@@ -125,13 +125,19 @@ public class CrudProcess implements Serializable {
 			String result1 = sqlsession.selectOne(stmt1, "b."+id);
 			String result2 = sqlsession.selectOne(stmt2, "f."+id);
 			
-			if(result1 != null) {
-				return "BOK";
+			if(result1 != null){
+				if(result1.equals(pwd)) {
+					return "BOK";
+				}
 			}
-			if(result2 != null) {
-				return "FOK";
+			if(result2 != null){
+				if(result2.equals(pwd)) {
+					return "FOK";
+				}
 			}
-			
+			else {
+				return null;
+			}
 			return null;
 			
 		}finally {

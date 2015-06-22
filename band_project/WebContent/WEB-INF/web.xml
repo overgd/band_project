@@ -209,4 +209,14 @@
     <servlet-name>BandIntroServlet</servlet-name>
     <url-pattern>/bandintro.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BandIntroSessionServlet</display-name>
+    <servlet-name>BandIntroSessionServlet</servlet-name>
+    <servlet-class>band.BandIntroSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BandIntroSessionServlet</servlet-name>
+    <url-pattern>/bandintrosession</url-pattern>
+  </servlet-mapping>
 </web-app>

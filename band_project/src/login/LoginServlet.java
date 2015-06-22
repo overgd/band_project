@@ -42,10 +42,11 @@ public class LoginServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("password");
 		String result = null;
+		String usercheck = null;
 		
 		CrudProcess crud = new CrudProcess();
 		
-		String usercheck = crud.selectLoginUserCheck(id);
+		usercheck = crud.selectLoginUserCheck(id, pwd);
 		
 		if(usercheck == "FOK" || usercheck == "BOK") {
 			
@@ -86,7 +87,7 @@ public class LoginServlet extends HttpServlet {
 				request.setAttribute("BAND", selectinfo);
 				
 				result = "OK";
-				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp?LOGIN=login/loginConfirm.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp&BOTTOM=bottom/bottomMenu.jsp?LOGIN=login/loginConfirm.jsp");
 				rd.forward(request, response);
 				
 			}
