@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:if test="${! empty writing }">
-<form action="delete.do" method="post" onSubmit="return validate(this)">
+<form action="free.delete.do" method="post" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
 <table width="100%" border="1" cellpadding="1">
 <tr>
