@@ -47,7 +47,7 @@ public class DeleteUserInfoServlet extends HttpServlet {
 			session.removeAttribute("ID");
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("login/deleteuserconfirm.html");
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/deleteuserconfirm.html");
 		rd.forward(request, response);
 		
 	}
