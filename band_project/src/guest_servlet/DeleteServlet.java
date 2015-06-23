@@ -43,7 +43,7 @@ public class DeleteServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"template.jsp?CONTENTPAGE=deleteForm_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=deleteForm_view.jsp");
 		rd.forward(request, response);
 	}
 

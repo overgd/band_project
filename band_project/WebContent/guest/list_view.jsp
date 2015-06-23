@@ -71,14 +71,14 @@
 </c:if>
 <script type="text/javascript">
 function goPage(pageNo){
-	document.move.action="guest-list";
+	document.move.action="index.jsp?MAIN=guest/guest-list";
 	document.move.page.value=pageNo;
 	document.move.submit();
 }
 function goView(id){
 	if(id == null){ alert("글번호가 없습니다."); }
 	else {
-		document.move.action="guest-read";
+		document.move.action="index.jsp?MAIN=guest/guest-read";
 		document.move.id.value = id;
 		document.move.submit();
 	}

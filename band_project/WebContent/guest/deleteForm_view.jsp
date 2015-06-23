@@ -10,7 +10,7 @@
 <body>
 
 <c:if test="${ ! empty writing }">
-<form action="guest.delete.do" method="post" onsubmit="return validate(this)">
+<form action="index.jsp?MAIN=guest/guest.delete.do" method="post" onsubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
 <input type="hidden" name="title" value="${writing.title }"/>
 <table width="100%" border="1" cellpadding="1">

@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<c:redirect url="guest-form"/>
+<c:redirect url="index.jsp?MAIN=guest/guest-form"/>
 </body>
 </html>

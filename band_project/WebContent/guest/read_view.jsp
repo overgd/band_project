@@ -34,15 +34,15 @@
 </c:if>
 <script type="text/javascript">
 function goReply(){
-	document.move.action="guest-reply";
+	document.move.action="index.jsp?MAIN=guest/guest-reply";
 	document.move.submit();
 }
 function goDelete(){
-	document.move.action="guest-delete"
+	document.move.action="index.jsp?MAIN=guest/guest-delete"
 	document.move.submit();
 }
 function goModify(){
-	document.move.action="guest-update"
+	document.move.action="index.jsp?MAIN=guest/guest-update"
 	document.move.submit();
 }
 </script>

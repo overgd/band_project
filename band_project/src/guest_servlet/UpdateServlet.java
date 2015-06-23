@@ -38,7 +38,7 @@ public class UpdateServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"template.jsp?CONTENTPAGE=updateForm_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=updateForm_view.jsp");
 		rd.forward(request, response);
 	}
 
@@ -55,7 +55,7 @@ public class UpdateServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"template.jsp?CONTENTPAGE=updateForm_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=updateForm_view.jsp");
 		rd.forward(request, response);
 	}
 
