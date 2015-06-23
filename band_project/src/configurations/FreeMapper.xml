@@ -24,7 +24,7 @@
 	select max(group_id) from freeboard_info
 	</select>
 	<select id="selectBBSList" resultType="free_model.Writing">
-	select <include refid="BaseColumns"/> from freeboard_info order by group_id desc, order_no asc
+	select <include refid="BaseColumns"/> from freeboard_info order by group_id desc, order_id asc
 	</select>
 	<sql id="BaseColumns">
 	writing_id as writingid, group_id as groupid, order_id as orderno, parent_id as parentid, writing_date as writingdate,
@@ -53,7 +53,7 @@
 	where writing_id = #{writingid}
 	</update>
 	<select id="selectMaxGroupIdReply" parameterType="free_model.Writing" resultType="Integer">
-	select max(order_no) from freeboard_info
+	select max(order_id) from freeboard_info
 	where group_id = #{groupid} and parent_id = #{parentid}
 	</select>
 	<select id="selectCount" resultType="Integer">
@@ -66,11 +66,11 @@
 	where rn between #{startRow} and #{endRow}
 	</select>
 	<update id="updateOrderNoReply" parameterType="free_model.Writing">
-	update freeboard_info set order_no = order_no +1
-	where group_id = #{groupid} and order_no >= #{orderno}
+	update freeboard_info set order_id = order_id +1
+	where group_id = #{groupid} and order_id >= #{orderno}
 	</update>
 	<select id="selectMaxOrderNo" parameterType="free_model.Writing" resultType="Integer">
-	select max(order_no) from freeboard_info where group_id = #{groupid}
+	select max(order_id) from freeboard_info where group_id = #{groupid}
 	</select>
 </mapper>
 

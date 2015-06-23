@@ -101,6 +101,8 @@ public class WriteServlet extends HttpServlet {
 		}catch(Exception e){}
 		crud.insertWritingInfo(writing);
 		crud.insertWritingContent(writing);
+		
+		System.out.print(writing.getTitle());
 		RequestDispatcher rd = request.getRequestDispatcher(
 				"index.jsp?MAIN=free/write_result.jsp");
 		rd.forward(request, response);
