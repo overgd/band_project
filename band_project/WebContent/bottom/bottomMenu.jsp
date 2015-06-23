@@ -11,13 +11,13 @@ ${BNAME }
 <table align="center">
 		<tr>
 			<td>
-			<a href="">
+			<a href="index.jsp">
 			<img alt="¾Ù¹üÀ½¿ø" src="./images/um1.png" width="58px">
 			<input type="button" value="¾Ù¹üÀ½¿ø" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/></a>
 			</td>
 			<td width="100px"></td>
 			<td>
-			<a href="">
+			<a href="index.jsp?MAIN=qna-list?ID=${sessionScope.BID }">
 			<img alt="ÁúÀÇÀÀ´ä" src="./images/qna.png" width="58px">
 			<input type="button" value="ÁúÀÇÀÀ´ä" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/>
 			 </a>
