@@ -10,7 +10,7 @@
 <body>
 <table>
 	<tr>
-		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td>등록</td><td>수정</td><td>삭제</td>
+		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td><a href="javascript:goInsert()">등록</a></td><td>수정</td><td>삭제</td>
 	</tr>
 </table>
 <table>
@@ -30,6 +30,12 @@
 	</tr>
 </table>
 </c:if>
-<input type="button" value="등록" onclick=""/>
+<script type="text/javascript">
+function goInsert() {
+	
+	location.href("qnawriteform.jsp");
+	
+}
+</script>
 </body>
 </html>

@@ -99,9 +99,6 @@
     <servlet-name>SearchBandServlet</servlet-name>
     <url-pattern>/searchband.do</url-pattern>
   </servlet-mapping>
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>DeleteServlet</display-name>
@@ -202,9 +199,6 @@
     <servlet-name>ListFree</servlet-name>
     <url-pattern>/ListFree</url-pattern>
   </servlet-mapping>
-  
-  
-  
   <servlet>
     <description></description>
     <display-name>BandIntroServlet</display-name>
@@ -245,9 +239,7 @@
     <servlet-name>BandIntroModifyServlet</servlet-name>
     <url-pattern>/bandintromodify.do</url-pattern>
   </servlet-mapping>
-  
-  
-   <servlet>
+  <servlet>
     <description></description>
     <display-name>guestWriteFormServlet</display-name>
     <servlet-name>guestWriteFormServlet</servlet-name>
@@ -337,5 +329,14 @@
     <servlet-name>guestReplyServlet</servlet-name>
     <url-pattern>/guest-reply</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>QnaWriteServlet</display-name>
+    <servlet-name>QnaWriteServlet</servlet-name>
+    <servlet-class>qna.QnaWriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QnaWriteServlet</servlet-name>
+    <url-pattern>/qna_write.do</url-pattern>
+  </servlet-mapping>
 </web-app>
