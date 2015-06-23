@@ -1,0 +1,70 @@
+package guest_model;
+
+import java.io.Serializable;
+
+public class Writing implements Serializable {
+	private int writingid;
+	private int groupid;
+	private int parentid;
+	private int bandid;
+	private int orderno;
+	private int writerid;
+	private String writingdate;
+	private String title;
+	private String content;
+	public int getWritingid() {
+		return writingid;
+	}
+	public void setWritingid(int writingid) {
+		this.writingid = writingid;
+	}
+	public int getGroupid() {
+		return groupid;
+	}
+	public void setGroupid(int groupid) {
+		this.groupid = groupid;
+	}
+	public int getParentid() {
+		return parentid;
+	}
+	public void setParentid(int parentid) {
+		this.parentid = parentid;
+	}
+	public int getBandid() {
+		return bandid;
+	}
+	public void setBandid(int bandid) {
+		this.bandid = bandid;
+	}
+	public int getOrderno() {
+		return orderno;
+	}
+	public void setOrderno(int orderno) {
+		this.orderno = orderno;
+	}
+	public int getWriterid() {
+		return writerid;
+	}
+	public void setWriterid(int writerid) {
+		this.writerid = writerid;
+	}
+	public String getWritingdate() {
+		return writingdate;
+	}
+	public void setWritingdate(String writingdate) {
+		this.writingdate = writingdate;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
+}
