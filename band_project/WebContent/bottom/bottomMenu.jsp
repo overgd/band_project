@@ -10,22 +10,22 @@
 ${BNAME }
 <table align="center">
 		<tr>
-			<td class="top.menu">
+			<td>
 			<a href="">
-			<img  alt="logo" src="./images/um1.png" width="58px">
+			<img alt="¾Ù¹üÀ½¿ø" src="./images/um1.png" width="58px">
 			<input type="button" value="¾Ù¹üÀ½¿ø" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/></a>
 			</td>
 			<td width="100px"></td>
-			<td class="top.menu">
+			<td>
 			<a href="">
-			<img  alt="logo" src="./images/qna.png" width="58px">
-			<input type="button" value="Q & A" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/>
+			<img alt="ÁúÀÇÀÀ´ä" src="./images/qna.png" width="58px">
+			<input type="button" value="ÁúÀÇÀÀ´ä" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/>
 			 </a>
 			</td>
 			<td width="100px"></td>
-			<td class="top.menu">
-			<a href="">
-			<img  alt="logo" src="./images/guest.png" width="58px">
+			<td>
+			<a href="index.jsp?MAIN=guest-list?ID=${sessionScope.BID }">
+			<img alt="¹æ¸í·Ï" src="./images/guest.png" width="58px">
 			<input type="button" value="¹æ¸í·Ï" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/>
 			 </a>
 			</td>

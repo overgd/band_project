@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ListServlet
@@ -32,6 +33,9 @@ public class ListServlet extends HttpServlet {
 	 */
     private static int PAGE_SIZE = 5;//페이지 갯수 지정 숫자 바꿔주면됨
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String band_id = request.getParameter("ID");
+		
 		CrudProcess crud = new CrudProcess();
 //		List list= crud.selectWritingInfo();//모든 게시글 검색
 		//전체 글 갯수, 페이지 갯수, 시작글번호, 마지막글번호
@@ -49,6 +53,7 @@ public class ListServlet extends HttpServlet {
 			if(endRow > count) endRow = count;
 		}
 		Condition condition = new Condition();
+		condition.setBand_id(band_id);
 		condition.setStartRow(startRow);
 		condition.setEndRow(endRow);
 		List list = crud.selectWritingInfoWithRange(condition);

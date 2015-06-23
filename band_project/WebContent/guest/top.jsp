@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>방명록 입니다. - 방명록을 올려주세요.</h2>
+<h2>${sessionScope.BNAME }의 방명록 입니다. - 방명록을 올려주세요.</h2>
 </body>
 </html>

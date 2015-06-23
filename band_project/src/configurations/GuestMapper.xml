@@ -80,7 +80,7 @@ select count(*) from guestbook_info
 								resultType="guest_model.Writing">
 select <include refid="BaseColumns" /> from
 (select a.*, rownum rn from
-(select * from guestbook_info order by group_id desc, order_no asc) a)
+(select * from guestbook_info order by group_id desc, order_no asc) a where band_id = #{band_id})
 where rn between #{startRow} and #{endRow}
 </select>
 <update id="updateOrderNoReply" parameterType="guest_model.Writing">
