@@ -44,7 +44,7 @@
    </c:if>
    <tr>
 		<td colspan = "4" align = "right">
-		<a href = "index.jsp?MAIN=guest/writeForm.jsp">[등록]</a></td>
+		<a href = "index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=writeForm_view.jsp">[등록]</a></td>
 	</tr>
 </table>
 <c:if test="${count > 0 }">
