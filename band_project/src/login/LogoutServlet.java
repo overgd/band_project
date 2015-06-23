@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import oracle.net.aso.r;
+import oracle.net.aso.s;
+
 /**
  * Servlet implementation class LogoutServlet
  */
@@ -29,7 +32,8 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		session.removeAttribute("ID");
+		
+		session.invalidate();		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
