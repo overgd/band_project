@@ -3,5 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="configurations.QnaMapper">
 <cache/>
+	<select id="selectIdSequence" parameterType="String" resultType="qna_model.Id_sequence">
+	select * from id_sequence where table_name=#{table_name}
+	</select>
 
 </mapper>

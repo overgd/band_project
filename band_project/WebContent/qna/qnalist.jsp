@@ -8,32 +8,49 @@
 <title>질의응답</title>
 </head>
 <body>
-<table>
+${sessionScope.BNAME }에게 물어봐!<br/>
+<c:choose>
+<c:when test="${param.INSERT == null }">
+<table width="1000px">
 	<tr>
-		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td><a href="javascript:goInsert()">등록</a></td><td>수정</td><td>삭제</td>
+		<td align="left" width="300px">글쓴이 : ㅂㅈㄱㅂㅈㄱ</td>
+		<td width="10%">
+		<c:if test="${sessionScope.ID == param.ID }">
+		수정
+		</c:if>
+		</td>
+		<td width="10%">
+		<c:if test="${sessionScope.ID == param.ID }">
+		삭제
+		</c:if>
+		<td width="10%">
+		<c:if test="${sessionScope.BID == BID }">
+		답하기
+		</c:if>
+		</td>
 	</tr>
 </table>
-<table>
+<table width="1000px">
 	<tr>
-		<td>내용 : </td><td>ㅂㅈㄱㅂㅈㄱ</td>
+		<td align="left">내용</td>
+	</tr>
+	<tr>
+		<td>ㅂㅈㄱㅂㅈㄱ</td>
+	</tr>
+	<tr>
+		<td><a href="javascript:goInsert()">등록</a></td>
 	</tr>
 </table>
-<c:if test="">
-<table>
-	<tr>
-		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td>등록</td><td>수정</td><td>삭제</td>
-	</tr>
-</table>
-<table>
-	<tr>
-		<td>내용 : </td><td>ㅂㅈㄱㅂㅈㄱ</td>
-	</tr>
-</table>
-</c:if>
+</c:when>
+<c:when test="${param.INSERT != null }">
+	<jsp:include page="${param.INSERT }"></jsp:include>
+</c:when>
+</c:choose>
+
 <script type="text/javascript">
 function goInsert() {
 	
-	location.href("qnawriteform.jsp");
+	location.href("index.jsp?MAIN=qna/qnalist.jsp?INSERT=qnawriteform.jsp");
 	
 }
 </script>
