@@ -8,19 +8,19 @@
 select last_id from id_sequence where table_name = #{name} 
 </select> 
 
-<insert id="insertguestbookinfo" parameterType = "Writing">  
+<insert id="insertguestbookinfo" parameterType = "guest_model.Writing">  
 insert into guestbook_info values( 
 #{writingid},#{groupid},#{parentid},#{orderno},#{writerid},#{writingdate},#{title},#{bandid}) 
 </insert> 
 
-<insert id="insertguestbookcontent" parameterType = "WritingContent"> 
+<insert id="insertguestbookcontent" parameterType = "guest_model.WritingContent"> 
 insert into guestbook_content values(#{writingid},#{content}) 
 </insert> 
 
-<insert id="insertSequenceManager" parameterType = "IdSequence"> 
+<insert id="insertSequenceManager" parameterType = "guest_model.IdSequence"> 
 insert into id_sequence values(#{name}, #{lastid}) 
 </insert> 
-<update id="updateSequenceManager" parameterType = "IdSequence"> 
+<update id="updateSequenceManager" parameterType = "guest_model.IdSequence"> 
 update id_sequence set last_id=#{lastid} where table_name = #{name} 
 </update> 
 
@@ -28,7 +28,7 @@ update id_sequence set last_id=#{lastid} where table_name = #{name}
 select max(group_id) from guestbook_info
 </select>
 
-<select id="selectBBSList" resultType="Writing">
+<select id="selectBBSList" resultType="guest_model.Writing">
 select <include refid="BaseColumns"/> from guestbook_info order by group_id desc, order_no asc
 </select>
 
@@ -45,7 +45,7 @@ writer_id as writerid, title as title
 
 
 <select id="selectWritingInfo" parameterType="Integer" 
-													resultType="Writing">
+													resultType="guest_model.Writing">
 select <include refid="BaseColumns"/> from guestbook_info
 where writing_id = #{writingid}
 </select>
@@ -59,16 +59,16 @@ delete from guestbook_info where writing_id = #{writingid}
 <delete id="deleteWritingContent" parameterType="Integer">
 delete from guestbook_content where writing_id = #{writingid}
 </delete>
-<update id="updateWritingInfo" parameterType="Writing">
+<update id="updateWritingInfo" parameterType="guest_model.Writing">
 update guestbook_info set writer_id = #{writerid}, title = #{title}
 where writing_id = #{writingid}
 </update>
 
-<update id="updateWritingContent" parameterType="Writing">
+<update id="updateWritingContent" parameterType="guest_model.Writing">
 update guestbook_content set content = #{content}
 where writing_id = #{writingid}
 </update>
-<select id="selectMaxGroupIdReply" parameterType="Writing"
+<select id="selectMaxGroupIdReply" parameterType="guest_model.Writing"
 								resultType="Integer">
 select max(order_no) from guestbook_info
 where group_id = #{groupid} and parent_id = #{parentid}
@@ -77,17 +77,17 @@ where group_id = #{groupid} and parent_id = #{parentid}
 select count(*) from guestbook_info
 </select>
 <select id="selectWritingInfoWithRange" parameterType="guest_model.Condition"
-								resultType="Writing">
+								resultType="guest_model.Writing">
 select <include refid="BaseColumns" /> from
 (select a.*, rownum rn from
 (select * from guestbook_info order by group_id desc, order_no asc) a)
 where rn between #{startRow} and #{endRow}
 </select>
-<update id="updateOrderNoReply" parameterType="Writing">
+<update id="updateOrderNoReply" parameterType="guest_model.Writing">
 update guestbook_info set order_no = order_no + 1
 where group_id = #{groupid} and order_no >= #{orderno}
 </update>
-<select id="selectMaxOrderNo" parameterType="Writing"
+<select id="selectMaxOrderNo" parameterType="guest_model.Writing"
 								resultType="Integer">
 select max(order_no) from guestbook_info where group_id = #{groupid} 
 </select>
