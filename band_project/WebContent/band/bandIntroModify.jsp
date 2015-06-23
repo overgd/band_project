@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name="modifyform" method="post" action="bandintromodify.do" onsubmit="return voidcheck()">
+<form name="modifyform" method="post" action="bandintromodify.do" enctype="multipart/form-data" onsubmit="return voidcheck()">
 	<table width="1000" border="1">
 		<tr>
 			<td>
