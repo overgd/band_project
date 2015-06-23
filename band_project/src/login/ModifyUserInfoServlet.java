@@ -80,6 +80,7 @@ public class ModifyUserInfoServlet extends HttpServlet {
 			
 			if(result > 0) {
 				session.setAttribute("NAME", band.getName());
+				session.setAttribute("BNAME", band.getName());
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/modifyresult.jsp");
 				rd.forward(request, response);
 			}

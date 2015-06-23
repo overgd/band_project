@@ -10,7 +10,7 @@
 <table>
 	<tr>
 		<td>
-		${sessionScope.ID }´Ô È¯¿µÇÕ´Ï´Ù!!
+		${sessionScope.NAME }´Ô È¯¿µÇÕ´Ï´Ù!!
 		</td>
 		<td>
 		<input type="button" value="·Î±×¾Æ¿ô" onclick="logout()"/>

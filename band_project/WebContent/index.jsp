@@ -7,22 +7,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>DYNAMIC</title>
 <link type="text/css" rel="stylesheet" href="style.css"/>
+<script type="text/javascript">
+</script>
 </head>
-<body>
+<body topmargin="0" leftmargin="0">
 <div class="index">
 	<div class="head">
-		<a href="index.html">
-		<img  alt="logo" src="./images/logo.jpg" height="200px">
-		</a>
+		<table class="head.table" align="center">
+		<tr>
+			<td width="5%"></td>
+			<td width="10%" class="top.menu">
+			</td>
+			<td width="181px" class="top.center">
+			<a href="index.html">
+			<img  alt="logo" src="./images/logo.jpg" height="200px">
+			</a>
+			</td>
+			<td width="10%" class="top.login">
+			</td>
+			<td width="5%"></td>
+		</tr> 
+		</table>
 	</div>
-	<div class="top" align="center">
+	<div id="top" align="center">
 		<table class="top.table">
 		<tr>
 			<td width="5%"></td>
 			<td width="10%" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
-			<td width="3000px">
+			<td width="181px" class="top.center">
 			</td>
 			<td width="15%" class="top.login">
 			<c:choose>
@@ -38,11 +52,11 @@
 		</tr> 
 		</table>
 	</div>
-	<div class="main">
-	<table>
+	<div id="main">
+	<table align="center">
 		<tr>
 			<td width="5%"></td>
-			<td width="3000px">
+			<td>
 			<c:choose>
 				<c:when test="${param.MAIN != null }">
 					<jsp:include page="${param.MAIN }"/>
@@ -56,24 +70,19 @@
 		</tr>
 	</table>
 	</div>
-	<c:if test="${param.BOTTOM != null || sessionScope.DIV == 'b'}">
-	<div class="bottom">
-	<table class="bottom.table">
-		<tr>
-			<td width="5%"></td>
-			<td width="5000px">
-			<c:choose>
-				<c:when test="${param.BOTTOM != null }">
-					<jsp:include page="${param.BOTTOM }"/>
-				</c:when>
-				<c:when test="${sessionScope.DIV == 'b' }">
-					<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.BID }"/>
-				</c:when>
-			</c:choose>
-			</td>
-			<td width="5%"></td>
-		</tr>
-	</table>
+	<c:if test="${sessionScope.BID != null || param.BOTTOM != null || sessionScope.DIV == 'b'}">
+	<div id="bottom">
+		<c:choose>
+			<c:when test="${param.BOTTOM != null }">
+				<jsp:include page="${param.BOTTOM }"/>
+			</c:when>
+			<c:when test="${sessionScope.BID != null }">
+				<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.BID }"/>
+			</c:when>
+			<c:when test="${sessionScope.DIV == 'b' }">
+				<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.BID }"/>
+			</c:when>
+		</c:choose>
 	</div>
 	</c:if>
 </div>

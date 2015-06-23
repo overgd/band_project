@@ -13,12 +13,13 @@
 		<tr>
 			<td>
 			<c:if test="${BAND.image_name != null }">
-				<img alt="${BAND.name }" src="${BAND.image_name }"/>
+				<img alt="${BAND.name }" src="band_upload_files/thumb.${BAND.image_name }"/>
 			</c:if>
 			<c:if test="${BAND.image_name == null }">
 				이미지 없음!
 			</c:if>
-				<input type="file" name="image_name" value="${BAND.image_name }"/>
+				<input type="file" name="image_name"/>
+				<input type="hidden" name="org_image_name" value="${BAND.image_name }"/>
 			</td>
 		</tr>
 		<tr>

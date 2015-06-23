@@ -7,10 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-${BID }
-<table>
+${BNAME }
+<table align="center">
 		<tr>
-			<td width="6600px"></td>
 			<td class="top.menu">
 			<a href="">
 			<img  alt="logo" src="./images/um1.png" width="58px">
@@ -30,9 +29,6 @@ ${BID }
 			<input type="button" value="¹æ¸í·Ï" style="background-color:orange;font-face:±¼¸²;font-size:7pt;color:#ffffff;"/>
 			 </a>
 			</td>
-			<td width="800px"></td>
-			<td width="5000px"></td>
-			<td width="800px"></td>
 		</tr>
 </table>
 </body>

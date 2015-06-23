@@ -54,33 +54,40 @@ public class BandIntroModifyServlet extends HttpServlet {
 		band.setGenre(mutipart.getParameter("genre"));
 		band.setContent(mutipart.getParameter("content"));
 		
+		String image_name = mutipart.getFileName("image_name");
+		
+		String filename = band.getId()+mutipart.getFileName("image_name");
+		
 		String uploadpath = getServletContext().getRealPath("band_upload_files");
-		String filename = band.getId()+mutipart.getParameter("image_name");
-		
-		System.out.println("Here is content :"+ band.getContent());
-		System.out.println("Here is genre :"+ band.getGenre());
-		System.out.println("Here is name :"+ band.getName());
-		System.out.println("Here is image_name :"+ filename);
-		
-		try {
-			mutipart.saveFile("imagename", uploadpath+"/"+filename);
-		}catch(Exception e) {}
-		
-		String thupath = uploadpath+"/thumb."+filename;
-		String orgpath = uploadpath+"/"+filename;
-		
-		File thufile = new File(thupath);
-		File orgfile = new File(orgpath);
-		
-		ImageUtility.resize(orgfile, thufile, 50, ImageUtility.RATIO);
-		
-		band.setImage_name(filename);
+			
+		if(image_name != "") {
+			
+			try {
+				mutipart.saveFile("image_name", uploadpath+"/"+filename);
+			}catch(Exception e) {}
+			
+			String thupath = uploadpath+"/thumb."+filename;
+			String orgpath = uploadpath+"/"+filename;
+			
+			File thufile = new File(thupath);
+			File orgfile = new File(orgpath);
+			
+			ImageUtility.resize(orgfile, thufile, 50, ImageUtility.RATIO);
+			
+			band.setImage_name(filename);
+		}else if(image_name == "") {
+			
+			band.setImage_name(mutipart.getParameter("org_image_name"));
+		}
 		
 		int result = crud.updateBandIntro(band);
 		
 		if(result > 0) {
+			session.setAttribute("NAME", band.getName());
+			session.setAttribute("BNAME", band.getName());
+			
 			request.setAttribute("BAND", band);
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp?BOTTOM=bottom/bottomMenu.jsp");
 			rd.forward(request, response);
 		}
 	}

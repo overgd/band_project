@@ -31,6 +31,8 @@ public class BandIntroServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("euc-kr");
+		
 		HttpSession session = request.getSession();
 		
 		String id = request.getParameter("ID");
@@ -38,14 +40,16 @@ public class BandIntroServlet extends HttpServlet {
 
 		Band band = crud.selectBandIntroToId(id);
 		
+		session.setAttribute("BID", id);
+		
 		id = id.substring(2);
 		
 		request.setAttribute("BAND", band);
 		request.setAttribute("ID", id);
-		session.setAttribute("BID", id);
+		
 		session.setAttribute("BNAME", band.getName());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp&BOTTOM=bottom/bottomMenu.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
 		rd.forward(request, response);
 		
 	}

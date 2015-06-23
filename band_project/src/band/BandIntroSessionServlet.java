@@ -31,9 +31,10 @@ public class BandIntroSessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("euc-kr");
+		
 		HttpSession session = request.getSession();
 		
-	
 		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		

@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
 				div = "b";
 				session.setAttribute("DIV", div);
 				session.setAttribute("ID", id);
-				session.setAttribute("BID", id);
+				session.setAttribute("BID", "b."+id);
 				session.setAttribute("BNAME", selectinfo.getName());
 				request.setAttribute("BAND", selectinfo);
 				

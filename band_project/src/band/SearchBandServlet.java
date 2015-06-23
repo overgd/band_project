@@ -51,6 +51,7 @@ public class SearchBandServlet extends HttpServlet {
 			
 			for(int cnt = 0; cnt < bandlist.size(); cnt++) {
 				band[cnt] = (Band)bandlist.get(cnt);
+				band[cnt].setId(band[cnt].getId().substring(2));
 			}
 			
 			request.setAttribute("LISTSIZE", band.length);

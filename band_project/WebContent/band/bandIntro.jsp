@@ -12,7 +12,7 @@
 		<tr>
 			<td>
 			<c:if test="${BAND.image_name != null }">
-				<img alt="${BAND.name }" src="${BAND.image_name }"/>
+				<img alt="${BAND.name }" src="band_upload_files/${BAND.image_name }"/>
 			</c:if>
 			<c:if test="${BAND.image_name == null }">
 				이미지를 등록해주세요!
