@@ -32,6 +32,8 @@ public class BandIntroSessionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		
+	
 		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		
@@ -44,6 +46,7 @@ public class BandIntroSessionServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=band/bandIntro.jsp");
 		rd.forward(request, response);
+		
 		
 	}
 
