@@ -14,7 +14,7 @@ insert into guestbook_info values(
 </insert> 
 
 <insert id="insertguestbookcontent" parameterType = "guest_model.WritingContent"> 
-insert into guestbook_content values(#{writingid},#{content}) 
+insert into guestbook_content values(#{writingid},#{bandid},#{content}) 
 </insert> 
 
 <insert id="insertSequenceManager" parameterType = "guest_model.IdSequence"> 
