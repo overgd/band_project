@@ -64,7 +64,7 @@ public class ListServlet extends HttpServlet {
 		request.setAttribute("count", count);
 		request.setAttribute("list", list);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=list_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/list_view.jsp");
 		rd.forward(request, response);
 	}
 
@@ -99,7 +99,7 @@ public class ListServlet extends HttpServlet {
 		request.setAttribute("count", count);
 		request.setAttribute("list", list);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=list_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/list_view.jsp");
 		rd.forward(request, response);
 	}
 

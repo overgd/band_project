@@ -17,7 +17,7 @@ function validate(form) {
 	}
 }
 </script>
-<form action="index.jsp?MAIN=guest/guest.write.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
+<form action="index.jsp?MAIN=guest.write.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 
 <table width="100%" border="1" cellpadding="1">
 <tr>

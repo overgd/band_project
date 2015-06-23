@@ -11,13 +11,13 @@
 <c:if test="${ ! empty RESULT }">
 	<script type="text/javascript">
 	alert("변경되지 않았습니다.");
-	location.href="index.jsp?MAIN=guest/guest-update?id=${id}";
+	location.href="index.jsp?MAIN=guest-update?id=${id}";
 	</script>
 </c:if>
 	<c:if test="${  empty RESULT }">
 	<script type="text/javascript">
 	alert("변경 되었습니다.");
-	location.href="index.jsp?MAIN=guest/guest-update?id=${id}";
+	location.href="index.jsp?MAIN=guest-update?id=${id}";
 	</script>
 </c:if>
 </body>

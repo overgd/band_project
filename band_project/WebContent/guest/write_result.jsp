@@ -9,7 +9,7 @@
 <body>
 <script type="text/javascript">
 alert("새로운 방명록을 등록했습니다.");
-location.href="index.jsp?MAIN=guest/guest-list";
+location.href="index.jsp?MAIN=guest-list";
 </script>
 </body>
 </html>

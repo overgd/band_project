@@ -36,7 +36,7 @@ public class ReadServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=read_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/read_view.jsp");
 		rd.forward(request, response);
 	}
 
@@ -51,7 +51,7 @@ public class ReadServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=read_view.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/read_view.jsp");
 		rd.forward(request, response);
 	}
 }

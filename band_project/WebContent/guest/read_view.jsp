@@ -27,22 +27,22 @@
 	<a href="javascript:goReply()">[답글]</a>
 	<a href="javascript:goModify()">[수정]</a>
 	<a href="javascript:goDelete()">[삭제]</a>
-	<a href="guest-list">[목록]</a>
+	<a href="index.jsp?MAIN=guest-list">[목록]</a>
 	</td>
 </tr>
 </table>
 </c:if>
 <script type="text/javascript">
 function goReply(){
-	document.move.action="index.jsp?MAIN=guest/guest-reply";
+	document.move.action="index.jsp?MAIN=guest-reply";
 	document.move.submit();
 }
 function goDelete(){
-	document.move.action="index.jsp?MAIN=guest/guest-delete"
+	document.move.action="index.jsp?MAIN=guest-delete"
 	document.move.submit();
 }
 function goModify(){
-	document.move.action="index.jsp?MAIN=guest/guest-update"
+	document.move.action="index.jsp?MAIN=guest-update"
 	document.move.submit();
 }
 </script>
