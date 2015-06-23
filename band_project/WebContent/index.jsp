@@ -56,6 +56,7 @@
 		</tr>
 	</table>
 	</div>
+	<c:if test="${param.BOTTOM != null || sessionScope.DIV == 'b'}">
 	<div class="bottom">
 	<table class="bottom.table">
 		<tr>
@@ -74,6 +75,7 @@
 		</tr>
 	</table>
 	</div>
+	</c:if>
 </div>
 </body>
 </html>
