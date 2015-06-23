@@ -19,9 +19,9 @@
 	</environments>
 	<mappers>
 		<mapper resource="configurations/LoginMapper.xml"/>
-		<mapper	resource="configurations/AlbumMapper.xml"/><mapper
-			resource="configurations/FreeMapper.xml" ></mapper>
-		<mapper resource="configurations/SearchMapper.xml" ></mapper>
+		<mapper	resource="configurations/AlbumMapper.xml"/>
+		<mapper	resource="configurations/FreeMapper.xml" />
+		<mapper resource="configurations/BandMapper.xml" />
 	</mappers>
 </configuration>
 

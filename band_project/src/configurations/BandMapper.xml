@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="configurations.SearchMapper">
+<mapper namespace="configurations.BandMapper">
 <cache/>
 	<select id="selectBandInfoToName" parameterType="String" resultType="login_model.Band">
 	select id, name, genre from banduser_info where lower(name) like '%'||#{name}||'%' or upper(name) like '%'||#{name}||'%'
@@ -9,4 +9,7 @@
 	<select id="selectBandIntroToId" parameterType="String" resultType="login_model.Band">
 	select id, name, genre, content, image_name from banduser_info where id = #{id}
 	</select>
+	<insert id="updateBandIntro" parameterType="login_model.Band">
+	update banduser_info set name=#{name}, genre=#{genre}, content=#{content}, image_name=#{image_name} where id=#{id}
+	</insert>
 </mapper>

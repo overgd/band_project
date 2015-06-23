@@ -13,7 +13,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class CrudProcess {
 	
-	private final String namespace = "configurations.SearchMapper";
+	private final String namespace = "configurations.BandMapper";
 	
 	private SqlSessionFactory getSqlSessionFactory(){
 		
@@ -60,6 +60,29 @@ public class CrudProcess {
 				return result;
 			}
 		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
+	public Integer updateBandIntro(Band band) {
+
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateBandIntro";
+			
+			int result = sqlsession.insert(stmt, band);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
 			sqlsession.close();
 		}
 		

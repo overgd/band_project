@@ -28,10 +28,10 @@
 	select ID, PASSWORD, EMAIL, NAME, GENRE, CONTENT, IMAGE_NAME from banduser_info where id=#{id}
 	</select>
 	<update id="updateFanUserInfo" parameterType="login_model.Fan">
-	update fanuser_info set PASSWORD=#{password}, EMAIL=#{email}, NAME=#{name}, GENDER=#{gender}, PHONE=#{phone}, BIRTH=#{birth} where id=#{id}
+	update fanuser_info set EMAIL=#{email}, NAME=#{name}, GENDER=#{gender}, PHONE=#{phone}, BIRTH=#{birth} where id=#{id}
 	</update>
 	<update id="updateBandUserInfo" parameterType="login_model.Band">
-	update fanuser_info set PASSWORD=#{password}, EMAIL=#{email}, NAME=#{name}, GENRE=#{genre} where id=#{id}
+	update banduser_info set EMAIL=#{email}, NAME=#{name}, GENRE=#{genre} where id=#{id}
 	</update>
 	<delete id="deleteFanUserInfo" parameterType="String">
 	delete from fanuser_info where id = #{id}

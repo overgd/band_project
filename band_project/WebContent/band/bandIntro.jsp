@@ -7,8 +7,18 @@
 <title></title>
 </head>
 <body>
-<form>
+<form method="post" action="bandintromodifygo.do">
 	<table width="1000" border="1">
+		<tr>
+			<td>
+			<c:if test="${BAND.image_name != null }">
+				<img alt="${BAND.name }" src="${BAND.image_name }"/>
+			</c:if>
+			<c:if test="${BAND.image_name == null }">
+				이미지를 등록해주세요!
+			</c:if>
+			</td>
+		</tr>
 		<tr>
 			<td>
 			${BAND.name }
@@ -22,11 +32,6 @@
 		<tr>
 			<td>
 			${BAND.content }
-			</td>
-		</tr>
-		<tr>
-			<td>
-			${BAND.image_name }
 			</td>
 		</tr>
 	</table>

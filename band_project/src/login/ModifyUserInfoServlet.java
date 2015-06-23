@@ -60,6 +60,7 @@ public class ModifyUserInfoServlet extends HttpServlet {
 			int result = crud.updateFanUserInfo(fan);
 			
 			if(result > 0) {
+				session.setAttribute("NAME", fan.getName());
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/modifyresult.jsp");
 				rd.forward(request, response);
 			}
@@ -69,7 +70,7 @@ public class ModifyUserInfoServlet extends HttpServlet {
 			Band band = new Band();
 			CrudProcess crud = new CrudProcess();
 			
-			band.setId("b."+(String)request.getAttribute("ID"));
+			band.setId("b."+(String)session.getAttribute("ID"));
 			band.setPassword((String)request.getParameter("password"));
 			band.setName((String)request.getParameter("name"));
 			band.setEmail((String)request.getParameter("email"));
@@ -78,6 +79,7 @@ public class ModifyUserInfoServlet extends HttpServlet {
 			int result = crud.updateBandUserInfo(band);
 			
 			if(result > 0) {
+				session.setAttribute("NAME", band.getName());
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/modifyresult.jsp");
 				rd.forward(request, response);
 			}
