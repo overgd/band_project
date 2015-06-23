@@ -81,9 +81,9 @@ public class WriteServlet extends HttpServlet {
 			}
 			
 		}
-		String uploadPath = getServletContext().getRealPath("upload_files");
+		String uploadPath = getServletContext().getRealPath("free_upload_files");
 		try{
-			multiPart.savaFile("imagename", uploadPath+"/"+fileName);
+			multiPart.savaFile("imagename", uploadPath+"/"+writing.getWritingid()+fileName);
 		}catch(Exception e){}
 		String tmpPath = uploadPath + "/small."+fileName;
 		String orgPath = uploadPath + "/" + fileName;

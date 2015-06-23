@@ -19,7 +19,7 @@
 	<td>작성자</td><td>${writing.writername }</td>
 </tr>
 <tr>
-	<td>이미지</td><td><img src="upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
+	<td>이미지</td><td><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
 </tr>
 <tr>
 	<td colspan="2">

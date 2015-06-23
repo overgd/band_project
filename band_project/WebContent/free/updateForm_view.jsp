@@ -30,7 +30,7 @@ function validate(form){
 <tr>
 	<td>이미지</td>
 	<td><input type="file" name="image_name"/><br/>
-	<img src="upload_files/${writing.imagename }" alt=",이미지" width="150" border="0"/>
+	<img src="free_upload_files/${writing.imagename }" alt=",이미지" width="150" border="0"/>
 	</td>
 </tr>
 <tr>

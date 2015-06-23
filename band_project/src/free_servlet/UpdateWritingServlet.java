@@ -57,7 +57,7 @@ public class UpdateWritingServlet extends HttpServlet {
 			if(fileName.equals("")){//이미지를 변경하지 않는 경우
 				writing.setImagename(oldWriting.getImagename());
 			}else{//이미지를 변경하는 경우
-				String path = getServletContext().getRealPath("upload_files");
+				String path = getServletContext().getRealPath("free_upload_files");
 				String newPath = path + "/" + fileName;
 				try{
 					multiPart.savaFile("image_name", newPath);
