@@ -10,16 +10,26 @@
 <body>
 <table>
 	<tr>
-		<td>글쓴이 : </td><td>등록</td><td>수정</td><td>삭제</td>
+		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td>등록</td><td>수정</td><td>삭제</td>
 	</tr>
+</table>
+<table>
 	<tr>
-		내용
+		<td>내용 : </td><td>ㅂㅈㄱㅂㅈㄱ</td>
 	</tr>
 </table>
 <c:if test="">
 <table>
-
+	<tr>
+		<td>글쓴이 : ㅂㅈㄱㅂㅈㄱ</td><td>등록</td><td>수정</td><td>삭제</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>내용 : </td><td>ㅂㅈㄱㅂㅈㄱ</td>
+	</tr>
 </table>
 </c:if>
+<input type="button" value="등록" onclick=""/>
 </body>
 </html>

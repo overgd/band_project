@@ -24,8 +24,9 @@
 		<mapper resource="configurations/LoginMapper.xml"/>
 		<mapper	resource="configurations/AlbumMapper.xml"/>
 		<mapper	resource="configurations/FreeMapper.xml" />
-		<mapper resource="configurations/BandMapper.xml" /><mapper
-			resource="configurations/GuestMapper.xml" />
+		<mapper resource="configurations/BandMapper.xml" />
+		<mapper	resource="configurations/GuestMapper.xml" />
+		<mapper	resource="configurations/QnaMapper.xml" />
 	</mappers>
 </configuration>
 
