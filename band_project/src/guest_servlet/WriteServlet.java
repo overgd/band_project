@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class WriteServlet
@@ -39,7 +40,16 @@ public class WriteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		String band_id = (String)session.getAttribute("BID");
+		String id = (String)session.getAttribute("ID");
+		
 		Writing writing = new Writing();
+		
+		writing.setBandid(band_id);
+		
 		MultipartUploading multiPart = null;
 		try{
 			multiPart = new MultipartUploading(request);

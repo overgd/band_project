@@ -6,9 +6,9 @@ public class Writing implements Serializable {
 	private int writingid;
 	private int groupid;
 	private int parentid;
-	private int bandid;
 	private int orderno;
 	private int writerid;
+	private String bandid;
 	private String writingdate;
 	private String title;
 	private String content;
@@ -30,10 +30,10 @@ public class Writing implements Serializable {
 	public void setParentid(int parentid) {
 		this.parentid = parentid;
 	}
-	public int getBandid() {
+	public String getBandid() {
 		return bandid;
 	}
-	public void setBandid(int bandid) {
+	public void setBandid(String bandid) {
 		this.bandid = bandid;
 	}
 	public int getOrderno() {
