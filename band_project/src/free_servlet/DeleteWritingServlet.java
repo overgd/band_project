@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import free_model.Writing;
 import free_crud.CrudProcess;
@@ -36,11 +37,14 @@ public class DeleteWritingServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("ID");
 		String writeId = request.getParameter("id");
 		CrudProcess crud = new CrudProcess();
 		Writing orgWriting =
 				crud.selectOneWritingInfo(Integer.parseInt(writeId));
-		if(equals("loginConfirm.jsp?ID")){//암호 일치
+		if(orgWriting.getWritername().equals(id)){//암호 일치
+			
 			crud.deleteWritingInfo(Integer.parseInt(writeId));
 			crud.deleteWritingContent(Integer.parseInt(writeId));
 		}else{//암호 불일치

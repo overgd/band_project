@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import free_model.Writing;
 import free_util.ImageUtility;
@@ -45,11 +46,13 @@ public class UpdateWritingServlet extends HttpServlet {
 		}catch(Exception e){}
 		Writing writing = new Writing();
 		String writeId = multiPart.getParameter("id");
+		HttpSession session = request.getSession();
+		String id = request.getParameter((String)session.getAttribute("ID"));
 		CrudProcess crud = new CrudProcess();
 		Writing oldWriting = crud.selectOneWritingInfo(
 				Integer.parseInt(writeId));
 		writing.setWritingid(Integer.parseInt(writeId));
-		if(equals("loginConfirm.jsp?ID")){
+		if(oldWriting.getWritername().equals(id)){
 			String fileName = multiPart.getFileName("image_name");
 			if(fileName.equals("")){//이미지를 변경하지 않는 경우
 				writing.setImagename(oldWriting.getImagename());
@@ -66,7 +69,6 @@ public class UpdateWritingServlet extends HttpServlet {
 				writing.setImagename(fileName);
 			}
 			writing.setTitle(multiPart.getParameter("title"));
-			writing.setWritername(multiPart.getParameter("name"));
 			writing.setContent(multiPart.getParameter("content"));
 			crud.updateWritingInfo(writing);
 			crud.updateWritingContent(writing);

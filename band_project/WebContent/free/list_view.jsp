@@ -37,7 +37,7 @@
        <tr bgcolor="#f0f0f0">
        <td><img src="upload_files/small.${writing.imagename }" alt="ÀÌ¹ÌÁö" width="50"/></td>
           <td><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
-          <td>${ID} </td>
+          <td>${writing.writername} </td>
           <td>${writing.writingdate }</td>
       </tr>
       </c:forEach>

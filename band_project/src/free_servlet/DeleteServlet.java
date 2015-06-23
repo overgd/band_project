@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import free_model.Writing;
 import free_crud.CrudProcess;
@@ -36,7 +37,7 @@ public class DeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String writeId = request.getParameter("id");
+		String writeId =request.getParameter("id");
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(Integer.parseInt(writeId));
 		request.setAttribute("writing", writing);

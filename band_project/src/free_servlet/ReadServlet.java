@@ -30,8 +30,7 @@ public class ReadServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		String writeId = request.getParameter((String)session.getAttribute("ID"));
+		String writeId = request.getParameter("id");
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(Integer.parseInt(writeId));
 		String content = crud.selectWritingContent(Integer.parseInt(writeId));
