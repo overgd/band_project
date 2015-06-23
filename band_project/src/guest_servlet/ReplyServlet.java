@@ -55,7 +55,7 @@ public class ReplyServlet extends HttpServlet {
 			request.setAttribute("writing", writing);
 			request.setAttribute("title", title);
 			RequestDispatcher rd = request.getRequestDispatcher(
-					"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/writeForm_view.jsp");
+					"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=writeForm_view.jsp");
 			rd.forward(request, response);
 		}
 	}

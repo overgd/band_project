@@ -86,7 +86,7 @@ public class WriteServlet extends HttpServlet {
 		crud.insertguestbookinfo(writing);
 		crud.insertguestbookcontent(writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=guest/write_result.jsp");
+				"index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=write_result.jsp");
 		rd.forward(request, response);
 	}
 }
