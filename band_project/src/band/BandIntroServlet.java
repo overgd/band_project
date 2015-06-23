@@ -31,14 +31,12 @@ public class BandIntroServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("euc-kr");
-		
 		HttpSession session = request.getSession();
 		
 		String id = request.getParameter("ID");
 		CrudProcess crud = new CrudProcess();
 
-		Band band = crud.selectBandIntroToId(id);
+		Band band = crud.selectBandIntroToId("b."+id);
 		
 		session.setAttribute("BID", id);
 		

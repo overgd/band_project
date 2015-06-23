@@ -99,6 +99,9 @@
     <servlet-name>SearchBandServlet</servlet-name>
     <url-pattern>/searchband.do</url-pattern>
   </servlet-mapping>
+  
+  
+  
   <servlet>
     <description></description>
     <display-name>DeleteServlet</display-name>
@@ -199,6 +202,9 @@
     <servlet-name>ListFree</servlet-name>
     <url-pattern>/ListFree</url-pattern>
   </servlet-mapping>
+  
+  
+  
   <servlet>
     <description></description>
     <display-name>BandIntroServlet</display-name>
@@ -239,4 +245,97 @@
     <servlet-name>BandIntroModifyServlet</servlet-name>
     <url-pattern>/bandintromodify.do</url-pattern>
   </servlet-mapping>
+  
+  
+   <servlet>
+    <description></description>
+    <display-name>guestWriteFormServlet</display-name>
+    <servlet-name>guestWriteFormServlet</servlet-name>
+    <servlet-class>guest_servlet.WriteFormServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestWriteFormServlet</servlet-name>
+    <url-pattern>/guest-form</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestWriteServlet</display-name>
+    <servlet-name>guestWriteServlet</servlet-name>
+    <servlet-class>guest_servlet.WriteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestWriteServlet</servlet-name>
+    <url-pattern>/guest.write.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestListServlet</display-name>
+    <servlet-name>guestListServlet</servlet-name>
+    <servlet-class>guest_servlet.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestListServlet</servlet-name>
+    <url-pattern>/guest-list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestReadServlet</display-name>
+    <servlet-name>guestReadServlet</servlet-name>
+    <servlet-class>guest_servlet.ReadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestReadServlet</servlet-name>
+    <url-pattern>/guest-read</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestDeleteServlet</display-name>
+    <servlet-name>guestDeleteServlet</servlet-name>
+    <servlet-class>guest_servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestDeleteServlet</servlet-name>
+    <url-pattern>/guest-delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestDeleteWritingServlet</display-name>
+    <servlet-name>guestDeleteWritingServlet</servlet-name>
+    <servlet-class>guest_servlet.DeleteWritingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestDeleteWritingServlet</servlet-name>
+    <url-pattern>/guest.delete.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestUpdateServlet</display-name>
+    <servlet-name>guestUpdateServlet</servlet-name>
+    <servlet-class>guest_servlet.UpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestUpdateServlet</servlet-name>
+    <url-pattern>/guest-update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestUpdateWritingServlet</display-name>
+    <servlet-name>guestUpdateWritingServlet</servlet-name>
+    <servlet-class>guest_servlet.UpdateWritingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestUpdateWritingServlet</servlet-name>
+    <url-pattern>/guest.update.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>guestReplyServlet</display-name>
+    <servlet-name>guestReplyServlet</servlet-name>
+    <servlet-class>guest_servlet.ReplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>guestReplyServlet</servlet-name>
+    <url-pattern>/guest-reply</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
