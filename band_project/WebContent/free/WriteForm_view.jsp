@@ -12,8 +12,8 @@
 function validate(form){
 	if(form.title.value == ""){
 		alert("제목을 입력하세요."); return false;
-	}else if(form.writername.value == ""){
-		alert("작성자를 입력하세요."); return false;
+	}else if(form.imagename.value == ""){
+		alert("이미지를 넣어주세요."); return false;
 	}else if(form.content.value == ""){
 		alert("글 내용을 입력하세요."); return false;
 	}	
@@ -30,21 +30,22 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="100%" border="1" cellpadding="1">
+<table width="70%" border="1" cellpadding="1"  align="center">
+
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></td>
-	<td><input type="text" name="title" size="40" value="${title }"/></td>
+	<td  align="left"><input type="text" name="title" size="40" value="${title }"/></td>
 </tr>
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></td>
-	<td><input type="file" name="imagename" size="20"/></td>
+	<td  align="left"><input type="file" name="imagename" size="20"/></td>
 </tr>
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">글내용</span></td>
-	<td><textarea name="content" rows="8" cols="40"></textarea></td>
+	<td  align="left"><textarea name="content" rows="8" cols="40"></textarea></td>
 </tr>
 <tr>
-	<td colspan="2"><input type="submit" value="글 올리기"/>
+	<td colspan="2"  align="right"><input type="submit" value="글 올리기"/>
 	<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
 </tr>

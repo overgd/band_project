@@ -22,23 +22,23 @@ function validate(form){
 <c:if test="${! empty writing }">
 <form action="free.update.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="100%" border="1" cellpadding="1">
+<table width="70%" border="1" cellpadding="1"  align="center">
 <tr>
 	<td>글제목</td>
-	<td><input type="text" name="title" size="20" value="${writing.title}"/></td>
+	<td  align="left"><input type="text" name="title" size="20" value="${writing.title}"/></td>
 </tr>
 <tr>
 	<td>이미지</td>
-	<td><input type="file" name="image_name"/><br/>
-	<img src="free_upload_files/${writing.imagename }" alt=",이미지" width="150" border="0"/>
+	<td  align="left"><input type="file" name="image_name"/><br/>
+	<img src="free_upload_files/${writing.imagename }" alt="이미지" width="150" border="0"/>
 	</td>
 </tr>
 <tr>
 	<td>글내용</td>
-	<td><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
+	<td  align="left"><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
 </tr>
 <tr>
-	<td colspan="2">
+	<td colspan="2"  align="right">
 		<input type="submit" value="수정"/>
 		<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>

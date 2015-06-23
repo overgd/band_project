@@ -11,18 +11,19 @@
 <c:if test="${! empty writing }">
 <form action="free.delete.do" method="post" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="100%" border="1" cellpadding="1">
+<table width="70%" border="1" cellpadding="1"  align="center">
 <tr>
-	<td>글제목</td><td>${writing.title }</td>
+	<td>글제목</td><td  align="left">${writing.title }</td>
 </tr>
 <tr>
-	<td>작성자</td><td>${writing.writername }</td>
+	<td>작성자</td><td  align="left">${writing.writername }</td>
 </tr>
 <tr>
-	<td>이미지</td><td><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
+	<td>이미지</td><td  align="left"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
 </tr>
+
 <tr>
-	<td colspan="2">
+	<td colspan="2"  align="right">
 		<input type="submit" value="삭제"/>
 		<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
