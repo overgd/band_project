@@ -35,10 +35,9 @@
    <c:if test = "${ ! empty list }">
       <c:forEach var = "writing" items = "${list }">
        <tr bgcolor="#f0f0f0">
-       <td><img src="upload_files/small.${writing.imagename }"
-          alt="이미지" width="50"/></td>
+       <td><img src="upload_files/small.${writing.imagename }" alt="이미지" width="50"/></td>
           <td><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
-          <td>${writing.writername }</td>
+          <td>${ID} </td>
           <td>${writing.writingdate }</td>
       </tr>
       </c:forEach>

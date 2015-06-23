@@ -32,15 +32,15 @@ function validate(form){
 
 <table width="100%" border="1" cellpadding="1">
 <tr>
-	<td bgcolor = "#00bfff"align="center"><span style="color:#ffffff">글 제목</span></td>
+	<td bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></td>
 	<td><input type="text" name="title" size="40" value="${title }"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff"align="center"><span style="color:#ffffff">이미지</span></td>
+	<td bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></td>
 	<td><input type="file" name="imagename" size="20"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff" align="center"><span style="color:#ffffff">글내용</span></td>
+	<td bgcolor = "#00bfff"><span style="color:#ffffff">글내용</span></td>
 	<td><textarea name="content" rows="8" cols="40"></textarea></td>
 </tr>
 <tr>
@@ -50,7 +50,6 @@ function validate(form){
 </tr>
 </table>	
 <input type="hidden" name="writername" size="10" value="session.getId()"/>		
-<input type="hidden" name="email" size="30"/>	
 </form>				
 </body>
 </html>

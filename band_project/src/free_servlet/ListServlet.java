@@ -8,9 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import free_model.Condition;
 import free_crud.CrudProcess;
+import free_model.Condition;
 
 /**
  * Servlet implementation class ListServlet
@@ -31,6 +32,8 @@ public class ListServlet extends HttpServlet {
 	 */
     private static int PAGE_SIZE = 5;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		
 		String pageNum = request.getParameter("page");
