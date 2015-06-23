@@ -85,13 +85,13 @@ public class WriteServlet extends HttpServlet {
 		try{
 			multiPart.savaFile("imagename", uploadPath+"/"+writing.getWritingid()+fileName);
 		}catch(Exception e){}
-		String tmpPath = uploadPath + "/small."+fileName;
-		String orgPath = uploadPath + "/" + fileName;
+		String tmpPath = uploadPath + "/small."+writing.getWritingid()+fileName;
+		String orgPath = uploadPath + "/" + writing.getWritingid()+fileName;
 		File orgFile = new File(orgPath);
 		File newFile = new File(tmpPath);
 		ImageUtility.resize(orgFile, newFile, 50, ImageUtility.RATIO);
 		writing.setWritingdate(new Timestamp(System.currentTimeMillis()).toString());
-		writing.setImagename(fileName);
+		writing.setImagename(writing.getWritingid()+fileName);
 		HttpSession session = request.getSession();
 		writing.setWritername((String)session.getAttribute("ID"));
 		writing.setTitle(multiPart.getParameter("title"));

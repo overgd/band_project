@@ -128,8 +128,7 @@ public class CrudProcess {
 	public Integer updateWritingInfo(Writing writing){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
-			String statement = namespace+".updateWritingInfo";
-			int result = sqlSession.update(statement, writing);
+			int result = sqlSession.update(namespace+".updateWritingInfo", writing);
 			if(result > 0){sqlSession.commit();}
 			else {sqlSession.rollback();}
 			return result;
@@ -138,8 +137,7 @@ public class CrudProcess {
 	public Integer updateWritingContent(Writing writing){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
-			String statement = namespace+".updateWritingContent";
-			int result = sqlSession.update(statement, writing);
+			int result = sqlSession.update(namespace+".updateWritingContent", writing);
 			if(result > 0){sqlSession.commit();}
 			else {sqlSession.rollback();}
 			return result;

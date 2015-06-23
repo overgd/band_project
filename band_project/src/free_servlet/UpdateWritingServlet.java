@@ -47,7 +47,7 @@ public class UpdateWritingServlet extends HttpServlet {
 		Writing writing = new Writing();
 		String writeId = multiPart.getParameter("id");
 		HttpSession session = request.getSession();
-		String id = request.getParameter((String)session.getAttribute("ID"));
+		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		Writing oldWriting = crud.selectOneWritingInfo(
 				Integer.parseInt(writeId));
@@ -58,17 +58,18 @@ public class UpdateWritingServlet extends HttpServlet {
 				writing.setImagename(oldWriting.getImagename());
 			}else{//이미지를 변경하는 경우
 				String path = getServletContext().getRealPath("free_upload_files");
-				String newPath = path + "/" + fileName;
+				String newPath = path + "/" + writing.getWritingid()+fileName;
 				try{
 					multiPart.savaFile("image_name", newPath);
 				}catch(Exception e){}
-				String smallPath = path + "/small."+fileName;
+				String smallPath = path + "/small."+writing.getWritingid()+fileName;
 				File orgFile = new File(newPath);
 				File thumbFile = new File(smallPath);
 				ImageUtility.resize(orgFile, thumbFile, 50, ImageUtility.RATIO);
-				writing.setImagename(fileName);
+				writing.setImagename(writing.getWritingid()+fileName);
 			}
 			writing.setTitle(multiPart.getParameter("title"));
+			writing.setWritername(multiPart.getParameter("name"));
 			writing.setContent(multiPart.getParameter("content"));
 			crud.updateWritingInfo(writing);
 			crud.updateWritingContent(writing);

@@ -44,7 +44,7 @@
 	delete from freeboard_content where writing_id = #{writingid}
 	</delete>
 	<update id="updateWritingInfo" parameterType="free_model.Writing">
-	update freeboard_info set writer_name = #{writername},
+	update freeboard_info set
     image_name =#{imagename}, title = #{title}
 	where writing_id = #{writingid}
 	</update>
