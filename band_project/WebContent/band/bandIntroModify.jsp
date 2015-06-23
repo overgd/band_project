@@ -44,10 +44,10 @@
 function voidcheck() {
 	
 	if(modifyform.name.value == "") {
-		alert("비어있는 폼이 있습니다.");
+		alert("이름이 비어 있습니다.");
 		return false;
 	}else if(modifyform.genre.value == "") {
-		alert("비어있는 폼이 있습니다.");
+		alert("장르가 비어 있습니다.");
 		return false;
 	}
 	alert("수정합니다.");
