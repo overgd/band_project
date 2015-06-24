@@ -1,11 +1,17 @@
 package guest_servlet;
 
+import guest_crud.CrudProcess;
+import guest_model.Writing;
+
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Servlet implementation class DeleteWritingServlet
@@ -32,5 +38,22 @@ public class DeleteWritingServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String id = (String)session.getAttribute("ID");
+		String writeId = request.getParameter("id");
+		CrudProcess crud = new CrudProcess();
+		Writing orgWriting =
+				crud.selectOneWritingInfo(Integer.parseInt(writeId));
+		if(orgWriting.getWriterid().equals(id)){//암호 일치
+			
+			crud.deleteWritingInfo(Integer.parseInt(writeId));
+			crud.deleteWritingContent(Integer.parseInt(writeId));
+		}else{//암호 불일치
+			request.setAttribute("id", writeId);
+		}
+		RequestDispatcher rd= request.getRequestDispatcher(
+				"index.jsp?MAIN=guest/delete_result.jsp");
+		rd.forward(request, response);
 	}
+
 }

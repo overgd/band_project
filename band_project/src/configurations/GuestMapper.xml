@@ -35,9 +35,9 @@ select <include refid="BaseColumns"/> from guestbook_info order by group_id desc
 
 
 <sql id="BaseColumns">
-writing_id as writingid, group_id as groupid, order_no as orderno, 
-parent_id as parentid,band_id as bandid,writing_date as writingdate,
-writer_id as writerid, title as title
+writing_id as writingid, group_id as groupid, parent_id as parentid, 
+order_no as orderno, writer_id as writerid, writing_date as writingdate,
+title as title, band_id as bandid
 </sql>
 
 
@@ -80,7 +80,7 @@ select count(*) from guestbook_info
 								resultType="guest_model.Writing">
 select <include refid="BaseColumns" /> from
 (select a.*, rownum rn from
-(select * from guestbook_info order by group_id desc, order_no asc) a where band_id = #{band_id})
+(select * from guestbook_info order by group_id desc, order_no asc) a )
 where rn between #{startRow} and #{endRow}
 </select>
 <update id="updateOrderNoReply" parameterType="guest_model.Writing">
