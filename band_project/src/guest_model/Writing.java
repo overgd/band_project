@@ -7,7 +7,7 @@ public class Writing implements Serializable {
 	private int groupid;
 	private int parentid;
 	private int orderno;
-	private int writerid;
+	private String writerid;
 	private String bandid;
 	private String writingdate;
 	private String title;
@@ -42,10 +42,10 @@ public class Writing implements Serializable {
 	public void setOrderno(int orderno) {
 		this.orderno = orderno;
 	}
-	public int getWriterid() {
+	public String getWriterid() {
 		return writerid;
 	}
-	public void setWriterid(int writerid) {
+	public void setWriterid(String writerid) {
 		this.writerid = writerid;
 	}
 	public String getWritingdate() {

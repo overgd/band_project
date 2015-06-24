@@ -30,7 +30,7 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="70%" border="1" cellpadding="1"  align="center">
+<table width="1000px" border="1" cellpadding="1"  align="center">
 
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">±Û Á¦¸ñ</span></td>

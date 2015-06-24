@@ -87,6 +87,7 @@ public class WriteServlet extends HttpServlet {
 		System.out.println("±Û¹øÈ£:["+writing.getWritingid()+"]");
 		writing.setWritingdate(
 				new Timestamp(System.currentTimeMillis()).toString());
+		writing.setWriterid((String)session.getAttribute("ID"));
 		writing.setTitle(multiPart.getParameter("title"));
 		writing.setContent(multiPart.getParameter("content"));
 		try{

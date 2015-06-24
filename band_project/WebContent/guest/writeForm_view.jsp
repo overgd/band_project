@@ -32,6 +32,7 @@ function validate(form) {
 	<td colspan="2"><input type="submit" value="글 올리기"/></td>
 </tr>
 </table>
+<input type="hidden" name="writername" size="10" value="session.getId()"/>	
 </form>
 </body>
 </html>
