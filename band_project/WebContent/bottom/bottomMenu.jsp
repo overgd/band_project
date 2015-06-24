@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${BNAME }
+${BID }
 <table align="center">
 		<tr>
 			<td>

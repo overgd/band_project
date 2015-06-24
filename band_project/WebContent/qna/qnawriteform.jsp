@@ -12,15 +12,19 @@
 <table border="1px" width="1000px">
 	<tr>
 		<td align="left" width="200px">글쓴이 : ${sessionScope.NAME }</td>
-		<td align="left" width="59.3%">제목 : <input type="text" name="title"/></td>
-		<td width="10%"><input type="submit" value="등록"></td>
-		<td width="10%"><a href="">리셋</a></td>
+		<td align="left">제목 : <input type="text" name="title"/></td>
 	</tr>
 </table>
 <table border="1px" width="1000px">
 	<tr>
 		<td width="200px" align="left">내용</td><td><textarea name="content" rows="5" cols="100"></textarea>
 		</td>
+	</tr>
+</table>
+<table border="1px">
+	<tr>
+		<td width="60px"><input type="submit" value="등록"></td>
+		<td width="60px"><a href="">리셋</a></td>
 	</tr>
 </table>
 </form>

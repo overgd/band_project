@@ -2,6 +2,7 @@ package qna_crud;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -120,14 +121,14 @@ public class CrudProcess {
 		
 	}
 	
-	public Qna_info selectQnaInfo(String band_id) {
+	public List selectQnaInfo(String band_id) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectQnaInfo";
 
-			Qna_info result = sqlsession.selectOne(stmt, band_id);
+			List result = sqlsession.selectList(stmt, band_id);
 			
 			if(result == null){
 				return null;
@@ -141,14 +142,14 @@ public class CrudProcess {
 		
 	}
 	
-	public Qna_content selectQnaContent(String band_id) {
+	public List selectQnaContent(String band_id) {
 		
 		SqlSession sqlsession = getSqlSessionFactory().openSession();
 		
 		try {
 			String stmt = namespace+".selectQnaContent";
 
-			Qna_content result = sqlsession.selectOne(stmt, band_id);
+			List result = sqlsession.selectList(stmt, band_id);
 			
 			if(result == null){
 				return null;
@@ -157,6 +158,29 @@ public class CrudProcess {
 			}
 			
 		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
+	public Integer updateIdSequence(Id_sequence id_sequence) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateIdSequence";
+			
+			int result = sqlsession.update(stmt, id_sequence);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
 			sqlsession.close();
 		}
 		

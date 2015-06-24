@@ -77,10 +77,10 @@
 				<jsp:include page="${param.BOTTOM }"/>
 			</c:when>
 			<c:when test="${sessionScope.BID != null }">
-				<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.BID }"/>
+				<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
 			</c:when>
 			<c:when test="${sessionScope.DIV == 'b' }">
-				<jsp:include page="bottom/bottomMenu.jsp?ID=${sessionScope.BID }"/>
+				<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
 			</c:when>
 		</c:choose>
 	</div>

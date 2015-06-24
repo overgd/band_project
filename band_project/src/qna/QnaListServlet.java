@@ -1,6 +1,7 @@
 package qna;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,8 +36,8 @@ public class QnaListServlet extends HttpServlet {
 		
 		String band_id = request.getParameter("BID");
 		
-		Qna_info qnainfo = crud.selectQnaInfo(band_id);
-		Qna_content qnacontent = crud.selectQnaContent(band_id);
+		List<Qna_info> qnainfo = crud.selectQnaInfo(band_id);
+		List<Qna_content> qnacontent = crud.selectQnaContent(band_id);
 		
 		request.setAttribute("INFO", qnainfo);
 		request.setAttribute("CONTENT", qnacontent);

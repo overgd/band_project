@@ -55,8 +55,6 @@ public class QnaWriteServlet extends HttpServlet {
 		String writer_id = (String)session.getAttribute("ID");
 		String band_id = (String)session.getAttribute("BID");
 		
-		System.out.print(band_id);
-		
 		String table_name = band_id+".qna_info";
 		
 		//id_sequence를 검색해서 table_name과 last_id를 가지고 온다.
@@ -72,7 +70,7 @@ public class QnaWriteServlet extends HttpServlet {
 			int last_id = id_sequence.getLast_id();
 			last_id++;
 			id_sequence.setLast_id(last_id);
-			crud.insertIdSequence(id_sequence);
+			crud.updateIdSequence(id_sequence);
 		}
 		
 		qnainfo.setTitle(title);
@@ -92,12 +90,8 @@ public class QnaWriteServlet extends HttpServlet {
 		
 		//글이 있으면 last_id를 가져와서 등록한다.
 		
-		request.setAttribute("INFO", qnainfo);
-		request.setAttribute("CONTENT", qnacontent);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=qna/qnalist.jsp");
-		rd.forward(request, response);
-		
+		response.sendRedirect("index.jsp?MAIN=qnalist.do?BID="+session.getAttribute("BID"));
+
 	}
 
 }
