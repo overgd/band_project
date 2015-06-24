@@ -36,7 +36,9 @@ FAN 가입
 </tr>
 <tr>
 	<td>성별 : </td>
-	<td><input type="text" name="gender"/></td>
+	<td><input type="radio" name="gender"/>남성
+		<input type="radio" name="gender"/>여성
+	</td>
 </tr>
 <tr>
 	<td>휴대폰 번호 : </td>
