@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
+
+
+
 /**
  * Servlet implementation class WriteServlet
  */
@@ -43,12 +47,29 @@ public class WriteServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
+//		request.setCharacterEncoding("euc-kr");
+//		HttpSession session = request.getSession();
+//		CrudProcess crud = new CrudProcess();
+//		
+//		Qna_info qnainfo = new Qna_info();
+//		Qna_content qnacontent = new Qna_content();
+//		Id_sequence id_sequence = new Id_sequence();
+		
 		String band_id = (String)session.getAttribute("BID");
 		String id = (String)session.getAttribute("ID");
+//		Id_sequence id_sequence = new Id_sequence(); 
+		
+		
+//		String table_name = band_id+".qna_info";
 		
 		Writing writing = new Writing();
 		
 		writing.setBandid(band_id);
+
+//		String table_name = band_id+".qna_info";
+//id_sequence를 검색해서 table_name과 last_id를 가지고 온다.
+//		id_sequence =  crud.selectIdSequence(table_name);
+//글이 없으면 insert로 table_name과 last_id를 초기화해준다.
 		
 		MultipartUploading multiPart = null;
 		try{
