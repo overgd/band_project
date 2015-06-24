@@ -9,18 +9,24 @@
 </head>
 <body>
 ${sessionScope.BNAME }에게 물어봐!<br/>
-<c:choose>
-<c:when test="${param.INSERT == null }">
-<table width="1000px">
+<jsp:include page="/qna/qnawriteform.jsp"></jsp:include>
+<table border="1px" width="1000px">
 	<tr>
-		<td align="left" width="300px">글쓴이 : ㅂㅈㄱㅂㅈㄱ</td>
+		<td align="left" width="200px">글쓴이 : ${INFO.writer_id }</td>
+		<td align="left" width="">제목 : ${INFO.title }</td>
 		<td width="10%">
 		<c:if test="${sessionScope.ID == param.ID }">
+		수정
+		</c:if>
+		<c:if test="${sessionScope.ID != param.ID }">
 		수정
 		</c:if>
 		</td>
 		<td width="10%">
 		<c:if test="${sessionScope.ID == param.ID }">
+		삭제
+		</c:if>
+		<c:if test="${sessionScope.ID != param.ID }">
 		삭제
 		</c:if>
 		<td width="10%">
@@ -30,23 +36,11 @@ ${sessionScope.BNAME }에게 물어봐!<br/>
 		</td>
 	</tr>
 </table>
-<table width="1000px">
+<table border="1px" width="1000px">
 	<tr>
-		<td align="left">내용</td>
-	</tr>
-	<tr>
-		<td>ㅂㅈㄱㅂㅈㄱ</td>
-	</tr>
-	<tr>
-		<td><a href="javascript:goInsert()">등록</a></td>
+		<td width="200px" align="left">내용</td><td>${CONTENT.content }</td>
 	</tr>
 </table>
-</c:when>
-<c:when test="${param.INSERT != null }">
-	<jsp:include page="${param.INSERT }"></jsp:include>
-</c:when>
-</c:choose>
-
 <script type="text/javascript">
 function goInsert() {
 	

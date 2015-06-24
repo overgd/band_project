@@ -339,4 +339,14 @@
     <servlet-name>QnaWriteServlet</servlet-name>
     <url-pattern>/qna_write.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QnaListServlet</display-name>
+    <servlet-name>QnaListServlet</servlet-name>
+    <servlet-class>qna.QnaListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QnaListServlet</servlet-name>
+    <url-pattern>/qnalist.do</url-pattern>
+  </servlet-mapping>
 </web-app>

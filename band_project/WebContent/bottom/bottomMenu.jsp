@@ -17,7 +17,7 @@ ${BNAME }
 			</td>
 			<td width="100px"></td>
 			<td>
-			<a href="index.jsp?MAIN=qna/qnalist.jsp?BID=${sessionScope.BID }">
+			<a href="index.jsp?MAIN=qnalist.do?BID=${sessionScope.BID }">
 			<img alt="질의응답" src="./images/qna.png" width="58px">
 			<input type="button" value="질의응답" style="background-color:orange;font-face:굴림;font-size:7pt;color:#ffffff;"/>
 			 </a>

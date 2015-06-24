@@ -4,7 +4,22 @@
 <mapper namespace="configurations.QnaMapper">
 <cache/>
 	<select id="selectIdSequence" parameterType="String" resultType="qna_model.Id_sequence">
-	select * from id_sequence where table_name=#{table_name}
+	select table_name, last_id from id_sequence where table_name=#{table_name}
+	</select>
+	<insert id="insertIdSequence" parameterType="qna_model.Id_sequence">
+	insert into id_sequence values(#{table_name}, #{last_id})
+	</insert>
+	<insert id="insertQnaInfo" parameterType="qna_model.Qna_info">
+	insert into qna_info values(#{parent_id}, #{writing_id}, #{order_no}, #{writer_id}, #{writing_date}, #{title}, #{band_id})
+	</insert>
+	<insert id="insertQnaContent" parameterType="qna_model.Qna_content">
+	insert into qna_content values(#{writing_id}, #{content}, #{band_id})
+	</insert>
+	<select id="selectQnaInfo" parameterType="String" resultType="qna_model.Qna_info">
+	select * from qna_info where band_id=#{band_id}
+	</select>
+	<select id="selectQnaContent" parameterType="String" resultType="qna_model.Qna_content">
+	select * from qna_content where band_id=#{band_content}
 	</select>
 
 </mapper>
