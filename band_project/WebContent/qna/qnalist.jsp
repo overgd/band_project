@@ -34,7 +34,7 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 		</c:if>
 		<c:if test="${sessionScope.ID == writing.writer_id }">
 		<td width="60px">
-		삭제
+		<a href="javascript:goDelete(${writing.writing_id }, ${writing.band_id }, ${writing.writer_id })">삭제</a>
 		</td>
 		</c:if>
 		<td width="60px">
@@ -56,6 +56,18 @@ function goInsert() {
 	
 	location.href("index.jsp?MAIN=qna/qnalist.jsp?INSERT=qnawriteform.jsp");
 	
+}
+function goDelete(writing_id, band_id, writer_id) {
+	
+	var choice;
+	choice=confirm("정말로 삭제하시겠습니까?");
+	
+	if(choice) {
+		alert("삭제합니다.");
+		location.href("index.jsp?MAIN=qnadelete.do?WID="+writing_id+"&BID="+band_id+"&ID"+writer_id);
+	} else {
+		alert("취소하셨습니다.");
+	}
 }
 </script>
 </body>

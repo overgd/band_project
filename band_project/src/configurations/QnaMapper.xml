@@ -24,5 +24,11 @@
 	<update id="updateIdSequence" parameterType="qna_model.Id_sequence">
 	update id_sequence set last_id=#{last_id} where table_name=#{table_name}
 	</update>
+	<delete id="deleteQnaInfo" parameterType="qna_model.Qna_info">
+	delete qna_info where band_id=#{band_id} and writing_id=#{writing_id}
+	</delete>
+	<delete id="deleteQnaContent" parameterType="qna_model.Qna_info">
+	delete qna_content where band_id=#{band_id} and writing_id=#{writing_id}
+	</delete>
 
 </mapper>

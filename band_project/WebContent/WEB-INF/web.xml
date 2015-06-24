@@ -349,4 +349,14 @@
     <servlet-name>QnaListServlet</servlet-name>
     <url-pattern>/qnalist.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QnaDeleteServlet</display-name>
+    <servlet-name>QnaDeleteServlet</servlet-name>
+    <servlet-class>qna.QnaDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QnaDeleteServlet</servlet-name>
+    <url-pattern>/qnadelete.do</url-pattern>
+  </servlet-mapping>
 </web-app>
