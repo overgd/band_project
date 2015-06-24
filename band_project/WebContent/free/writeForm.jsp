@@ -14,6 +14,7 @@ function goWrite(){
 	document.move.action="free-write";
 	document.move.submit();
 }
+
 </script>
 <form name="move" method="post">
 </form>

@@ -32,7 +32,9 @@ FAN 정보 수정
 </tr>
 <tr>
 	<td>성별 : </td>
-	<td><input type="text" name="gender" value="${sessionScope.GENDER }"/></td>
+	<td><input type="radio" name="gender" checked="${sessionScope.GENDER }" />남성
+		<input type="radio" name="gender" checked="${sessionScope.GENDER }"/>여성
+	</td>
 </tr>
 <tr>
 	<td>휴대폰 번호 : </td>
