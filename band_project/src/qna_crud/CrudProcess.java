@@ -231,6 +231,27 @@ public class CrudProcess {
 		}
 		
 	}
+	
+	public Integer selectCountQnaInfo(String band_id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectCountQnaInfo";
+
+			Integer result = sqlsession.selectOne(stmt, band_id);
+			
+			if(result == null){
+				return null;
+			}else {
+				return result;
+			}
+			
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
 
 }
 

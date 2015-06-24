@@ -12,29 +12,31 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 <c:if test="${sessionScope.ID != null }">
 <jsp:include page="/qna/qnawriteform.jsp"></jsp:include><br/>
 </c:if>
+<form name="qnalist">
 <c:if test="${!empty INFO }">
-<c:forEach var="writing" items="${INFO }">
+<c:set var="cnt" value="${COUNT }"/>
+<c:forEach var="c" begin="0" end="${COUNT-1 }">
 <table border="1px" width="1000px">
 	<tr>
-		<td align="left" width="200px">글쓴이 : ${writing.writer_id }</td>
-		<td align="left">제목 : ${writing.title }</td>
+		<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
+		<td align="left">제목 : ${INFO[c].title }</td>
 	</tr>
 </table>
 <table border="1px" width="1000px">
 	<tr>
-		<td width="200px" align="left">내용</td><td>${CONTENT[writing.writing_id-1].content }</td>
+		<td width="200px" align="left">내용</td><td>${CONTENT[c].content }</td>
 	</tr>
 </table>
 <table border="1px">
 	<tr>
-		<c:if test="${sessionScope.ID == writing.writer_id }">
+		<c:if test="${sessionScope.ID == INFO[c].writer_id }">
 		<td width="60px">
 		수정
 		</td>
 		</c:if>
-		<c:if test="${sessionScope.ID == writing.writer_id }">
+		<c:if test="${sessionScope.ID == INFO[c].writer_id }">
 		<td width="60px">
-		<a href="javascript:goDelete(${writing.writing_id }, ${writing.band_id }, ${writing.writer_id })">삭제</a>
+		<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 		</td>
 		</c:if>
 		<td width="60px">
@@ -51,20 +53,22 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 <tr><td>등록된 글이 없습니다!</td></tr>
 </table>
 </c:if>
+</form>
 <script type="text/javascript">
 function goInsert() {
 	
 	location.href("index.jsp?MAIN=qna/qnalist.jsp?INSERT=qnawriteform.jsp");
 	
 }
-function goDelete(writing_id, band_id, writer_id) {
+function goDelete(writing_id, writer_id, band_id) {
 	
 	var choice;
+	
 	choice=confirm("정말로 삭제하시겠습니까?");
 	
 	if(choice) {
 		alert("삭제합니다.");
-		location.href("index.jsp?MAIN=qnadelete.do?WID="+writing_id+"&BID="+band_id+"&ID"+writer_id);
+		location.href("index.jsp?MAIN=qnadelete.do?WID="+writing_id+"&BID="+band_id+"&ID="+writer_id);
 	} else {
 		alert("취소하셨습니다.");
 	}

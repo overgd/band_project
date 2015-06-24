@@ -2,6 +2,7 @@ package qna;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +37,10 @@ public class QnaDeleteServlet extends HttpServlet {
 		String session_id = (String)session.getAttribute("ID");
 		String writer_id = request.getParameter("ID");
 		String band_id = request.getParameter("BID");
-		
+				
 		String result = null;
 		
-		if(session_id == writer_id) {
+		if(writer_id.equals(session_id)) {
 			
 			Qna_info qnainfo = new Qna_info();
 			
@@ -52,16 +53,19 @@ public class QnaDeleteServlet extends HttpServlet {
 			crud.deleteQnaInfo(qnainfo);
 			
 			result = "TRUE";
-			
-			
 
 		}else {
 			
 			result = "FALSE";
 			
 		}
+		System.out.println("HER");
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=qnalist.do");
+		rd.forward(request, response);
 		
-		response.sendRedirect("index.jsp?MAIN=qnalist.do?BID="+session.getAttribute("BID")+"&RESULT"+result);
+//		response.sendRedirect("index.jsp?MAIN=qnalist.do?BID="+session.getAttribute("BID"));
+		
+	
 	}
 
 	/**
