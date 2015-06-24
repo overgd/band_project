@@ -32,17 +32,11 @@ select max(group_id) from guestbook_info
 select <include refid="BaseColumns"/> from guestbook_info order by group_id desc, order_no asc
 </select>
 
-
-
 <sql id="BaseColumns">
 writing_id as writingid, group_id as groupid, parent_id as parentid, 
 order_no as orderno, writer_id as writerid, writing_date as writingdate,
 title as title, band_id as bandid
 </sql>
-
-
-
-
 
 <select id="selectWritingInfo" parameterType="Integer" 
 													resultType="guest_model.Writing">
@@ -60,7 +54,8 @@ delete from guestbook_info where writing_id = #{writingid}
 delete from guestbook_content where writing_id = #{writingid}
 </delete>
 <update id="updateWritingInfo" parameterType="guest_model.Writing">
-update guestbook_info set writer_id = #{writerid}, title = #{title}
+update guestbook_info set 
+title = #{title}
 where writing_id = #{writingid}
 </update>
 
