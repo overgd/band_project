@@ -11,7 +11,7 @@
 <input type="hidden" name="name" value="${sessionScope.NAME }"/>
 <table border="1px" width="1000px">
 	<tr>
-		<td align="left" width="200px">글쓴이 : ${sessionScope.NAME }</td>
+		<td align="left" width="200px">글쓴이 : ${sessionScope.ID }</td>
 		<td align="left">제목 : <input type="text" name="title"/></td>
 	</tr>
 </table>

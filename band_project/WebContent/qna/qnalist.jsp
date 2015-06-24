@@ -24,9 +24,10 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 </table>
 <table border="1px" width="1000px">
 	<tr>
-		<td width="200px" align="left">내용</td><td>${CONTENT[c].content }</td>
+		<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
 	</tr>
 </table>
+<c:if test="${sessionScope.ID != null}">
 <table border="1px">
 	<tr>
 		<c:if test="${sessionScope.ID == INFO[c].writer_id }">
@@ -39,13 +40,10 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 		<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 		</td>
 		</c:if>
-		<td width="60px">
-		<c:if test="${sessionScope.BID == BID }">
-		답하기
-		</c:if>
-		</td>
+		<td width="60px">답하기</td>
 	</tr>
-</table><br/>
+</table>
+</c:if><br/>
 </c:forEach>
 </c:if>
 <c:if test="${empty INFO }">
