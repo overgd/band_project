@@ -61,6 +61,10 @@ public class ModifyUserInfoServlet extends HttpServlet {
 			
 			if(result > 0) {
 				session.setAttribute("NAME", fan.getName());
+				session.setAttribute("GENDER", fan.getGender());
+				session.setAttribute("PHONE", fan.getPhone());
+				session.setAttribute("BIRTH", fan.getBirth());
+				session.setAttribute("EMAIL", fan.getEmail());
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp?MAIN=login/modifyresult.jsp");
 				rd.forward(request, response);
 			}

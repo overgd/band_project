@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,8 +33,19 @@ FAN 정보 수정
 </tr>
 <tr>
 	<td>성별 : </td>
-	<td><input type="radio" name="gender" checked="${sessionScope.GENDER }" />남성
-		<input type="radio" name="gender" checked="${sessionScope.GENDER }"/>여성
+	<td>
+	<c:if test="${sessionScope.GENDER == '남'}">
+	<input type="radio" name="gender" value="남" checked="checked"/>남성
+	<input type="radio" name="gender" value="여"/>여성
+	</c:if>
+	<c:if test="${sessionScope.GENDER == '여'}">
+	<input type="radio" name="gender" value="남"/>남성
+	<input type="radio" name="gender" value="여" checked="checked"/>여성
+	</c:if>
+	<c:if test="${sessionScope.GENDER == null}">
+	<input type="radio" name="gender" value="남"/>남성
+	<input type="radio" name="gender" value="여"/>여성
+	</c:if>
 	</td>
 </tr>
 <tr>

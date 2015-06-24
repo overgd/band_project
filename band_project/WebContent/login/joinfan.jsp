@@ -36,8 +36,8 @@ FAN 가입
 </tr>
 <tr>
 	<td>성별 : </td>
-	<td><input type="radio" name="gender"/>남성
-		<input type="radio" name="gender"/>여성
+	<td><input type="radio" name="gender" value="남"/>남성
+		<input type="radio" name="gender" value="여"/>여성
 	</td>
 </tr>
 <tr>
