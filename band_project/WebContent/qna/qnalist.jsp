@@ -41,7 +41,9 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == sessionScope.BID }">
-						<td width="60px">답하기</td>
+						<td width="60px">
+						<a href="javascript:goReply(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">답하기</a>
+						</td>
 						</c:if>
 					</tr>
 				</table>
@@ -57,11 +59,19 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 ${sessionScope.ID } ${sessionScope.BID }
 <script type="text/javascript">
 var newWindow;
+
+function goReply(writing_id, writer_id, band_id, content, title) {
+	
+	newWindow = window.open("qna/qnareplyform.jsp?WID="+writing_id+"&BID="+band_id+"&ID="+writer_id+"&CON="+content+"&TI="+title, "modify", "height=200, width=750, top=100, left=100, location=no, resizable=no, menubar=no, directories=no");
+	
+}
+
 function goModify(writing_id, writer_id, band_id, content, title) {
 	
 	newWindow = window.open("qna/qnamodifyform.jsp?WID="+writing_id+"&BID="+band_id+"&ID="+writer_id+"&CON="+content+"&TI="+title, "modify", "height=200, width=750, top=100, left=100, location=no, resizable=no, menubar=no, directories=no");
 	
 }
+
 function goDelete(writing_id, writer_id, band_id) {
 	
 	var choice;

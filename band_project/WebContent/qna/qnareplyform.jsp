@@ -5,23 +5,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>글 수정</title>
+<title>Insert title here</title>
 </head>
 <body>
-<c:if test="${sessionScope.ID == param.ID }">
-<form name="modifyform" action="../qna_modify.do" method="post" onsubmit="return modifyCheck()">
+<form name="modifyform" action="../qna_reply.do" method="post" onsubmit="return modifyCheck()">
 <input type="hidden" name="writing_id" value="${param.WID }"/>
 <input type="hidden" name="writer_id" value="${param.ID }"/>
 <table align="center" border="1px" width="700px">
 	<tr>
-		<td align="left" width="150px">글쓴이 : ${param.ID }</td>
-		<td align="left" width="550px">제목 : <input type="text" name="title" value="${param.TI }"/></td>
+		<td align="left" width="150px">글쓴이 : ${sessionScope.ID }</td>
+		<td align="left" width="550px">제목 : <input type="text" name="title" value="'${param.TI }'의 답변"/></td>
 	</tr>
 </table>
 <table align="center" border="1px" width="700px">
 	<tr>
 		<td width="400px" align="left">내용</td>
-		<td width="400px"><textarea name="content" rows="7" cols="90">${param.CON }</textarea>
+		<td width="400px"><textarea name="content" rows="7" cols="90"></textarea>
 		</td>
 	</tr>
 </table>
@@ -32,10 +31,6 @@
 	</tr>
 </table>
 </form>
-</c:if>
-<c:if test="${sessionScope.ID != param.ID }">
-작성자가 같지 않습니다!
-</c:if>
 <script type="text/javascript">
 function modifyCheck() {
 	

@@ -15,15 +15,15 @@ import qna_model.Qna_content;
 import qna_model.Qna_info;
 
 /**
- * Servlet implementation class QnaModifyServlet
+ * Servlet implementation class QnaReplyServlet
  */
-public class QnaModifyServlet extends HttpServlet {
+public class QnaReplyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QnaModifyServlet() {
+    public QnaReplyServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,41 +41,39 @@ public class QnaModifyServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("euc-kr");
-		
 		HttpSession session = request.getSession();
 		CrudProcess crud = new CrudProcess();
 		
-		String sid = (String)session.getAttribute("ID");
-		String writer_id = request.getParameter("writer_id");
+		Qna_info qnainfo = new Qna_info();
+		Qna_content qnacontent = new Qna_content();
+		Id_sequence id_sequence = new Id_sequence(); 
 		
-		String RESULT = "FALSE";
+		String title = (String)request.getParameter("title");
+		String content = (String)request.getParameter("content");
+		String writing_id = (String)request.getParameter("writing_id");
 		
-		if(sid.equals(writer_id)) {
+		String writer_id = (String)session.getAttribute("ID");
+		String band_id = (String)session.getAttribute("BID");
 		
-			String band_id = (String)session.getAttribute("BID");
-			String writing_id = request.getParameter("writing_id");
-			String title = (String)request.getParameter("title");
-			String content = (String)request.getParameter("content");
-			
-			Qna_info qnainfo = new Qna_info();
-			Qna_content qnacontent = new Qna_content();
-			
-			qnainfo.setBand_id(band_id);
-			qnainfo.setTitle(title);
-			qnainfo.setWriting_id(Integer.valueOf(writing_id));
-			
-			qnacontent.setBand_id(band_id);
-			qnacontent.setContent(content);
-			qnacontent.setWriting_id(Integer.valueOf(writing_id));
-			
-			crud.updateQnaContent(qnacontent);
-			crud.updateQnaInfo(qnainfo);
-			
-			RESULT = "TRUE";
-			
-		}
+		String table_name = band_id+".qna_info";
 		
-		response.sendRedirect("qna/qnamodifyresult.jsp?RESULT="+RESULT);
+		int last_id = id_sequence.getLast_id();
+		last_id++;
+		id_sequence.setLast_id(last_id);
+		crud.updateIdSequence(id_sequence);
+		
+		qnainfo.setTitle(title);
+		qnainfo.setOrder_no(Integer.valueOf(writing_id));
+		qnainfo.setParent_id(id_sequence.getLast_id());
+		qnainfo.setBand_id(band_id);
+		qnainfo.setWriting_id(id_sequence.getLast_id());
+		qnainfo.setWriter_id(writer_id);
+		qnainfo.setWriting_date(new Timestamp(System.currentTimeMillis()).toString());
+		
+		qnacontent.setBand_id(band_id);
+		qnacontent.setContent(content);
+		qnacontent.setWriting_id(id_sequence.getLast_id());
+		
 		
 	}
 

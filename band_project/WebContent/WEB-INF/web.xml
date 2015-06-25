@@ -369,4 +369,14 @@
     <servlet-name>QnaModifyServlet</servlet-name>
     <url-pattern>/qna_modify.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QnaReplyServlet</display-name>
+    <servlet-name>QnaReplyServlet</servlet-name>
+    <servlet-class>qna.QnaReplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QnaReplyServlet</servlet-name>
+    <url-pattern>/qna_reply.do</url-pattern>
+  </servlet-mapping>
 </web-app>
