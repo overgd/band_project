@@ -7,7 +7,7 @@
 <title></title>
 </head>
 <body>
-<form action="qna_write.do" method="post">
+<form name="writeform" action="qna_write.do" method="post" onsubmit="return insertCheck()">
 <input type="hidden" name="name" value="${sessionScope.NAME }"/>
 <table border="1px" width="1000px">
 	<tr>
@@ -23,12 +23,20 @@
 </table>
 <table border="1px">
 	<tr>
-		<td width="60px"><input type="submit" value="등록"></td>
+		<td width="60px"><input type="submit" value="등록" ></td>
 		<td width="60px"><a href="">리셋</a></td>
 	</tr>
 </table>
 </form>
 <script type="text/javascript">
+function insertCheck() {
+	
+	if(writeform.title.value == "" || writeform.content.value == "") {
+		alert("입력되지 않은 폼이 있습니다.");
+		return false;
+	}
+	
+}
 </script>
 </body>
 </html>

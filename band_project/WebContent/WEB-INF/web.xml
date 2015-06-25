@@ -359,4 +359,14 @@
     <servlet-name>QnaDeleteServlet</servlet-name>
     <url-pattern>/qnadelete.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>QnaModifyServlet</display-name>
+    <servlet-name>QnaModifyServlet</servlet-name>
+    <servlet-class>qna.QnaModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QnaModifyServlet</servlet-name>
+    <url-pattern>/qna_modify.do</url-pattern>
+  </servlet-mapping>
 </web-app>

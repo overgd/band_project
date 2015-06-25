@@ -252,6 +252,52 @@ public class CrudProcess {
 		}
 		
 	}
+	
+	public Integer updateQnaInfo(Qna_info qnainfo) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateQnaInfo";
+			
+			int result = sqlsession.update(stmt, qnainfo);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+		
+	}
+	
+	public Integer updateQnaContent(Qna_content qnacontent) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try{
+			
+			String stmt = namespace+".updateQnaContent";
+			
+			int result = sqlsession.update(stmt, qnacontent);
+			
+			if(result > 0) {
+				sqlsession.commit();
+			}else {
+				sqlsession.rollback();
+			}
+			return result;
+			
+		}finally{
+			sqlsession.close();
+		}
+		
+	}
 
 }
 

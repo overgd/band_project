@@ -33,5 +33,11 @@
 	<select id="selectCountQnaInfo" parameterType="String" resultType="Integer">
 	select count(*) from qna_info where band_id=#{band_id}
 	</select>
+	<update id="updateQnaInfo" parameterType="qna_model.Qna_info">
+	update qna_info set title=#{title} where band_id=#{band_id} and writing_id=#{writing_id}
+	</update>
+	<update id="updateQnaContent" parameterType="qna_model.Qna_content">
+	update qna_content set content=#{content} where band_id=#{band_id} and writing_id=#{writing_id}
+	</update>
 
 </mapper>

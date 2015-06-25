@@ -13,49 +13,53 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 <jsp:include page="/qna/qnawriteform.jsp"></jsp:include><br/>
 </c:if>
 <form name="qnalist">
-<c:if test="${!empty INFO }">
-<c:set var="cnt" value="${COUNT }"/>
-<c:forEach var="c" begin="0" end="${COUNT-1 }">
-<table border="1px" width="1000px">
-	<tr>
-		<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
-		<td align="left">제목 : ${INFO[c].title }</td>
-	</tr>
-</table>
-<table border="1px" width="1000px">
-	<tr>
-		<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
-	</tr>
-</table>
-<c:if test="${sessionScope.ID != null}">
-<table border="1px">
-	<tr>
-		<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-		<td width="60px">
-		수정
-		</td>
-		</c:if>
-		<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-		<td width="60px">
-		<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
-		</td>
-		</c:if>
-		<td width="60px">답하기</td>
-	</tr>
-</table>
-</c:if><br/>
-</c:forEach>
-</c:if>
-<c:if test="${empty INFO }">
-<table width="1000px" border="1px">
-<tr><td>등록된 글이 없습니다!</td></tr>
-</table>
-</c:if>
+	<c:if test="${!empty INFO }">
+		<c:set var="cnt" value="${COUNT }"/>
+		<c:forEach var="c" begin="0" end="${COUNT-1 }">
+			<table border="1px" width="1000px">
+				<tr>
+					<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
+					<td align="left">제목 : ${INFO[c].title }</td>
+				</tr>
+			</table>
+			<table border="1px" width="1000px">
+				<tr>
+					<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
+				</tr>
+			</table>
+			<c:if test="${sessionScope.ID != null}">
+				<table border="1px">
+					<tr>
+						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
+						<td width="60px">
+						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
+						</td>
+						</c:if>
+						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
+						<td width="60px">
+						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
+						</td>
+						</c:if>
+						<c:if test="${sessionScope.ID == sessionScope.BID }">
+						<td width="60px">답하기</td>
+						</c:if>
+					</tr>
+				</table>
+			</c:if><br/>
+		</c:forEach>
+	</c:if>
+	<c:if test="${empty INFO }">
+		<table width="1000px" border="1px">
+		<tr><td>등록된 글이 없습니다!</td></tr>
+		</table>
+	</c:if>
 </form>
+${sessionScope.ID } ${sessionScope.BID }
 <script type="text/javascript">
-function goInsert() {
+var newWindow;
+function goModify(writing_id, writer_id, band_id, content, title) {
 	
-	location.href("index.jsp?MAIN=qna/qnalist.jsp?INSERT=qnawriteform.jsp");
+	newWindow = window.open("qna/qnamodifyform.jsp?WID="+writing_id+"&BID="+band_id+"&ID="+writer_id+"&CON="+content+"&TI="+title, "modify", "height=200, width=750, top=100, left=100, location=no, resizable=no, menubar=no, directories=no");
 	
 }
 function goDelete(writing_id, writer_id, band_id) {
