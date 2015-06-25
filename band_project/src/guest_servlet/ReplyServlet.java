@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ReplyServlet
@@ -36,6 +37,17 @@ public class ReplyServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		String bandId = (String)session.getAttribute("BID");
+		String writeId = request.getParameter("id");
+		
+		Writing inwriting = new Writing();
+		
+		inwriting.setBandid(bandId);
+		inwriting.setWritingid(Integer.parseInt(writeId));
+		
 		String parentId = request.getParameter("parentid");
 		String groupId = request.getParameter("groupid");
 		String title = "";
@@ -44,7 +56,7 @@ public class ReplyServlet extends HttpServlet {
 			try{
 				CrudProcess crud = new CrudProcess();
 				writing = crud.selectOneWritingInfo(
-						Integer.parseInt(parentId));//부모글정보 검색
+						inwriting);//부모글정보 검색
 			}catch(Exception e){}
 			if(writing != null){//검색된 경우
 				title = "RE] " + writing.getTitle();//원글의 제목을 불러옴

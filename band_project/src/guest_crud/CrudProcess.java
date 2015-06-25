@@ -51,7 +51,9 @@ public class CrudProcess {
 	public Integer insertIdSequnce(IdSequence idSequence){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
+			
 			int result = sqlSession.insert(namespace+".insertSequenceManager",idSequence);
+			
 			if(result > 0){ sqlSession.commit(); }
 			else { sqlSession.rollback(); }
 			return result;
@@ -94,14 +96,14 @@ public class CrudProcess {
 			return sqlSession.selectList(namespace + ".selectBBSList");
 		}finally{ sqlSession.close();}
 	}
-	public Writing selectOneWritingInfo(int writingid){
+	public Writing selectOneWritingInfo(Writing writingid){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
 			return sqlSession.selectOne(
 					namespace + ".selectWritingInfo", writingid);
 		}finally{ sqlSession.close(); }
 	}
-	public String seletWritingContent(int writingid){
+	public String seletWritingContent(Writing writingid){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
 			return sqlSession.selectOne(
@@ -175,10 +177,10 @@ public class CrudProcess {
 	    		else return Integer.parseInt(String.valueOf(result));
 	    	}finally{ sqlSession.close(); }
 	    }
-	    public Integer selectCount(){
+	    public Integer selectCount(String bandid){
 	    	SqlSession sqlSession = getSqlSessionFactory().openSession();
 	    	try{
-	    		return sqlSession.selectOne(namespace + ".selectCount");
+	    		return sqlSession.selectOne(namespace + ".selectCount", bandid);
 	    	}finally{ sqlSession.close(); }
 	    }
 	    public List<Writing> selectWritingInfoWithRange(Condition condition){

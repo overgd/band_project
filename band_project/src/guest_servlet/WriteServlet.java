@@ -46,31 +46,14 @@ public class WriteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		
-//		request.setCharacterEncoding("euc-kr");
-//		HttpSession session = request.getSession();
-//		CrudProcess crud = new CrudProcess();
-//		
-//		Qna_info qnainfo = new Qna_info();
-//		Qna_content qnacontent = new Qna_content();
-//		Id_sequence id_sequence = new Id_sequence();
-		
+
 		String band_id = (String)session.getAttribute("BID");
 		String id = (String)session.getAttribute("ID");
-//		Id_sequence id_sequence = new Id_sequence(); 
-		
-		
-//		String table_name = band_id+".qna_info";
 		
 		Writing writing = new Writing();
 		
 		writing.setBandid(band_id);
 
-//		String table_name = band_id+".qna_info";
-//id_sequence를 검색해서 table_name과 last_id를 가지고 온다.
-//		id_sequence =  crud.selectIdSequence(table_name);
-//글이 없으면 insert로 table_name과 last_id를 초기화해준다.
-		
 		MultipartUploading multiPart = null;
 		try{
 			multiPart = new MultipartUploading(request);
@@ -105,16 +88,16 @@ public class WriteServlet extends HttpServlet {
 				crud.updateOrderNoReply(writing);
 			}
 		}
-		System.out.println("글번호:["+writing.getWritingid()+"]");
+		
 		writing.setWritingdate(
 				new Timestamp(System.currentTimeMillis()).toString());
 		writing.setWriterid((String)session.getAttribute("ID"));
 		writing.setTitle(multiPart.getParameter("title"));
 		writing.setContent(multiPart.getParameter("content"));
 		try{
-			writing.setWritingid(SequenceManager.nextId("guestbook_info"));
+			System.out.println(band_id);
+			writing.setWritingid(SequenceManager.nextId(band_id+".guestbook_info"));
 		}catch(Exception e){}
-		//writing_info에 삽입.writing_content에 삽입
 		crud.insertguestbookinfo(writing);
 		crud.insertguestbookcontent(writing);
 		RequestDispatcher rd = request.getRequestDispatcher(

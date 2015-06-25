@@ -42,27 +42,38 @@ public class UpdateWritingServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MultipartUploading multiPart =null;
+		
+		HttpSession session = request.getSession();
+		
+		String bandId = (String)session.getAttribute("BID");
+		
+		Writing inwriting = new Writing();
+		
+		inwriting.setBandid(bandId);
+		
 		try{
 			multiPart = new MultipartUploading(request);
 		}catch(Exception e){}
 		Writing writing = new Writing();
 		String writeId = multiPart.getParameter("id");
-		HttpSession session = request.getSession();
+		inwriting.setWritingid(Integer.parseInt(writeId));
 		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		Writing oldWriting = crud.selectOneWritingInfo(
-				Integer.parseInt(writeId));
+				inwriting);
 		writing.setWritingid(Integer.parseInt(writeId));
 		if(oldWriting.getWriterid().equals(id)){
 			writing.setTitle(multiPart.getParameter("title"));
 			writing.setWriterid(multiPart.getParameter("name"));
 			writing.setContent(multiPart.getParameter("content"));
+			writing.setBandid((String)session.getAttribute("BID"));
 			crud.updateWritingInfo(writing);
 			crud.updateWritingContent(writing);
 		}else{
 			request.setAttribute("RESULT", "FAIL");
 		}
 		request.setAttribute("id", writeId);
+		request.setAttribute("BID", (String)session.getAttribute("BID"));
 		RequestDispatcher rd = request.getRequestDispatcher(
 				"index.jsp?MAIN=guest/update_result.jsp");
 		rd.forward(request, response);

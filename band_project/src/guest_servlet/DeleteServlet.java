@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DeleteServlet
@@ -36,10 +37,20 @@ public class DeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		String bandId = (String)session.getAttribute("BID");
 		String writeId = request.getParameter("id");
+		
+		Writing inwriting = new Writing();
+		
+		inwriting.setBandid(bandId);
+		inwriting.setWritingid(Integer.parseInt(writeId));
+
 		CrudProcess crud = new CrudProcess();
-		Writing writing = crud.selectOneWritingInfo(Integer.parseInt(writeId));
-		String content = crud.seletWritingContent(Integer.parseInt(writeId));
+		Writing writing = crud.selectOneWritingInfo(inwriting);
+		String content = crud.seletWritingContent(inwriting);
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(

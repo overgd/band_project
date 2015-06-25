@@ -22,6 +22,7 @@ public class SequenceManager {
 			System.out.println("sequencemanger return : ["+count+"]");
 			return count;
 		}else{
+			
 			IdSequence idSequence = new IdSequence();
 			idSequence.setName(tableName);
 			idSequence.setLastid(1);

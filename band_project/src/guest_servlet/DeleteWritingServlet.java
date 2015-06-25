@@ -39,11 +39,19 @@ public class DeleteWritingServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String id = (String)session.getAttribute("ID");
+		
+		String bandId = (String)session.getAttribute("BID");
 		String writeId = request.getParameter("id");
+		
+		Writing inwriting = new Writing();
+		
+		inwriting.setBandid(bandId);
+		inwriting.setWritingid(Integer.parseInt(writeId));
+		
+		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		Writing orgWriting =
-				crud.selectOneWritingInfo(Integer.parseInt(writeId));
+				crud.selectOneWritingInfo(inwriting);
 		if(orgWriting.getWriterid().equals(id)){//암호 일치
 			
 			crud.deleteWritingInfo(Integer.parseInt(writeId));

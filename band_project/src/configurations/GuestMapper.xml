@@ -18,7 +18,7 @@ insert into guestbook_content values(#{writingid},#{bandid},#{content})
 </insert> 
 
 <insert id="insertSequenceManager" parameterType = "guest_model.IdSequence"> 
-insert into id_sequence values(#{name}, #{lastid}) 
+insert into id_sequence values( #{name}, #{lastid} ) 
 </insert> 
 <update id="updateSequenceManager" parameterType = "guest_model.IdSequence"> 
 update id_sequence set last_id=#{lastid} where table_name = #{name} 
@@ -38,14 +38,14 @@ order_no as orderno, writer_id as writerid, writing_date as writingdate,
 title as title, band_id as bandid
 </sql>
 
-<select id="selectWritingInfo" parameterType="Integer" 
+<select id="selectWritingInfo" parameterType="guest_model.Writing" 
 													resultType="guest_model.Writing">
 select <include refid="BaseColumns"/> from guestbook_info
-where writing_id = #{writingid}
+where writing_id = #{writingid} and band_id = #{bandid}
 </select>
-<select id="selectWritingContent" parameterType="Integer" 
+<select id="selectWritingContent" parameterType="guest_model.Writing" 
 													resultType="String">
-select content from guestbook_content where writing_id = #{writingid}
+select content from guestbook_content where writing_id = #{writingid} and band_id = #{bandid}
 </select>
 <delete id="deleteWritingInfo" parameterType="Integer">
 delete from guestbook_info where writing_id = #{writingid}
@@ -56,34 +56,34 @@ delete from guestbook_content where writing_id = #{writingid}
 <update id="updateWritingInfo" parameterType="guest_model.Writing">
 update guestbook_info set 
 title = #{title}
-where writing_id = #{writingid}
+where writing_id = #{writingid} and band_id = #{bandid}
 </update>
 
 <update id="updateWritingContent" parameterType="guest_model.Writing">
 update guestbook_content set content = #{content}
-where writing_id = #{writingid}
+where writing_id = #{writingid} and band_id = #{bandid}
 </update>
 <select id="selectMaxGroupIdReply" parameterType="guest_model.Writing"
 								resultType="Integer">
 select max(order_no) from guestbook_info
-where group_id = #{groupid} and parent_id = #{parentid}
+where group_id = #{groupid} and parent_id = #{parentid} and band_id = #{bandid}
 </select>
-<select id="selectCount" resultType="Integer">
-select count(*) from guestbook_info
+<select id="selectCount" parameterType="String" resultType="Integer">
+select count(*) from guestbook_info where band_id = #{bandid}
 </select>
 <select id="selectWritingInfoWithRange" parameterType="guest_model.Condition"
 								resultType="guest_model.Writing">
 select <include refid="BaseColumns" /> from
 (select a.*, rownum rn from
 (select * from guestbook_info order by group_id desc, order_no asc) a )
-where rn between #{startRow} and #{endRow}
+where rn between #{startRow} and #{endRow} and band_id=#{band_id}
 </select>
 <update id="updateOrderNoReply" parameterType="guest_model.Writing">
 update guestbook_info set order_no = order_no + 1
-where group_id = #{groupid} and order_no >= #{orderno}
+where group_id = #{groupid} and order_no >= #{orderno} and band_id = #{bandid}
 </update>
 <select id="selectMaxOrderNo" parameterType="guest_model.Writing"
 								resultType="Integer">
-select max(order_no) from guestbook_info where group_id = #{groupid} 
+select max(order_no) from guestbook_info where group_id = #{groupid} and band_id = #{bandid}
 </select>
 </mapper>
