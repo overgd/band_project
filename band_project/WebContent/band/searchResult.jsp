@@ -10,9 +10,11 @@
 <body>
 <table width="1000" border="1">
 	<tr>
-		<td width="40">아이디</td>
-		<td width="300">이름</td>
-		<td width="80">장르</td>
+		
+		<th width="40">아이디</th>
+		<th width="300">이름</th>
+		<th width="80">장르</th>
+		
 	</tr>
 	<c:choose>
 		<c:when test="${LISTSIZE > 0 }">

@@ -5,15 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>로그인 성공!</title>
+<style>  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+     .f  {font-family: 'Hanna';}</style>
 </head>
 <body>
-<table>
+<table class="f">
 	<tr>
 		<td>
 		${sessionScope.NAME }님 환영합니다!!
 		</td>
 		<td>
-		<input type="button" value="로그아웃" onclick="logout()"/>
+		<input type="button" value="로그아웃" onclick="logout()" class="f"/>
 		</td>
 	</tr>
 	<tr>

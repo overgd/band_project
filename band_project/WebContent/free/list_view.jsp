@@ -20,10 +20,10 @@
 </c:if>	
 <table width = "70%" cellpadding="1"  align="center">
    <tr align="center">
-      <td bgcolor = "#00bfff"><b>이미지</b></td>
-      <td bgcolor = "#00bfff"><b>글제목</b></td>
-      <td bgcolor = "#00bfff"><b>작성자</b></td>
-      <td bgcolor = "#00bfff"><b>작성일</b></td>
+      <th bgcolor = "#00bfff"><b>이미지</b></th>
+      <th bgcolor = "#00bfff"><b>글제목</b></th>
+      <th bgcolor = "#00bfff"><b>작성자</b></th>
+      <th bgcolor = "#00bfff"><b>작성일</b></th>
    </tr>
    <c:if test = "${empty list }">
    <tr>
@@ -44,7 +44,7 @@
    </c:if>
    <tr>
       <td colspan = "4" align = "right">
-      <a href = "free-write">[한마디 등록]</a></td>
+      <a href = "free-write"><input type="submit"value="한마디 등록"></a></td>
    </tr>
 </table>
 <c:if test="${count >0 }">

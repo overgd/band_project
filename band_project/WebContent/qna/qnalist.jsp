@@ -6,9 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>질의응답</title>
+<style>  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+     h2  {font-family: 'Hanna';}</style>
 </head>
 <body>
-${sessionScope.BNAME }에게 물어봐!<br/><br/>
+<h2>${sessionScope.BNAME }에게 물어봐!</h2><br/><br/>
 <c:if test="${sessionScope.ID != null }">
 <jsp:include page="/qna/qnawriteform.jsp"></jsp:include><br/>
 </c:if>

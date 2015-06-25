@@ -5,28 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<style>  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+     .f  {font-family: 'Hanna';}</style>
 </head>
 <body>
-${BID }
+
+
+<font class="f">${BNAME } 메뉴</font>
 <table align="center">
 		<tr>
 			<td>
 			<a href="index.jsp">
 			<img alt="앨범음원" src="./images/um1.png" width="58px">
-			<input type="button" value="앨범음원" style="background-color:orange;font-face:굴림;font-size:7pt;color:#ffffff;"/></a>
+			</a>
 			</td>
 			<td width="100px"></td>
 			<td>
 			<a href="index.jsp?MAIN=qnalist.do?BID=${sessionScope.BID }">
-			<img alt="질의응답" src="./images/qna.png" width="58px">
-			<input type="button" value="질의응답" style="background-color:orange;font-face:굴림;font-size:7pt;color:#ffffff;"/>
+			<img alt="질의응답" src="./images/qna.png" width="58px">			
 			 </a>
 			</td>
 			<td width="100px"></td>
 			<td>
 			<a href="index.jsp?MAIN=guest-list?ID=${sessionScope.BID }">
-			<img alt="방명록" src="./images/guest.png" width="58px">
-			<input type="button" value="방명록" style="background-color:orange;font-face:굴림;font-size:7pt;color:#ffffff;"/>
+			<img alt="방명록" src="./images/guest.png" width="58px">		
 			 </a>
 			</td>
 		</tr>

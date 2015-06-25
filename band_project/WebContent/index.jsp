@@ -72,6 +72,9 @@
 	</div>
 	<c:if test="${sessionScope.BID != null || param.BOTTOM != null || sessionScope.DIV == 'b'}">
 	<div id="bottom">
+	<table class="bottom.table">
+	<tr>
+	<td width="5%" >
 		<c:choose>
 			<c:when test="${param.BOTTOM != null }">
 				<jsp:include page="${param.BOTTOM }"/>
@@ -83,8 +86,12 @@
 				<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
 			</c:when>
 		</c:choose>
+		</td>
+		</tr>
+		</table>
 	</div>
 	</c:if>
+	
 </div>
 </body>
 </html>

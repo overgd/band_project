@@ -20,10 +20,10 @@
 </c:if>
 <table width = "100%" cellpadding="1">
    <tr>
-   	  <td bgcolor = "#e9e9e9"><b>글번호</b></td>
-   	  <td bgcolor = "#e9e9e9"><b>작성자</b></td>
-      <td bgcolor = "#e9e9e9"><b>글제목</b></td>
-      <td bgcolor = "#e9e9e9"><b>작성일</b></td>
+   	  <th bgcolor = "#e9e9e9"><b>글번호</b></th>
+   	  <th bgcolor = "#e9e9e9"><b>작성자</b></th>
+      <th bgcolor = "#e9e9e9"><b>글제목</b></th>
+      <th bgcolor = "#e9e9e9"><b>작성일</b></th>
    </tr>
    <c:if test = "${empty list }">
    <tr>
