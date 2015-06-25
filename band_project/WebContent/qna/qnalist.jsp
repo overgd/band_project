@@ -16,6 +16,8 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 	<c:if test="${!empty INFO }">
 		<c:set var="cnt" value="${COUNT }"/>
 		<c:forEach var="c" begin="0" end="${COUNT-1 }">
+		
+			<c:if test="${INFO[c].order_no == '0' }">
 			<table border="1px" width="1000px">
 				<tr>
 					<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
@@ -40,7 +42,7 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 						</td>
 						</c:if>
-						<c:if test="${sessionScope.ID == sessionScope.BID }">
+						<c:if test="${sessionScope.ID == sessionScope.BID && INFO[c].order_no == '0' && INFO[c+1].order_no != '1' }">
 						<td width="60px">
 						<a href="javascript:goReply(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">답하기</a>
 						</td>
@@ -48,7 +50,47 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 					</tr>
 				</table>
 			</c:if><br/>
+			</c:if>
+			
+			<c:if test="${INFO[c].order_no == '1' }">
+			<table>
+			<tr>
+			<td width="100px"></td>
+			<td>
+			<table border="1px" width="900px">
+				<tr>
+					<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
+					<td align="left">제목 : ${INFO[c].title }</td>
+				</tr>
+			</table>
+			<table border="1px" width="900px">
+				<tr>
+					<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
+				</tr>
+			</table>
+			<c:if test="${sessionScope.ID != null}">
+				<table border="1px">
+					<tr>
+						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
+						<td width="60px">
+						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
+						</td>
+						</c:if>
+						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
+						<td width="60px">
+						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
+						</td>
+						</c:if>
+					</tr>
+				</table>
+			</c:if>
+			</td>
+			</tr>
+			</table><br/>
+			</c:if>
+			
 		</c:forEach>
+		
 	</c:if>
 	<c:if test="${empty INFO }">
 		<table width="1000px" border="1px">
@@ -56,7 +98,6 @@ ${sessionScope.BNAME }에게 물어봐!<br/><br/>
 		</table>
 	</c:if>
 </form>
-${sessionScope.ID } ${sessionScope.BID }
 <script type="text/javascript">
 var newWindow;
 

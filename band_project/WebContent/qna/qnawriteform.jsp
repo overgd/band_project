@@ -24,7 +24,6 @@
 <table border="1px">
 	<tr>
 		<td width="60px"><input type="submit" value="등록" ></td>
-		<td width="60px"><a href="">리셋</a></td>
 	</tr>
 </table>
 </form>

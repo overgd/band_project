@@ -16,10 +16,13 @@
 	insert into qna_content values(#{writing_id}, #{content}, #{band_id})
 	</insert>
 	<select id="selectQnaInfo" parameterType="String" resultType="qna_model.Qna_info">
-	select * from qna_info where band_id=#{band_id} order by writing_id desc
+	select * from qna_info where band_id=#{band_id} order by parent_id desc, order_no asc, writing_id desc
 	</select>
 	<select id="selectQnaContent" parameterType="String" resultType="qna_model.Qna_content">
-	select * from qna_content where band_id=#{band_id} order by writing_id desc
+	select a.*
+	from qna_content a, qna_info b 
+	where a.writing_id = b.writing_id and a.band_id = #{band_id}
+	order by b.parent_id desc, b.order_no asc, b.writing_id desc
 	</select>
 	<update id="updateIdSequence" parameterType="qna_model.Id_sequence">
 	update id_sequence set last_id=#{last_id} where table_name=#{table_name}

@@ -48,6 +48,8 @@ public class QnaReplyServlet extends HttpServlet {
 		Qna_content qnacontent = new Qna_content();
 		Id_sequence id_sequence = new Id_sequence(); 
 		
+		String RESULT = "FALSE";
+		
 		String title = (String)request.getParameter("title");
 		String content = (String)request.getParameter("content");
 		String writing_id = (String)request.getParameter("writing_id");
@@ -57,14 +59,15 @@ public class QnaReplyServlet extends HttpServlet {
 		
 		String table_name = band_id+".qna_info";
 		
+		id_sequence =  crud.selectIdSequence(table_name);
 		int last_id = id_sequence.getLast_id();
 		last_id++;
 		id_sequence.setLast_id(last_id);
 		crud.updateIdSequence(id_sequence);
 		
 		qnainfo.setTitle(title);
-		qnainfo.setOrder_no(Integer.valueOf(writing_id));
-		qnainfo.setParent_id(id_sequence.getLast_id());
+		qnainfo.setOrder_no(1);
+		qnainfo.setParent_id(Integer.valueOf(writing_id));
 		qnainfo.setBand_id(band_id);
 		qnainfo.setWriting_id(id_sequence.getLast_id());
 		qnainfo.setWriter_id(writer_id);
@@ -73,6 +76,15 @@ public class QnaReplyServlet extends HttpServlet {
 		qnacontent.setBand_id(band_id);
 		qnacontent.setContent(content);
 		qnacontent.setWriting_id(id_sequence.getLast_id());
+		
+		if(crud.insertQnaInfo(qnainfo) > 0) {
+			
+			crud.insertQnaContent(qnacontent);
+			RESULT = "TRUE";
+			
+		}
+				
+		response.sendRedirect("qna/qnareplyresult.jsp?RESULT="+RESULT);
 		
 		
 	}
