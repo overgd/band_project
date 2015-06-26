@@ -6,17 +6,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>FAN 가입</title>
 </head>
-FAN 가입
+<h2>FAN 가입</h2>
 <form name="form" action="joinfan.do" method="post" onsubmit="return submitcheck()">
 <table cellpadding="10px">
 <tr>
 	<td width="200px">아이디 : </td>
-	<td><input type="text" name="id"/></td>
-	<td><input type="button" value="중복확인" onclick="idcheck()"></td>
+	<td><input type="text" name="id" maxlength="8"/></td>
+	<td><input type="button" value="중복확인" onclick="idcheck()"/></td>
+	<td>영문, 8자 이하</td>
 </tr>
 <tr>
 	<td>비밀번호 : </td>
 	<td><input type="password" name="password"/></td>
+	<td></td>
+	<td>8자 이하</td>
 </tr>
 <tr>
 	<td>비밀번호 확인 : </td>
@@ -25,6 +28,8 @@ FAN 가입
 <tr>
 	<td>이름 : </td>
 	<td><input type="text" name="name"/></td>
+	<td></td>
+	<td>한글, 영문</td>
 </tr>
 <tr>
 	<td>이메일 : </td>

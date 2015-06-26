@@ -29,7 +29,14 @@
 		</tr>
 		<tr>
 			<td>
-				<input type="text" name="genre" value="${BAND.genre }"/>
+				${BAND.genre } - 
+				<select name="genre">
+					<option>Rock</option>
+					<option>Blues</option>
+					<option>R&B</option>
+					<option>Folk</option>
+					<option>Electronic</option>
+				</select>
 			</td>
 		</tr>
 		<tr>

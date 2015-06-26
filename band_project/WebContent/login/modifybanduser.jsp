@@ -21,6 +21,7 @@ BAND 정보수정
 <tr>
 	<td>밴드이름 : </td>
 	<td><input type="text" name="name" value="${sessionScope.NAME }"/></td>
+	<td>한글, 영문</td>
 </tr>
 <tr>
 	<td>이메일 : </td>
@@ -28,7 +29,15 @@ BAND 정보수정
 </tr>
 <tr>
 	<td>장르 : </td>
-	<td><input type="text" name="genre" value="${sessionScope.GENRE }"/></td>
+	<td>${sessionScope.GENRE } - 
+		<select name="genre">
+			<option>Rock</option>
+			<option>Blues</option>
+			<option>R&B</option>
+			<option>Folk</option>
+			<option>Electronic</option>
+		</select>
+	</td>
 </tr>
 </table>
 <input type="submit" value="수정하기"/>

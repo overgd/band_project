@@ -58,6 +58,9 @@
 				<c:when test="${sessionScope.DIV == 'b' }">
 					<c:redirect url="bandintrosession"/>
 				</c:when>
+				<c:otherwise>
+					<jsp:include page="init.html"/>
+				</c:otherwise>
 			</c:choose>
 			</td>
 			<td width="5%"></td>

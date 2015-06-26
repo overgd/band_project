@@ -22,6 +22,7 @@ FAN 정보 수정
 <tr>
 	<td>이름 : </td>
 	<td><input type="text" name="name" value="${sessionScope.NAME }"/></td>
+	<td>한글, 영문</td>
 </tr>
 <tr>
 	<td>이메일 : </td>
