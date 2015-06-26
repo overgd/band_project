@@ -273,6 +273,43 @@ public class CrudProcess implements Serializable {
 			sqlsession.close();
 		}
 	}
+	
+	public String selectIDPasswordBandUser(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectIDPasswordBandUser";
+			String result = sqlsession.selectOne(stmt, id);
+			if(result == null){
+				return null;
+			}else {
+				return result;
+			}
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
+	public String selectIDPasswordFanUser(String id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		
+		try {
+			String stmt = namespace+".selectIDPasswordFanUser";
+			String result = sqlsession.selectOne(stmt, id);
+			if(result == null){
+				return null;
+			}else {
+				return result;
+			}
+		}finally {
+			sqlsession.close();
+		}
+		
+	}
+	
 }
 
 

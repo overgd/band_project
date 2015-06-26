@@ -11,10 +11,10 @@
 ${sessionScope.NAME }님의 마이페이지<br/>
 <c:choose>
 <c:when test="${sessionScope.DIV == 'f' }">
-	<a href="index.jsp?MAIN=login/modifyfanuser.jsp">정보 수정</a>
+	<a href="index.jsp?MAIN=pwdread.do">정보 수정</a>
 </c:when>
 <c:when test="${sessionScope.DIV == 'b' }">
-	<a href="index.jsp?MAIN=login/modifybanduser.jsp">정보 수정</a>
+	<a href="index.jsp?MAIN=pwdread.do">정보 수정</a>
 </c:when>
 </c:choose>
 <a href="deleteuser.do" onclick="return deleteuser()">회원 탈퇴</a>
