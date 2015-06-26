@@ -15,17 +15,11 @@
 	<div class="head">
 		<table class="head.table" align="center">
 		<tr>
-			<td width="5%"></td>
-			<td width="10%" class="top.menu">
-			</td>
-			<td width="181px" class="top.center">
+			<td align="center" class="top.center">
 			<a href="index.html">
-			<img  alt="logo" src="./images/logo.jpg" height="200px">
+				<img  alt="logo" src="./images/logo.jpg" height="160px">
 			</a>
 			</td>
-			<td width="10%" class="top.login">
-			</td>
-			<td width="5%"></td>
 		</tr> 
 		</table>
 	</div>
@@ -33,12 +27,12 @@
 		<table class="top.table">
 		<tr>
 			<td width="5%"></td>
-			<td width="10%" class="top.menu">
+			<td width="30%" align="left" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
-			<td width="181px" class="top.center">
+			<td width="400px" class="top.center">
 			</td>
-			<td width="15%" class="top.login">
+			<td width="30%" align="right" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>
