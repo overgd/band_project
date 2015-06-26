@@ -1,7 +1,9 @@
 @CHARSET "EUC-KR";
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
 input {
-	font-family: 'Nanum Gothic';
+	font-family:"Nanum Gothic" !important 
+
 }
 th {
      background-color: green;
@@ -17,7 +19,7 @@ body {
 	background-size: 1600px 900px;
 	font: sans-serif;
 	height: 100%;
-	font-family: 'Nanum Gothic';
+	font-family:"Nanum Gothic" !important 
 }
 .index {
 	width: 100%;
@@ -47,6 +49,7 @@ body {
 	text-align: right;
 }
 #main {
+	font-family: 'Nanum Gothic';
 	text-align: center;
 	margin-top: 60px;
 	margin-left: 60px;
