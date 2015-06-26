@@ -379,4 +379,14 @@
     <servlet-name>QnaReplyServlet</servlet-name>
     <url-pattern>/qna_reply.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PasswordCheckUserInfoServlet</display-name>
+    <servlet-name>PasswordCheckUserInfoServlet</servlet-name>
+    <servlet-class>login.PasswordCheckUserInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PasswordCheckUserInfoServlet</servlet-name>
+    <url-pattern>/pwdread.do</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -33,10 +33,12 @@ BAND 정보수정
 </table>
 <input type="submit" value="수정하기"/>
 <input type="hidden" name="check"/>
+<input type="hidden" name="readpassword" value="${PWD }" />
 </form>
 <script type="text/javascript">
 function submitcheck() {
 		
+	var readpassword = form.readpassword.value;
 	var password = form.password.value;
 	var repassword = form.repassword.value;
 	var name = form.name.value;
@@ -48,6 +50,9 @@ function submitcheck() {
 		return false;
 	}else if(password != repassword) {
 		alert("비밀번호가 같지 않습니다.");
+		return false;
+	}else if(password != readpassword) {
+		alert("비밀번호를 확인해주세요!");
 		return false;
 	}else {
 		alert("수정되었습니다.");
