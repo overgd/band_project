@@ -5,13 +5,22 @@ input {
 	font-family:"Nanum Gothic" !important 
 
 }
-th {
-     background-color: green;
-     color: white;
- } 
-table{
-	border="0";
+
+table {
+	border: 1px;
+	border-color: #ffffff;
 } 
+
+th {
+	background-color: green;
+	color: white;
+} 
+
+td {
+	
+	
+}
+
 body {
 	margin: 0px;
 	background: url(images/bg/w.jpg);

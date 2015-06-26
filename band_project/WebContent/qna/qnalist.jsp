@@ -6,8 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>질의응답</title>
-<style>  @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-     h2  {font-family: 'Hanna';}</style>
 </head>
 <body>
 <h2>${sessionScope.BNAME }에게 물어봐!</h2><br/><br/>
@@ -22,13 +20,13 @@
 			<c:if test="${INFO[c].order_no == '0' }">
 			<table border="1px" width="1000px">
 				<tr>
-					<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
+					<th align="center" width="200px">글쓴이 : ${INFO[c].writer_id }</th>
 					<td align="left">제목 : ${INFO[c].title }</td>
 				</tr>
 			</table>
 			<table border="1px" width="1000px">
 				<tr>
-					<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
+					<th width="200px" align="center">내용</th><td align="left">${CONTENT[c].content }</td>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
@@ -55,19 +53,19 @@
 			</c:if>
 			
 			<c:if test="${INFO[c].order_no == '1' }">
-			<table>
+			<table border="1px">
 			<tr>
 			<td width="100px"></td>
 			<td>
 			<table border="1px" width="900px">
 				<tr>
-					<td align="left" width="200px">글쓴이 : ${INFO[c].writer_id }</td>
+					<th align="center" width="200px">글쓴이 : ${INFO[c].writer_id }</th>
 					<td align="left">제목 : ${INFO[c].title }</td>
 				</tr>
 			</table>
 			<table border="1px" width="900px">
 				<tr>
-					<td width="200px" align="left">내용</td><td align="left">${CONTENT[c].content }</td>
+					<th width="center" align="left">내용</td><td align="left">${CONTENT[c].content }</th>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">

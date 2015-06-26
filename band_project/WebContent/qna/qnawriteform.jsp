@@ -11,13 +11,13 @@
 <input type="hidden" name="name" value="${sessionScope.NAME }"/>
 <table border="1px" width="1000px">
 	<tr>
-		<td align="left" width="200px">글쓴이 : ${sessionScope.ID }</td>
-		<td align="left">제목 : <input type="text" name="title"/></td>
+		<th align="center" width="200px">글쓴이 : ${sessionScope.ID }</th>
+		<td align="left">제목 : <input type="text" name="title" size="118"/></td>
 	</tr>
 </table>
 <table border="1px" width="1000px">
 	<tr>
-		<td width="200px" align="left">내용</td><td><textarea name="content" rows="5" cols="100"></textarea>
+		<th width="200px" align="center">내용</th><td><textarea name="content" rows="5" cols="113"></textarea>
 		</td>
 	</tr>
 </table>
