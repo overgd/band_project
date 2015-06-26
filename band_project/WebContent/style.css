@@ -7,6 +7,9 @@ th {
      background-color: green;
      color: white;
  } 
+table{
+	border="0";
+} 
 body {
 	margin: 0px;
 	background-image: url(images/bg/w.jpg);

@@ -8,7 +8,7 @@
 <title>글 결과</title>
 </head>
 <body>
-<table width="1000" border="1">
+<table width="1000" border="0">
 	<tr>
 		
 		<th width="40">아이디</th>
