@@ -32,20 +32,20 @@
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
-				<table border="1px">
+				<table align="left" border="1px">
 					<tr>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="60px">
+						<td width="50px">
 						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="60px">
+						<td width="50px">
 						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == sessionScope.BID && INFO[c].order_no == '0' && INFO[c+1].order_no != '1' }">
-						<td width="60px">
+						<td width="50px">
 						<a href="javascript:goReply(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">답하기</a>
 						</td>
 						</c:if>
@@ -73,15 +73,15 @@
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
-				<table border="1px">
+				<table align="left" border="1px">
 					<tr>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="60px">
+						<td width="50px">
 						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="60px">
+						<td width="50px">
 						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 						</td>
 						</c:if>

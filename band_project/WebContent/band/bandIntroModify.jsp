@@ -11,6 +11,7 @@
 <form name="modifyform" method="post" action="bandintromodify.do" enctype="multipart/form-data" onsubmit="return voidcheck()">
 	<table width="1000" border="1">
 		<tr>
+			<th>로고</th>
 			<td>
 			<c:if test="${BAND.image_name != null }">
 				<img alt="${BAND.name }" src="band_upload_files/thumb.${BAND.image_name }"/>
@@ -23,11 +24,13 @@
 			</td>
 		</tr>
 		<tr>
+			<th>밴드 이름</th>
 			<td>
 				<input type="text" name="name" value="${BAND.name }"/>
 			</td>
 		</tr>
 		<tr>
+			<th>장르</th>
 			<td>
 				${BAND.genre } - 
 				<select name="genre">
@@ -40,11 +43,13 @@
 			</td>
 		</tr>
 		<tr>
+			<th>소개</th>
 			<td>
 				<textarea name="content" rows="4" cols="100">${BAND.content }</textarea>
 			</td>
 		</tr>
 	</table>
+	<br/>
 	<input type="submit" value="수정완료"/>
 	<input type="button" value="취소" onclick=""/>
 </form>

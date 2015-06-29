@@ -20,14 +20,14 @@
 			</td>
 
 		<td width="500px">
-			<table width="500px">
+			<table align="center" width="500px">
 				<tr>
 					<th>
 					<h2>밴드 이름</h2>
 					</th>
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 					<h3>${BAND.name }</h3>
 					</td>
 				</tr>
@@ -37,7 +37,7 @@
 					</th>
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 					<h3>${BAND.genre }</h3>
 					</td>
 				</tr>
@@ -47,7 +47,7 @@
 					</th>
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 					<h3>${BAND.content }</h3>
 					</td>
 				</tr>
@@ -57,8 +57,9 @@
 		</tr>
 		
 	</table>
+	<br/>
 	<c:if test="${sessionScope.ID == ID }">
-		<input type="submit" value="수정"/>
+		<input type="submit" value="수정하기"/>
 	</c:if>
 </form>
 </body>

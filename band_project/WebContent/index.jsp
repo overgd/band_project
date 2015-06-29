@@ -50,7 +50,7 @@
 	<table width="1000px" align="center">
 		<tr>
 			<td width="5%"></td>
-			<td>
+			<td align="center">
 			<c:choose>
 				<c:when test="${param.MAIN != null }">
 					<jsp:include page="${param.MAIN }"/>

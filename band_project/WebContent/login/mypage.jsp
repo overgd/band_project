@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${sessionScope.NAME }님의 마이페이지<br/>
+${sessionScope.NAME }님의 마이페이지<br/><br/>
 <c:choose>
 <c:when test="${sessionScope.DIV == 'f' }">
 	<a href="index.jsp?MAIN=pwdread.do">정보 수정</a>

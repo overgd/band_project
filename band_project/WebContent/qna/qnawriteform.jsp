@@ -25,7 +25,7 @@
 </table>
 <table border="1px">
 	<tr>
-		<td width="60px"><input type="submit" value="등록" ></td>
+		<td width="50px"><input type="submit" value="등록" ></td>
 	</tr>
 </table>
 </form>

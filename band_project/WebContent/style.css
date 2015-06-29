@@ -1,9 +1,23 @@
 @CHARSET "EUC-KR";
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 
-input {
-	font-family:"Nanum Gothic" !important 
+A:link {
+	color: #454545;
+	text-decoration: none;
+}
+a:visited {
+	color: #454545;
+	text-decoration: none;
+}
+a:hover {
+	color: #454545;
+	text-decoration: underline;
+}
 
+input {
+	font-family:"Nanum Gothic" !important;
+	font-size: 15px;
+	background-color: white;
 }
 
 table {
