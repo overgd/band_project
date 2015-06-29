@@ -7,7 +7,7 @@
 <title>BAND 정보 수정</title>
 </head>
 <body>
-BAND 정보수정
+BAND 정보수정<br/><br/>
 <form name="form" action="modifyuserinfo.do" method="post" onsubmit="return submitcheck()">
 <table class="list" cellpadding="10px">
 <tr>

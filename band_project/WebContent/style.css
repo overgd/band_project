@@ -4,7 +4,7 @@ body {
 	color: #ffffff;
 }
 
-A:link {
+a:link {
 	color: #444444;
 	text-decoration: none;
 }
@@ -14,6 +14,19 @@ a:visited {
 }
 a:hover {
 	color: #444444;
+	text-decoration: underline;
+}
+
+a:link.white {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:visited.white {
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover.white {
+	color: #ffffff;
 	text-decoration: underline;
 }
 

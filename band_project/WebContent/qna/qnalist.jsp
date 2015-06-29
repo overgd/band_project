@@ -97,7 +97,7 @@
 		
 	</c:if>
 	<c:if test="${empty INFO }">
-		<table class="list" width="1000px" border="1px">
+		<table class="list" width="1000px" border="0">
 		<tr><td>등록된 글이 없습니다!</td></tr>
 		</table>
 	</c:if>

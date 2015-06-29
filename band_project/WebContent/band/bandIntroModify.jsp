@@ -9,7 +9,7 @@
 </head>
 <body>
 <form name="modifyform" method="post" action="bandintromodify.do" enctype="multipart/form-data" onsubmit="return voidcheck()">
-	<table width="1000" border="1">
+	<table class="list" width="1000" border="0">
 		<tr>
 			<th>·Î°í</th>
 			<td>

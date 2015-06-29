@@ -10,7 +10,7 @@
 <form method="post" action="bandintromodifygo.do">
 	<table class="list" width="1000" border="1">
 		<tr>
-			<td class="list" width="500px">
+			<td align="center" class="list" width="500px">
 			<c:if test="${BAND.image_name != null }">
 				<img width="500px" alt="${BAND.name }" src="band_upload_files/${BAND.image_name }"/>
 			</c:if>
