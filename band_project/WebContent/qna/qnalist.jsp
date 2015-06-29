@@ -20,13 +20,15 @@
 			<c:if test="${INFO[c].order_no == '0' }">
 			<table border="1px" width="1000px">
 				<tr>
-					<th align="center" width="200px">글쓴이 : ${INFO[c].writer_id }</th>
-					<td align="left">제목 : ${INFO[c].title }</td>
+					<th align="center" width="100px">글쓴이</th><td align="left"> ${INFO[c].writer_id }</td>
+				</tr>
+				<tr>
+					<th align="center">제목</th><td align="left"> ${INFO[c].title }</td>
 				</tr>
 			</table>
 			<table border="1px" width="1000px">
 				<tr>
-					<th width="200px" align="center">내용</th><td align="left">${CONTENT[c].content }</td>
+					<th width="100px" align="center">내용</th><td align="left">${CONTENT[c].content }</td>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
@@ -53,19 +55,21 @@
 			</c:if>
 			
 			<c:if test="${INFO[c].order_no == '1' }">
-			<table border="1px">
+			<table border="0px">
 			<tr>
 			<td width="100px"></td>
 			<td>
 			<table border="1px" width="900px">
 				<tr>
-					<th align="center" width="200px">글쓴이 : ${INFO[c].writer_id }</th>
-					<td align="left">제목 : ${INFO[c].title }</td>
+					<th align="center" width="100px">글쓴이</th><td align="left"> ${INFO[c].writer_id }</td>
+				</tr>
+				<tr>
+					<th align="center">제목</th><td align="left"> ${INFO[c].title }</td>
 				</tr>
 			</table>
 			<table border="1px" width="900px">
 				<tr>
-					<th width="center" align="left">내용</td><td align="left">${CONTENT[c].content }</th>
+					<th width="100px" align="center" >내용</th><td align="left">${CONTENT[c].content }</td>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
