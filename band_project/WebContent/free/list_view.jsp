@@ -18,7 +18,7 @@
 		</tr>
 	</table>
 </c:if>	
-<table width = "70%" cellpadding="1"  align="center">
+<table width = "1000" border="0" cellpadding="1"  align="center">
    <tr align="center">
       <th bgcolor = "#00bfff"><b>이미지</b></th>
       <th bgcolor = "#00bfff"><b>글제목</b></th>
