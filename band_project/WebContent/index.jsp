@@ -13,7 +13,7 @@
 <body topmargin="0" leftmargin="0">
 <div class="index">
 	<div class="head">
-		<table class="head.table" align="center">
+		<table width="1000px" class="head.table" align="center">
 		<tr>
 			<td align="center" class="top.center">
 			<a href="index.html">
@@ -24,7 +24,7 @@
 		</table>
 	</div>
 	<div id="top" align="center">
-		<table class="top.table">
+		<table width="1000px" class="top.table">
 		<tr>
 			<td width="5%"></td>
 			<td width="30%" align="left" class="top.menu">
@@ -47,7 +47,7 @@
 		</table>
 	</div>
 	<div id="main">
-	<table align="center">
+	<table width="1000px" align="center">
 		<tr>
 			<td width="5%"></td>
 			<td>
@@ -69,22 +69,22 @@
 	</div>
 	<c:if test="${sessionScope.BID != null || param.BOTTOM != null || sessionScope.DIV == 'b'}">
 	<div id="bottom">
-	<table class="bottom.table">
-	<tr>
-	<td width="5%" >
-		<c:choose>
-			<c:when test="${param.BOTTOM != null }">
-				<jsp:include page="${param.BOTTOM }"/>
-			</c:when>
-			<c:when test="${sessionScope.BID != null }">
-				<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
-			</c:when>
-			<c:when test="${sessionScope.DIV == 'b' }">
-				<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
-			</c:when>
-		</c:choose>
-		</td>
-		</tr>
+		<table width="1000px" align="center" class="bottom.table">
+			<tr>
+				<td width="5%" >
+					<c:choose>
+						<c:when test="${param.BOTTOM != null }">
+							<jsp:include page="${param.BOTTOM }"/>
+						</c:when>
+						<c:when test="${sessionScope.BID != null }">
+							<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
+						</c:when>
+						<c:when test="${sessionScope.DIV == 'b' }">
+							<jsp:include page="bottom/bottomMenu.jsp?BID=${sessionScope.BID }"/>
+						</c:when>
+					</c:choose>
+				</td>
+			</tr>
 		</table>
 	</div>
 	</c:if>
