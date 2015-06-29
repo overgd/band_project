@@ -8,9 +8,9 @@
 </head>
 <body>
 <form method="post" action="bandintromodifygo.do">
-	<table width="1000" border="1">
+	<table class="list" width="1000" border="1">
 		<tr>
-			<td width="500px">
+			<td class="list" width="500px">
 			<c:if test="${BAND.image_name != null }">
 				<img width="500px" alt="${BAND.name }" src="band_upload_files/${BAND.image_name }"/>
 			</c:if>
@@ -19,8 +19,8 @@
 			</c:if>
 			</td>
 
-		<td width="500px">
-			<table align="center" width="500px">
+		<td class="list" width="500px">
+			<table class="list" align="center" width="500px">
 				<tr>
 					<th>
 					<h2>πÍµÂ ¿Ã∏ß</h2>

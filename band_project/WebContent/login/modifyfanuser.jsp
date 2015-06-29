@@ -10,7 +10,7 @@
 <body>
 FAN 정보 수정
 <form name="form" action="modifyuserinfo.do" method="post" onsubmit="return submitcheck()">
-<table cellpadding="10px">
+<table class="list" cellpadding="10px">
 <tr>
 	<th>비밀번호</th>
 	<td><input type="password" name="password"/></td>
@@ -53,7 +53,7 @@ FAN 정보 수정
 	<th>휴대폰 번호</th>
 	<td><input type="text" name="phone" value="${sessionScope.PHONE }"/></td>
 </tr>
-</table>
+</table><br/><br/>
 <input type="submit" value="수정하기"/>
 <input type="hidden" name="check"/>
 <input type="hidden" name="readpassword" value="${PWD }" />

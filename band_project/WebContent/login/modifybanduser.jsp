@@ -9,7 +9,7 @@
 <body>
 BAND 정보수정
 <form name="form" action="modifyuserinfo.do" method="post" onsubmit="return submitcheck()">
-<table cellpadding="10px">
+<table class="list" cellpadding="10px">
 <tr>
 	<th>비밀번호</th>
 	<td><input type="password" name="password"/></td>
@@ -39,7 +39,7 @@ BAND 정보수정
 		</select>
 	</td>
 </tr>
-</table>
+</table><br/><br/>
 <input type="submit" value="수정하기"/>
 <input type="hidden" name="check"/>
 <input type="hidden" name="readpassword" value="${PWD }" />

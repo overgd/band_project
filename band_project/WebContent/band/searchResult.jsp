@@ -8,21 +8,19 @@
 <title>글 결과</title>
 </head>
 <body>
-<table width="1000" border="0">
+<table class="list" width="1000" border="0">
 	<tr>
-		
 		<th width="40">아이디</th>
 		<th width="300">이름</th>
 		<th width="80">장르</th>
-		
 	</tr>
 	<c:choose>
 		<c:when test="${LISTSIZE > 0 }">
 		<c:forEach var="cnt" begin="0" end="${LISTSIZE -1 }">
 			<tr>
-				<td>${LISTRESULT[cnt].id }</td>
-				<td><a href="index.jsp?MAIN=bandintro.do?ID=${LISTRESULT[cnt].id }">${LISTRESULT[cnt].name }</a></td>
-				<td>${LISTRESULT[cnt].genre }</td>
+				<td align="center">${LISTRESULT[cnt].id }</td>
+				<td align="center"><a href="index.jsp?MAIN=bandintro.do?ID=${LISTRESULT[cnt].id }">${LISTRESULT[cnt].name }</a></td>
+				<td align="center">${LISTRESULT[cnt].genre }</td>
 			</tr>	
 		</c:forEach>
 		</c:when>

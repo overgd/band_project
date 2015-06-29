@@ -12,23 +12,25 @@
 존재하지 않는 글입니다.
 </c:if>
 <c:if test="${! empty writing }">
-<table width="70%" border="1" cellpadding="1"  align="center">
+<table class="list" width="70%" border="1" cellpadding="1"  align="center">
 <tr>
-	<td>제목</td><td>${writing.title }</td>
+	<th>제목</th><td>${writing.title }</td>
 </tr>
 <tr>
-	<td>작성자</td><td>${writing.writername}</td>
+	<th>작성자</th><td>${writing.writername}</td>
 </tr>
 <tr>
 	<td colspan="2"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="150" border="0"></td>
 </tr>
 
 <tr>
-	<td>글내용</td><td>${writing.content }</td>
+	<th>글내용</th>
 </tr>
-
 <tr>
-	<td colspan="2">
+	<td>${writing.content }</td>
+</tr>
+<tr>
+	<td  colspan="2">
 		<a href="javascript:goReply()">[답글]</a>
 		<a href="javascript:goModify()">[수정]</a>
 		<a href="javascript:goDelete()">[삭제]</a>

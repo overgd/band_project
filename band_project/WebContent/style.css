@@ -1,16 +1,19 @@
 @CHARSET "EUC-KR";
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+body {
+	color: #ffffff;
+}
 
 A:link {
-	color: #393939;
+	color: #444444;
 	text-decoration: none;
 }
 a:visited {
-	color: #393939;
+	color: #444444;
 	text-decoration: none;
 }
 a:hover {
-	color: #393939;
+	color: #444444;
 	text-decoration: underline;
 }
 
@@ -21,21 +24,29 @@ input {
 }
 
 table {
-	border: 0px;
+	
 } 
 
 .list {
-	background-color: #80ffff;
+	background-color: white;
 	color: #000000;
-	border-color: #80ffff;
-	border: 0px;
+	border-color: black;
+	border: 1px;
 }
 
-.th {
+.button {
 	background-color: #000000;	
 	color: white;
-	border-color: #000000;
-	border: 0px;
+	border-color: black;
+	border: 1px;
+}
+
+th {
+	background-color: #000000;	
+	color: white;
+	border-color: black;
+	border: 1px;
+	text-align: center;
 } 
 
 td {
@@ -62,7 +73,7 @@ body {
 }
 #top {
 	height: 90px;
-	background-color: rgba( 204, 204, 204, 0.7 );
+	background-color: rgba( 0, 0, 0, 0.5 );
 	font-size: 11px;
 	border-radius: 20px 20px 20px 20px;
   	-moz-border-radius: 20px 20px 20px 20px;
@@ -90,7 +101,7 @@ body {
 #bottom {
 	
 	text-align: center;
-	background-color: rgba( 204, 204, 204, 0.7 );
+	background-color: rgba( 0, 0, 0, 0.5 );
 	position: fixed;
 	z-index: 1005;
 	left: 0px;

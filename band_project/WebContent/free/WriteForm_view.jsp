@@ -30,11 +30,11 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="1000px" border="1" cellpadding="1"  align="center">
+<table class="list" width="1000px" border="1" cellpadding="1"  align="center">
 
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></td>
-	<td  align="left"><input type="text" name="title" size="40" value="${title }"/></td>
+	<td align="left"><input type="text" name="title" size="40" value="${title }"/></td>
 </tr>
 <tr>
 	<td bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></td>

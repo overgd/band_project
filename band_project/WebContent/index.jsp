@@ -17,7 +17,7 @@
 		<tr>
 			<td align="center" class="top.center">
 			<a href="index.html">
-				<img  alt="logo" src="./images/logo.jpg" height="160px">
+				<img alt="logo" src="./images/logo.jpg" height="160px">
 			</a>
 			</td>
 		</tr> 
@@ -31,7 +31,7 @@
 			</td>
 			<td width="400px" class="top.center">
 			</td>
-			<td width="30%" align="right" class="top.login">
+			<td style="" width="30%" align="right" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>

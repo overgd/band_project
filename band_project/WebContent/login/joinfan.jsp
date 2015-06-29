@@ -8,7 +8,7 @@
 </head>
 <h2>FAN 가입</h2>
 <form name="form" action="joinfan.do" method="post" onsubmit="return submitcheck()">
-<table cellpadding="10px">
+<table class="list" cellpadding="10px">
 <tr>
 	<th width="200px">아이디</th>
 	<td><input type="text" name="id" maxlength="8"/></td>
@@ -48,7 +48,7 @@
 	<th>휴대폰 번호</th>
 	<td><input type="text" name="phone"/></td>
 </tr>
-</table>
+</table><br/><br/>
 <input type="submit" value="가입하기"/>
 <input type="button" value="다시쓰기" onclick="formreset()"/>
 <input type="hidden" name="check"/>
