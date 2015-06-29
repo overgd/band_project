@@ -70,6 +70,23 @@ function submitcheck() {
 	var gender = form.gender.value;
 	var phone = form.phone.value;
 
+	var name_cnt = 0;
+	
+	for (i=0;i<name.length;i++){
+  		
+		ls_one_char = name.charAt(i);
+	
+	 	if(ls_one_char.search(/[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힝]/) == -1) {
+	 		name_cnt++;
+		}
+	 	
+	}
+	
+	if(name_cnt!=0) {
+		alert("이름은 영문, 한글, 숫자만 가능합니다.") 
+		return false;
+	}
+	
 	if(password == "" || repassword == "" || name == "" || email == "" || birth == "" || gender == "" || phone == "") {
 		alert("입력되지 않은 폼이 있습니다.");
 		return false;

@@ -29,7 +29,6 @@
 	<th>밴드이름</th>
 	<td><input type="text" name="name"/></td>
 	<td></td>
-	<td>한글, 영문</td>
 </tr>
 <tr>
 	<th>이메일</th>
@@ -59,6 +58,23 @@ var check;
 function idcheck() {
 	
 	var id = form.id.value;
+	var id_cnt = 0;
+	
+	for (i=0;i<id.length;i++){
+  		
+		ls_one_char = id.charAt(i);
+	
+	 	if(ls_one_char.search(/[0-9|a-z|A-Z]/) == -1) {
+	 		id_cnt++;
+		}
+	 	
+	}
+	
+	if(id_cnt!=0) {
+		alert("아이디는 영문, 숫자만 가능합니다.") 
+		return false;
+	}
+	
 	newWindow=open("joinidcheck?id="+id, "idcheck", "height=40, width=80, resizable=no");
 
 }
@@ -85,6 +101,40 @@ function submitcheck() {
 	var name = form.name.value;
 	var email = form.email.value;
 	var genre = form.genre.value;
+	
+	var id_cnt = 0;
+	
+	for (i=0;i<id.length;i++){
+  		
+		ls_one_char = id.charAt(i);
+	
+	 	if(ls_one_char.search(/[0-9|a-z|A-Z]/) == -1) {
+	 		id_cnt++;
+		}
+	 	
+	}
+	
+	var name_cnt = 0;
+	
+	for (i=0;i<name.length;i++){
+  		
+		ls_one_char = name.charAt(i);
+	
+	 	if(ls_one_char.search(/[0-9|a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힝]/) == -1) {
+	 		name_cnt++;
+		}
+	 	
+	}
+	
+	if(name_cnt!=0) {
+		alert("이름은 영문, 한글, 숫자만 가능합니다.") 
+		return false;
+	}
+	
+	if(id_cnt!=0) {
+		alert("아이디는 영문, 숫자만 가능합니다.") 
+		return false;
+	}
 	
 	if(check == "") {
 		alert("ID 중복확인을 하세요.");

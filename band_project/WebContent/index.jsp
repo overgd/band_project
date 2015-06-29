@@ -26,7 +26,6 @@
 	<div id="top" align="center">
 		<table width="1000px" class="top.table">
 		<tr>
-			<td width="5%"></td>
 			<td width="30%" align="left" class="top.menu">
 			<jsp:include page="top/topForm.html"/>
 			</td>
@@ -42,14 +41,12 @@
 				</c:when>
 			</c:choose>
 			</td>
-			<td width="5%"></td>
 		</tr> 
 		</table>
 	</div>
 	<div id="main">
 	<table width="1000px" align="center">
 		<tr>
-			<td width="5%"></td>
 			<td align="center">
 			<c:choose>
 				<c:when test="${param.MAIN != null }">
@@ -63,7 +60,6 @@
 				</c:otherwise>
 			</c:choose>
 			</td>
-			<td width="5%"></td>
 		</tr>
 	</table>
 	</div>

@@ -2,15 +2,15 @@
 @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
 
 A:link {
-	color: #454545;
+	color: #393939;
 	text-decoration: none;
 }
 a:visited {
-	color: #454545;
+	color: #393939;
 	text-decoration: none;
 }
 a:hover {
-	color: #454545;
+	color: #393939;
 	text-decoration: underline;
 }
 
@@ -21,13 +21,21 @@ input {
 }
 
 table {
-	border: 1px;
-	border-color: #ffffff;
+	border: 0px;
 } 
 
-th {
-	background-color: #000000;
+.list {
+	background-color: #80ffff;
+	color: #000000;
+	border-color: #80ffff;
+	border: 0px;
+}
+
+.th {
+	background-color: #000000;	
 	color: white;
+	border-color: #000000;
+	border: 0px;
 } 
 
 td {

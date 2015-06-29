@@ -20,32 +20,32 @@
 			<c:if test="${INFO[c].order_no == '0' }">
 			<table border="1px" width="1000px">
 				<tr>
-					<th align="center" width="100px">글쓴이</th><td align="left"> ${INFO[c].writer_id }</td>
+					<th class="th" align="center" width="100px">글쓴이</th><td class="list" align="left"> ${INFO[c].writer_id }</td>
 				</tr>
 				<tr>
-					<th align="center">제목</th><td align="left"> ${INFO[c].title }</td>
+					<th class="th" align="center">제목</th><td class="list" align="left"> ${INFO[c].title }</td>
 				</tr>
 			</table>
 			<table border="1px" width="1000px">
 				<tr>
-					<th width="100px" align="center">내용</th><td align="left">${CONTENT[c].content }</td>
+					<th class="th" width="100px" align="center">내용</th><td class="list" align="left">${CONTENT[c].content }</td>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
 				<table align="left" border="1px">
-					<tr>
+					<tr align="center">
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="50px">
+						<td class="th" width="50px">
 						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="50px">
+						<td class="th" width="50px">
 						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == sessionScope.BID && INFO[c].order_no == '0' && INFO[c+1].order_no != '1' }">
-						<td width="50px">
+						<td class="th" width="50px">
 						<a href="javascript:goReply(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">답하기</a>
 						</td>
 						</c:if>
@@ -59,29 +59,29 @@
 			<tr>
 			<td width="100px"></td>
 			<td>
-			<table border="1px" width="900px">
+			<table class="list" border="1px" width="900px">
 				<tr>
-					<th align="center" width="100px">글쓴이</th><td align="left"> ${INFO[c].writer_id }</td>
+					<th class="th" align="center" width="100px">글쓴이</th><td class="list" align="left"> ${INFO[c].writer_id }</td>
 				</tr>
 				<tr>
-					<th align="center">제목</th><td align="left"> ${INFO[c].title }</td>
+					<th class="th" align="center">제목</th><td class="list" align="left"> ${INFO[c].title }</td>
 				</tr>
 			</table>
-			<table border="1px" width="900px">
+			<table class="list" border="1px" width="900px">
 				<tr>
-					<th width="100px" align="center" >내용</th><td align="left">${CONTENT[c].content }</td>
+					<th class="th" width="100px" align="center" >내용</th><td class="list" align="left">${CONTENT[c].content }</td>
 				</tr>
 			</table>
 			<c:if test="${sessionScope.ID != null}">
 				<table align="left" border="1px">
-					<tr>
+					<tr align="center">
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="50px">
+						<td class="th" width="50px">
 						<a href="javascript:goModify(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }', '${CONTENT[c].content }', '${INFO[c].title }')">수정</a>
 						</td>
 						</c:if>
 						<c:if test="${sessionScope.ID == INFO[c].writer_id }">
-						<td width="50px">
+						<td class="th" width="50px">
 						<a href="javascript:goDelete(${INFO[c].writing_id}, '${INFO[c].writer_id }', '${INFO[c].band_id }')">삭제</a>
 						</td>
 						</c:if>
@@ -98,7 +98,7 @@
 	</c:if>
 	<c:if test="${empty INFO }">
 		<table width="1000px" border="1px">
-		<tr><td>등록된 글이 없습니다!</td></tr>
+		<tr class="th"><td>등록된 글이 없습니다!</td></tr>
 		</table>
 	</c:if>
 </form>
