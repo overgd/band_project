@@ -20,7 +20,6 @@
 </c:if>
 <table class="list" width = "65%" cellpadding="1" align="center">
    <tr>
-   	  <th bgcolor = "#e9e9e9" width="30"><b>글번호</b></th>
    	  <th bgcolor = "#e9e9e9" width="30"><b>작성자</b></th>
       <th bgcolor = "#e9e9e9" width="30"><b>글제목</b></th>
       <th bgcolor = "#e9e9e9" width="30"><b>작성일</b></th>
@@ -35,7 +34,6 @@
    <c:if test = "${ ! empty list }">
       <c:forEach var = "writing" items = "${list }">
       <tr bgcolor = "#f0f0f0">
-         <td align="center">${writing.writingid }</td>
          <td align="center">${writing.writerid }</td>
          <td align="center"><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
          <td align="center">${writing.writingdate }</td>
@@ -48,7 +46,7 @@
 		<input type="submit" value="등록"/></a></td>
 	</tr>
 </table>
-<c:if test="${count > 0 }">
+<c:if test="${count > 0 }" >
 <c:set var="pageCount" 
 	value="${count / PAGE_SIZE + (count % PAGE_SIZE == 0 ? 0 : 1) }"/>
 <c:set var="startPage"

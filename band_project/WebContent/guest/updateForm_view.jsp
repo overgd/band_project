@@ -20,7 +20,7 @@ function validate(form){
 <c:if test="${ ! empty writing }">
 <form action="guest.update.do" method="post" enctype="multipart/form-data"
 			onSubmit="return validate(this)">
-<input type="hidden" name="id" value="${writing.writingid }"/>
+
 <table class="list" width="65%" border="1" cellpadding="1" align="center">
 <tr>
 	<th width="30%">±€¡¶∏Ò</th>
