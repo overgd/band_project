@@ -10,30 +10,52 @@
 <form method="post" action="bandintromodifygo.do">
 	<table width="1000" border="1">
 		<tr>
-			<td>
+			<td width="500px">
 			<c:if test="${BAND.image_name != null }">
-				<img alt="${BAND.name }" src="band_upload_files/${BAND.image_name }"/>
+				<img width="500px" alt="${BAND.name }" src="band_upload_files/${BAND.image_name }"/>
 			</c:if>
 			<c:if test="${BAND.image_name == null }">
 				이미지를 등록해주세요!
 			</c:if>
 			</td>
+
+		<td width="500px">
+			<table width="500px">
+				<tr>
+					<th>
+					<h2>밴드 이름</h2>
+					</th>
+				</tr>
+				<tr>
+					<td>
+					<h3>${BAND.name }</h3>
+					</td>
+				</tr>
+				<tr>
+					<th>
+					<h2>장르</h2>
+					</th>
+				</tr>
+				<tr>
+					<td>
+					<h3>${BAND.genre }</h3>
+					</td>
+				</tr>
+				<tr>
+					<th>
+					<h2>소개</h2>
+					</th>
+				</tr>
+				<tr>
+					<td>
+					<h3>${BAND.content }</h3>
+					</td>
+				</tr>
+			</table>
+		</td>
+			
 		</tr>
-		<tr>
-			<td>
-			${BAND.name }
-			</td>
-		</tr>
-		<tr>
-			<td>
-			${BAND.genre }
-			</td>
-		</tr>
-		<tr>
-			<td>
-			${BAND.content }
-			</td>
-		</tr>
+		
 	</table>
 	<c:if test="${sessionScope.ID == ID }">
 		<input type="submit" value="수정"/>

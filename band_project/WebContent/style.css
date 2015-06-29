@@ -12,7 +12,7 @@ table {
 } 
 
 th {
-	background-color: green;
+	background-color: #000000;
 	color: white;
 } 
 
@@ -57,7 +57,6 @@ body {
 	text-align: right;
 }
 #main {
-	font-family: 'Nanum Gothic';
 	text-align: center;
 	margin-top: 60px;
 	margin-left: 60px;

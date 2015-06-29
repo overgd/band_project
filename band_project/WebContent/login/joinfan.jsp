@@ -10,43 +10,43 @@
 <form name="form" action="joinfan.do" method="post" onsubmit="return submitcheck()">
 <table cellpadding="10px">
 <tr>
-	<td width="200px">아이디 : </td>
+	<th width="200px">아이디</th>
 	<td><input type="text" name="id" maxlength="8"/></td>
 	<td><input type="button" value="중복확인" onclick="idcheck()"/></td>
 	<td>영문, 8자 이하</td>
 </tr>
 <tr>
-	<td>비밀번호 : </td>
+	<th>비밀번호</th>
 	<td><input type="password" name="password"/></td>
 	<td></td>
 	<td>8자 이하</td>
 </tr>
 <tr>
-	<td>비밀번호 확인 : </td>
+	<th>비밀번호 확인</th>
 	<td><input type="password" name="repassword"/></td>
 </tr>
 <tr>
-	<td>이름 : </td>
+	<th>이름</th>
 	<td><input type="text" name="name"/></td>
 	<td></td>
 	<td>한글, 영문</td>
 </tr>
 <tr>
-	<td>이메일 : </td>
+	<th>이메일</th>
 	<td><input type="text" name="email"/></td>
 </tr>
 <tr>
-	<td>생년월일 : </td>
+	<th>생년월일</th>
 	<td><input type="text" name="birth"/></td>
 </tr>
 <tr>
-	<td>성별 : </td>
+	<th>성별</th>
 	<td><input type="radio" name="gender" value="남"/>남성
 		<input type="radio" name="gender" value="여"/>여성
 	</td>
 </tr>
 <tr>
-	<td>휴대폰 번호 : </td>
+	<th>휴대폰 번호</th>
 	<td><input type="text" name="phone"/></td>
 </tr>
 </table>

@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-<font class="f">${BNAME } 메뉴</font>
+BAND ${BNAME }의 메뉴
 <table align="center">
 		<tr>
 			<td>

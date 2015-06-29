@@ -10,33 +10,33 @@
 <form name="form" action="joinband.do" method="post" onsubmit="return submitcheck()">
 <table cellpadding="10px">
 <tr>
-	<td width="200px">아이디 : </td>
+	<th width="200px">아이디</th>
 	<td><input type="text" name="id" maxlength="8"/></td>
 	<td><input type="button" value="중복확인" onclick="idcheck()"/></td>
 	<td>영문, 8자 이하</td>
 </tr>
 <tr>
-	<td>비밀번호 : </td>
+	<th>비밀번호</th>
 	<td><input type="password" name="password" maxlength="8"/></td>
 	<td></td>
 	<td>8자 이하</td>
 </tr>
 <tr>
-	<td>비밀번호 확인 : </td>
+	<th>비밀번호 확인</th>
 	<td><input type="password" name="repassword" maxlength="16"/></td>
 </tr>
 <tr>
-	<td>밴드이름 : </td>
+	<th>밴드이름</th>
 	<td><input type="text" name="name"/></td>
 	<td></td>
 	<td>한글, 영문</td>
 </tr>
 <tr>
-	<td>이메일 : </td>
+	<th>이메일</th>
 	<td><input type="text" name="email"/></td>
 </tr>
 <tr>
-	<td>장르 : </td>
+	<th>장르</th>
 	<td>
 	<select name="genre">
 		<option>Rock</option>

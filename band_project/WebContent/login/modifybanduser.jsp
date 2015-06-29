@@ -11,24 +11,24 @@ BAND 정보수정
 <form name="form" action="modifyuserinfo.do" method="post" onsubmit="return submitcheck()">
 <table cellpadding="10px">
 <tr>
-	<td>비밀번호 : </td>
+	<th>비밀번호</th>
 	<td><input type="password" name="password"/></td>
 </tr>
 <tr>
-	<td>비밀번호 확인 : </td>
+	<th>비밀번호 확인</th>
 	<td><input type="password" name="repassword"/></td>
 </tr>
 <tr>
-	<td>밴드이름 : </td>
+	<th>밴드이름</th>
 	<td><input type="text" name="name" value="${sessionScope.NAME }"/></td>
 	<td>한글, 영문</td>
 </tr>
 <tr>
-	<td>이메일 : </td>
+	<th>이메일</th>
 	<td><input type="text" name="email" value="${sessionScope.EMAIL }"/></td>
 </tr>
 <tr>
-	<td>장르 : </td>
+	<th>장르</th>
 	<td>${sessionScope.GENRE } - 
 		<select name="genre">
 			<option>Rock</option>
