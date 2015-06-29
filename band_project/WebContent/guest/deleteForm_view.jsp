@@ -13,16 +13,16 @@
 <form action="guest.delete.do" method="post" onsubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
 <input type="hidden" name="title" value="${writing.title }"/>
-<table class="list" width="100%" border="1" cellpadding="1">
+<table class="list" width="65%" border="1" cellpadding="1" align="center">
 <tr>
-	<th>글제목</th><td>${writing.title }</td>
+	<th width="30%">글제목</th><td align="center">${writing.title }</td>
 </tr>
 <tr>
-	<th>글내용</th><td>${writing.content }</td>
+	<th width="30%">글내용</th><td align="center">${writing.content }</td>
 </tr>
 <tr>
-	<td colspan="2">
-		<input type="submit" value="삭제"/>
+	<td colspan="2" align="center">
+		<input type="submit" value="삭제" />
 		<input type="button" value="취소"
 						onClick="javascript:history.go(-1)"/>
 	</td>

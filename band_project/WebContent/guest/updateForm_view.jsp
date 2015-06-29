@@ -21,18 +21,18 @@ function validate(form){
 <form action="guest.update.do" method="post" enctype="multipart/form-data"
 			onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table class="list" width="100%" border="1" cellpadding="1">
+<table class="list" width="65%" border="1" cellpadding="1" align="center">
 <tr>
-	<th>글제목</th>
-	<td><input type="text" name="title" size="20"
+	<th width="30%">글제목</th>
+	<td><input type="text" name="title" size="75"
 								value="${writing.title }"/></td>
 </tr>
 <tr>
-	<th>글내용</th>
-	<td><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
+	<th width="30%">글내용</th>
+	<td><textarea name="content" rows="8" cols="76">${writing.content }</textarea></td>
 </tr>
 <tr>
-	<td colspan="2">
+	<td colspan="2" align="center">
 		<input type="submit" value="수정"/>
 		<input type="button" value="취소"
 					onClick="javascript:history.go(-1)"/>

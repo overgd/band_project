@@ -12,22 +12,22 @@
 존재하지 않는 글입니다.
 </c:if>
 <c:if test="${ ! empty writing }">
-<table class="list" width="100%" border="1" cellpadding="1">
+<table class="list" width="65%" border="1" cellpadding="1" align="center">
 <tr>
-	<th>제목</th><td>${writing.title }</td>
+	<th width="30%">제목</th><td align="center">${writing.title }</td>
 </tr>
 <tr>
-	<th>작성자</th><td>${writing.writerid }</td>
+	<th width="30%">작성자</th><td align="center">${writing.writerid }</td>
 </tr>
 <tr>
-	<th>글내용</th><td>${writing.content }</td>
+	<th width="30%">글내용</th><td align="center">${writing.content }</td>
 </tr>
 <tr>
-	<td colspan="2">
-	<a href="javascript:goReply()">[답글]</a>
-	<a href="javascript:goModify()">[수정]</a>
-	<a href="javascript:goDelete()">[삭제]</a>
-	<a href="index.jsp?MAIN=guest-list">[목록]</a>
+	<td colspan="2" align="center">
+	<a href="javascript:goReply()"><input type="submit" value="답글"/></a>
+	<a href="javascript:goModify()"><input type="submit" value="수정"/></a>
+	<a href="javascript:goDelete()"><input type="submit" value="삭제"/></a>
+	<a href="index.jsp?MAIN=guest-list"><input type="submit" value="목록"/></a>
 	</td>
 </tr>
 </table>

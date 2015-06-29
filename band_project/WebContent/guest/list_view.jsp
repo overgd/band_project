@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:if test="${count > 0 }">
-	<table class="list" width="100%" cellpadding="1">
+	<table class="list" width="65%" cellpadding="1" align="center">
 		<tr>
 			<td align="right">
 				<b>${startRow} ~ ${endRow} / ${count }</b>
@@ -18,12 +18,12 @@
 		</tr>
 	</table>
 </c:if>
-<table class="list" width = "100%" cellpadding="1">
+<table class="list" width = "65%" cellpadding="1" align="center">
    <tr>
-   	  <th bgcolor = "#e9e9e9"><b>글번호</b></th>
-   	  <th bgcolor = "#e9e9e9"><b>작성자</b></th>
-      <th bgcolor = "#e9e9e9"><b>글제목</b></th>
-      <th bgcolor = "#e9e9e9"><b>작성일</b></th>
+   	  <th bgcolor = "#e9e9e9" width="30"><b>글번호</b></th>
+   	  <th bgcolor = "#e9e9e9" width="30"><b>작성자</b></th>
+      <th bgcolor = "#e9e9e9" width="30"><b>글제목</b></th>
+      <th bgcolor = "#e9e9e9" width="30"><b>작성일</b></th>
    </tr>
    <c:if test = "${empty list }">
    <tr>
@@ -35,16 +35,17 @@
    <c:if test = "${ ! empty list }">
       <c:forEach var = "writing" items = "${list }">
       <tr bgcolor = "#f0f0f0">
-         <td>${writing.writingid }</td>
-         <td>${writing.writerid }</td>
-         <td><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
-         <td>${writing.writingdate }</td>
+         <td align="center">${writing.writingid }</td>
+         <td align="center">${writing.writerid }</td>
+         <td align="center"><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
+         <td align="center">${writing.writingdate }</td>
       </tr>
       </c:forEach>
    </c:if>
    <tr>
-		<td colspan = "4" align = "right">
-		<a href = "index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=writeForm_view.jsp">[등록]</a></td>
+		<td colspan = "4" align = "center">
+		<a href = "index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=writeForm_view.jsp">
+		<input type="submit" value="등록"/></a></td>
 	</tr>
 </table>
 <c:if test="${count > 0 }">

@@ -19,17 +19,17 @@ function validate(form) {
 </script>
 <form action="guest.write.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 
-<table class="list" width="100%" border="1" cellpadding="1">
+<table class="list" width="65%" border="1" cellpadding="1" align="center">
 <tr>
-	<th>글 제목</th>
-	<td><input type="text" name="title" size="40" value="${title }"/></td>
+	<th width="30%">글 제목</th>
+	<td align="center"><input type="text" name="title" size="75" value="${title }" /></td>
 </tr>
 <tr>
-	<th>글내용</th>
-	<td><textarea name="content" rows="8" cols="40"></textarea></td>
+	<th width="30%">글내용</th>
+	<td align="center"><textarea name="content" rows="8" cols="76"></textarea></td>
 </tr>
 <tr>
-	<td colspan="2"><input type="submit" value="글 올리기"/></td>
+	<td colspan="2" align="center"><input type="submit" value="글 올리기"/></td>
 </tr>
 </table>
 <input type="hidden" name="writername" size="10" value="session.getId()"/>	
