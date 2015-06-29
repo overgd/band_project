@@ -22,19 +22,20 @@ function validate(form){
 <c:if test="${! empty writing }">
 <form action="free.update.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="70%" border="1" cellpadding="1"  align="center">
+<h2>한마디 수정하기</h2>
+<table class="list" width="1000" border="0" cellpadding="1"  align="center">
 <tr>
-	<td>글제목</td>
+	<th>글제목</th>
 	<td  align="left"><input type="text" name="title" size="20" value="${writing.title}"/></td>
 </tr>
 <tr>
-	<td>이미지</td>
+	<th>이미지</th>
 	<td  align="left"><input type="file" name="image_name"/><br/>
 	<img src="free_upload_files/${writing.imagename }" alt="이미지" width="150" border="0"/>
 	</td>
 </tr>
 <tr>
-	<td>글내용</td>
+	<th>글내용</th>
 	<td  align="left"><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
 </tr>
 <tr>
