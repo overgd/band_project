@@ -21,14 +21,14 @@ function validate(form){
 <form action="guest.update.do" method="post" enctype="multipart/form-data"
 			onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
-	<td>글제목</td>
+	<th>글제목</th>
 	<td><input type="text" name="title" size="20"
 								value="${writing.title }"/></td>
 </tr>
 <tr>
-	<td>글내용</td>
+	<th>글내용</th>
 	<td><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
 </tr>
 <tr>

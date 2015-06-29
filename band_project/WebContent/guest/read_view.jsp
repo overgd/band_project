@@ -12,15 +12,15 @@
 존재하지 않는 글입니다.
 </c:if>
 <c:if test="${ ! empty writing }">
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
-	<td>제목</td><td>${writing.title }</td>
+	<th>제목</th><td>${writing.title }</td>
 </tr>
 <tr>
-	<td>작성자</td><td>${writing.writerid }</td>
+	<th>작성자</th><td>${writing.writerid }</td>
 </tr>
 <tr>
-	<td>글내용</td><td>${writing.content }</td>
+	<th>글내용</th><td>${writing.content }</td>
 </tr>
 <tr>
 	<td colspan="2">

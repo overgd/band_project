@@ -31,7 +31,18 @@
 			</td>
 			<td width="400px" class="top.center">
 			</td>
-			<td style="" width="30%" align="right" class="top.login">
+			<td style="a:link {
+	color: white;
+	text-decoration: none;
+}
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	color: white;
+	text-decoration: underline;
+}" width="30%" align="right" class="top.login">
 			<c:choose>
 				<c:when test="${sessionScope.ID == null }">
 					<jsp:include page="login/loginForm.html"/>

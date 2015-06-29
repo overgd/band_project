@@ -7,7 +7,7 @@
 <title>¹æ¸í·Ï</title>
 </head>
 <body>
-<table width="100%" border="1" cellpadding="2">
+<table width="100%" border="0" cellpadding="2">
 	<tr>
 		<td><jsp:include page="top.jsp"/></td>
 	</tr>

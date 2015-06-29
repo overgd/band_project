@@ -13,12 +13,12 @@
 <form action="guest.delete.do" method="post" onsubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
 <input type="hidden" name="title" value="${writing.title }"/>
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
-	<td>글제목</td><td>${writing.title }</td>
+	<th>글제목</th><td>${writing.title }</td>
 </tr>
 <tr>
-	<td>글내용</td><td>${writing.content }</td>
+	<th>글내용</th><td>${writing.content }</td>
 </tr>
 <tr>
 	<td colspan="2">
