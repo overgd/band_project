@@ -43,7 +43,7 @@ public class ReadServlet extends HttpServlet {
 		
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(inwriting);
-		String content = crud.seletWritingContent(inwriting);
+		String content = crud.selectWritingContent(inwriting);
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
@@ -68,7 +68,7 @@ public class ReadServlet extends HttpServlet {
 		
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(inwriting);
-		String content = crud.seletWritingContent(inwriting);
+		String content = crud.selectWritingContent(inwriting);
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(

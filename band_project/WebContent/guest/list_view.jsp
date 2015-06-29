@@ -43,7 +43,7 @@
       </c:forEach>
    </c:if>
    <tr>
-		<td colspan = "4" align = "center">
+		<td colspan = "4" align = "right">
 		<a href = "index.jsp?MAIN=guest/template.jsp?CONTENTPAGE=writeForm_view.jsp">
 		<input type="submit" value="µî·Ï"/></a></td>
 	</tr>

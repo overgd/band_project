@@ -21,7 +21,7 @@
 	<th width="30%">글내용</th><td align="center">${writing.content }</td>
 </tr>
 <tr>
-	<td colspan="2" align="center">
+	<td colspan="2" align="right">
 		<input type="submit" value="삭제" />
 		<input type="button" value="취소"
 						onClick="javascript:history.go(-1)"/>

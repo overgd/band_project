@@ -43,7 +43,7 @@ public class UpdateServlet extends HttpServlet {
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(
 				inwriting);
-		String content = crud.seletWritingContent(
+		String content = crud.selectWritingContent(
 				inwriting);
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
@@ -69,7 +69,7 @@ public class UpdateServlet extends HttpServlet {
 		CrudProcess crud = new CrudProcess();
 		Writing writing = crud.selectOneWritingInfo(
 				inwriting);
-		String content = crud.seletWritingContent(
+		String content = crud.selectWritingContent(
 				inwriting);
 		writing.setContent(content);
 		request.setAttribute("writing", writing);

@@ -29,7 +29,7 @@ function validate(form) {
 	<td align="center"><textarea name="content" rows="8" cols="76"></textarea></td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><input type="submit" value="글 올리기"/></td>
+	<td colspan="2" align="right"><input type="submit" value="글 올리기"/></td>
 </tr>
 </table>
 <input type="hidden" name="writername" size="10" value="session.getId()"/>	

@@ -103,7 +103,7 @@ public class CrudProcess {
 					namespace + ".selectWritingInfo", writingid);
 		}finally{ sqlSession.close(); }
 	}
-	public String seletWritingContent(Writing writingid){
+	public String selectWritingContent(Writing writingid){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
 			return sqlSession.selectOne(

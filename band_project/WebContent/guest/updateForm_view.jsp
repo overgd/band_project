@@ -32,7 +32,7 @@ function validate(form){
 	<td><textarea name="content" rows="8" cols="76">${writing.content }</textarea></td>
 </tr>
 <tr>
-	<td colspan="2" align="center">
+	<td colspan="2" align="right">
 		<input type="submit" value="수정"/>
 		<input type="button" value="취소"
 					onClick="javascript:history.go(-1)"/>

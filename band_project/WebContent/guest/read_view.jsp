@@ -23,7 +23,7 @@
 	<th width="30%">글내용</th><td align="center">${writing.content }</td>
 </tr>
 <tr>
-	<td colspan="2" align="center">
+	<td colspan="2" align="right">
 	<a href="javascript:goReply()"><input type="submit" value="답글"/></a>
 	<a href="javascript:goModify()"><input type="submit" value="수정"/></a>
 	<a href="javascript:goDelete()"><input type="submit" value="삭제"/></a>
