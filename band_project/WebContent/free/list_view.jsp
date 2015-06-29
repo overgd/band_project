@@ -10,6 +10,7 @@
 </head>
 <body>
 <c:if test="${count > 0 }">
+<h2>한마디 list</h2>
 	<table width="100%" cellpadding="1">
 		<tr>
 			<td align="right">
@@ -18,6 +19,7 @@
 		</tr>
 	</table>
 </c:if>	
+
 <table class="list" width = "1000" border="0" cellpadding="1"  align="center">
    <tr align="center">
       <th bgcolor = "#00bfff"><b>이미지</b></th>
@@ -35,10 +37,10 @@
    <c:if test = "${ ! empty list }">
       <c:forEach var = "writing" items = "${list }">
        <tr bgcolor="#f0f0f0">
-       <td><img src="free_upload_files/small.${writing.imagename }" alt="이미지" width="50"/></td>
-          <td><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
-          <td>${writing.writername} </td>
-          <td>${writing.writingdate }</td>
+       <td align="center"><a href="javascript:goView(${writing.writingid })"><img src="free_upload_files/small.${writing.imagename }" alt="이미지" width="50"/></a></td>
+          <td align="center"><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
+          <td align="center"><a href="javascript:goView(${writing.writingid })">${writing.writername} </a></td>
+          <td align="center"><a href="javascript:goView(${writing.writingid })">${writing.writingdate }</a></td>
       </tr>
       </c:forEach>
    </c:if>
@@ -47,6 +49,7 @@
       <a href = "free-write"><input type="submit"value="한마디 등록"></a></td>
    </tr>
 </table>
+
 <c:if test="${count >0 }">
 <c:set var="pageCount" value="${count / PAGE_SIZE + (count % PAGE_SIZE == 0 ? 0 : 1) }"/>
 <c:set var="startPage" value="${currentPage - (currentPage % 10 == 0 ? 10 :(currentPage % 10)) + 1 }"/>
@@ -58,8 +61,8 @@
 	<a href="javascript:goPage(${startPage - 10 })">[이전]</a>
 </c:if>
 <c:forEach var="pageNo" begin="${startPage }" end="${endPage }">
-	<c:if test="${currentPage ==pageNo }"><font size="5"></c:if>
-<a href="javascript:goPage(${pageNo })">${pageNo }</a>
+	<c:if test="${currentPage ==pageNo }"><font size="6" ></c:if>
+<a href="javascript:goPage(${pageNo })" style="color: white">${pageNo }</a>
 <c:if test="${currentPage == pageNo }"></font></c:if>
 </c:forEach>
 <c:if test="${endPage < pageCount }">

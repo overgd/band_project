@@ -62,8 +62,8 @@
 	<a href="javascript:goPage(${startPage - 10 })">[ְְּü]</a>
 </c:if>
 <c:forEach var="pageNo" begin="${startPage }" end="${endPage }">
-	<c:if test="${currentPage == pageNo }"><font size="5"></c:if>
-	<a href = "javascript:goPage(${pageNo })">${pageNo }</a>
+	<c:if test="${currentPage == pageNo }"><font size="6"></c:if>
+	<a href = "javascript:goPage(${pageNo })" style="color:white">${pageNo }</a>
 	<c:if test = "${currentPage == pageNo }"></font></c:if>
 </c:forEach>
 <c:if test="${endPage < pageCount }">

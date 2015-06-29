@@ -20,6 +20,7 @@ function validate(form){
 	
 }
 </script>
+
 <form action="free.write.do" method="post" enctype="multipart/form-data"
 				onSubmit="return validate(this)">
 <input type="hidden" name="orderno" value="${writing.orderno + 1 }"/>		
@@ -29,19 +30,19 @@ function validate(form){
 <c:if test="${! empty writing.parentid }">
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
-
-<table class="list" width="1000px" border="1" cellpadding="1"  align="center">
+<h2>자유롭게 한마디 하기!</h2>
+<table class="list" width="1000px" border="0" cellpadding="1"  align="center">
 
 <tr>
-	<td bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></td>
+	<th bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></th>
 	<td align="left"><input type="text" name="title" size="40" value="${title }"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></td>
+	<th bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></th>
 	<td  align="left"><input type="file" name="imagename" size="20"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff"><span style="color:#ffffff">글내용</span></td>
+	<th bgcolor = "#00bfff"><span style="color:#ffffff">글내용</span></th>
 	<td  align="left"><textarea name="content" rows="8" cols="40"></textarea></td>
 </tr>
 <tr>

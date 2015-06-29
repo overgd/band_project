@@ -107,7 +107,7 @@ public class CrudProcess {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
 			return sqlSession.selectOne(
-					namespace + ".selectWritingContent", writingid);
+					namespace + ".seletWritingContent", writingid);
 		}finally{ sqlSession.close(); }
 	}
 	 public Integer deleteWritingInfo(int writingid) {
@@ -210,3 +210,26 @@ public class CrudProcess {
 	    	}finally{ sqlSession.close(); }
 	    }
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

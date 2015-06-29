@@ -11,15 +11,16 @@
 <c:if test="${! empty writing }">
 <form action="free.delete.do" method="post" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="70%" border="1" cellpadding="1"  align="center">
+<h2>한마디 삭제하기</h2>
+<table class="list" width="1000" border="0" cellpadding="1"  align="center">
 <tr>
-	<td>글제목</td><td  align="left">${writing.title }</td>
+	<th>글제목</th><td  align="left">${writing.title }</td>
 </tr>
 <tr>
-	<td>작성자</td><td  align="left">${writing.writername }</td>
+	<th>작성자</th><td  align="left">${writing.writername }</td>
 </tr>
 <tr>
-	<td>이미지</td><td  align="left"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
+	<th>이미지</th><td  align="left"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
 </tr>
 
 <tr>

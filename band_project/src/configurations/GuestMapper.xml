@@ -43,7 +43,7 @@ title as title, band_id as bandid
 select <include refid="BaseColumns"/> from guestbook_info
 where writing_id = #{writingid} and band_id = #{bandid}
 </select>
-<select id="selectWritingContent" parameterType="guest_model.Writing" 
+<select id="seletWritingContent" parameterType="guest_model.Writing" 
 													resultType="String">
 select content from guestbook_content where writing_id = #{writingid} and band_id = #{bandid}
 </select>
