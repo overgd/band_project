@@ -27,6 +27,7 @@
 		<mapper resource="configurations/BandMapper.xml" />
 		<mapper	resource="configurations/GuestMapper.xml" />
 		<mapper	resource="configurations/QnaMapper.xml" />
+		<mapper	resource="configurations/SchMapper.xml" />
 	</mappers>
 </configuration>
 
