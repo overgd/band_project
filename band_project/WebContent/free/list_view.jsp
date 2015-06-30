@@ -45,8 +45,8 @@
       </c:forEach>
    </c:if>
    <tr>
-      <td colspan = "4" align = "right">
-      <a href = "free-write"><input type="submit"value="한마디 등록"></a></td>
+      <td colspan = "4" align = "right"><c:if test="${ ! empty sessionScope.ID }">
+      <a href = "free-write"><input type="submit"value="한마디 등록"></a></c:if></td>
    </tr>
 </table>
 
@@ -86,7 +86,7 @@ function goView(id){
 }
 </script>
 <form name="move" method="post">
-<input type="hidden" name="id" value=""/>
+<input type="hidden" name="id" value="${session.id }"/>
 <input type="hidden" name="page" value="${currentPage }"/>
 </form>
 </body>
