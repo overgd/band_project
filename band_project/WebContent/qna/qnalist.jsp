@@ -58,7 +58,7 @@
 			<table border="0px">
 			<tr>
 			<td width="100px">
-			<img src="images/replyarrow.png" width = 50px height=50px>
+			<img src="images/replyarrow.png" height="100px">
 			</td>
 			<td>
 			<table class="list" border="1px" width="900px">
