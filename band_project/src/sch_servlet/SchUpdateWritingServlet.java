@@ -44,19 +44,19 @@ public class SchUpdateWritingServlet extends HttpServlet {
 		try{
 			multiPart = new MultipartUploading(request);
 		}catch(Exception e){}
-		Writing writing = new Writing();//º¯°æ Á¤º¸¸¦ ÀúÀåÇÒ ºó
-		String writeId = multiPart.getParameter("id");
+		Writing writing = new Writing();//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		String writerid = multiPart.getParameter("id");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("ID");
 		CrudProcess crud = new CrudProcess();
 		Writing oldWriting = crud.selectOneWritingInfo(
-				Integer.parseInt(writeId));//º¯°æÀü Á¤º¸ °Ë»ö
-		writing.setWritingid(Integer.parseInt(writeId));
+				Integer.parseInt(writerid));//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
+		writing.setWritingid(Integer.parseInt(writerid));
 		if(oldWriting.getWriterid().equals(id)){
 			String fileName = multiPart.getFileName("image_name");
-			if(fileName.equals("")){//ÀÌ¹ÌÁö¸¦ º¯°æÇÏÁö ¾Ê´Â °æ¿ì
+			if(fileName.equals("")){//ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½
 				writing.setImagename(oldWriting.getImagename());
-			}else {//ÀÌ¹ÌÁö¸¦ º¯°æÇÏ´Â °æ¿ì
+			}else {//ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
 				String path = getServletContext().getRealPath("upload_files");
 				String newPath = path + "/" + fileName;
 				try{
@@ -76,7 +76,7 @@ public class SchUpdateWritingServlet extends HttpServlet {
 		}else{
 			request.setAttribute("RESULT", "FAIL");
 		}
-		request.setAttribute("id", writeId);
+		request.setAttribute("id", writerid);
 		RequestDispatcher rd = request.getRequestDispatcher(
 			"index.jsp?MAIN=sch/schupdate_result.jsp");
 		rd.forward(request, response);
