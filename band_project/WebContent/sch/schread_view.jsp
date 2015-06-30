@@ -12,7 +12,7 @@
 글이 존재하지 않습니다.
 </c:if>
 <c:if test="${ ! empty writing }">
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
 	<td bgcolor="black"><font color = "white" FACE= "돋움" align="center">제목</font></td><td>${writing.title }</td>
 </tr>
@@ -32,7 +32,7 @@
 <tr>
 	<td colspan="2">
 	
-		<a href="">후기</a>
+		<a href="javascript:schReply">후기</a>
 		<a href="javascript:schModify()">수정</a>
 		<a href="javascript:schDelete()">삭제</a>
 		<a href="sch-list">목록</a>
@@ -41,15 +41,15 @@
 </table>
 </c:if>
 <script type="text/javascript">
-function goReply(){
+function schReply(){
 	document.move.action="sch-reply";
 	document.move.submit();
 }
-function goDelete(){
+function schDelete(){
 	document.move.action="sch-delete";
 	document.move.submit();
 }
-function goModify(){
+function schModify(){
 	document.move.action="sch-update";
 	document.move.submit();
 }

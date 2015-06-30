@@ -52,7 +52,7 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
 <td bgcolor="black"><font FACE="돋움" color="white" size="5">공연날짜</font></td>
 <td>

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<table width="100%" hegiht = "150%" cellpadding="1">
+<table class="list" width="100%" hegiht = "150%" cellpadding="1">
 	<tr>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>DATE</b></font></td>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>BAND</b></font></td>
@@ -56,15 +56,15 @@
 	<c:set var="endPage" value="${pageCount }"/>
 </c:if>	
 <c:if test="${startPage > 10 }">
-	<a href="javascript:goPage(${startPage - 10 })">[이전]</a>
+	<a class="white" href="javascript:goPage(${startPage - 10 })">[이전]</a>
 </c:if>
 <c:forEach var="pageNo" begin="${startPage }" end="${endPage }">
 	<c:if test="${currentPage == pageNo }"><font size="5"></c:if>
-	<a href ="javascript:goPage(${pageNo })">${pageNo }</a>
+	<a class="white" href ="javascript:goPage(${pageNo })">${pageNo }</a>
 	<c:if test="${currentPage == pageNo }"></font></c:if>
 </c:forEach>
 <c:if test="${endPage < pageCount }">
-	<a href="javascript:goPage(${startPage + 10 })">[다음]</a>
+	<a class="white" href="javascript:goPage(${startPage + 10 })">[다음]</a>
 </c:if>
 </c:if>
 <script type="text/javascript">

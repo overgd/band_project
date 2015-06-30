@@ -6,24 +6,24 @@
 <select id="selectLastId" parameterType="String" resultType="Integer">
 select last_id from id_sequence where table_name = #{name}
 </select>
-<insert id="insertWritingInfo" parameterType="Writing">
+<insert id="insertWritingInfo" parameterType="sch_model.Writing">
 insert into sch_info values(
 #{writingdate},#{writingid},#{writerid},#{imagename},
 #{parentid},#{orderno},#{groupid},#{title},#{location})
 </insert>
-<insert id="insertWritingContent" parameterType="WritingContent">
+<insert id="insertWritingContent" parameterType="sch_model.WritingContent">
 insert into sch_content values(#{writingid},#{content})
 </insert>
-<insert id="insertSequenceManager" parameterType="IdSequence">
+<insert id="insertSequenceManager" parameterType="sch_model.IdSequence">
 insert into id_sequence values(#{name}, #{lastid})
 </insert>
-<update id="updateSequenceManager" parameterType="IdSequence">
+<update id="updateSequenceManager" parameterType="sch_model.IdSequence">
 update id_sequence set last_id=#{lastid} where table_name = #{name}
 </update>
 <select id="selectMaxGroupId" resultType="Integer">
 select max(group_id) from sch_info
 </select>
-<select id="selectBBSList" resultType="Writing" parameterType="sch_model.Condition">
+<select id="selectBBSList" resultType="sch_model.Writing" parameterType="sch_model.Condition">
 select <include refid="BaseColumns" /> from
 (select a.*, rownum rn from (select TO_DATE(writing_date, 'mm dd yy') as sortdate, 
 writing_id, writer_id, image_name, parent_id,
@@ -37,7 +37,7 @@ writer_id as writerid, image_name as imagename,
 location as location, title as title
 </sql>
 <select id="selectWritingInfo" parameterType="Integer" 
-													resultType="Writing">
+													resultType="sch_model.Writing">
 select <include refid="BaseColumns"/> from sch_info 
 where writing_id = #{writingid}
 </select>
@@ -51,12 +51,12 @@ delete from sch_info where writing_id = #{writingid}
 <delete id="deleteWritingContent" parameterType="Integer">
 delete from sch_content where writing_id = #{writingid}
 </delete>
-<update id="updateWritingInfo" parameterType="Writing">
+<update id="updateWritingInfo" parameterType="sch_model.Writing">
 update sch_info set writer_id = #{writerid},
 image_name = #{imagename}, title = #{title}
 where writing_id = #{writingid}
 </update>
-<update id="updateWritingContent" parameterType="Writing">
+<update id="updateWritingContent" parameterType="sch_model.Writing">
 update sch_content set content = #{content}
 where writing_id = #{writingid}
 </update>
@@ -64,13 +64,13 @@ where writing_id = #{writingid}
 select count(*) from sch_info
 </select>
 <select id="selectWritingInfoWithRange" parameterType="sch_model.Condition"
-								resultType="Writing">
+								resultType="sch_model.Writing">
 select <include refid="BaseColumns" /> from								
 (select a.*, rownum rn from 								
 (select * from sch_info order by group_id desc, order_no asc) a)
 where rn between #{startRow} and #{endRow}								
 </select>
-<select id="selectMaxOrderNo" parameterType="Writing"
+<select id="selectMaxOrderNo" parameterType="sch_model.Writing"
 								resultType="Integer">
 select max(order_no) from sch_info where group_id = #{groupid}
 </select>
