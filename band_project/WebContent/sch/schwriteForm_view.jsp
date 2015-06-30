@@ -63,7 +63,7 @@ function validate(form){
 </tr>
 <tr>
 	<td bgcolor="black"><font FACE="돋움" color="white" size="5">작성 밴드명</font></td>
-	<td><input type="text" name="writerid" size="10"/></td>
+	<td><input disabled="disabled" type="text" name="writerid" size="10" value="${sessionScope.ID }"/></td>
 </tr>
 <tr>
 	<td bgcolor="black"><font FACE="돋움" color="white" size="5">이미지</font></td>

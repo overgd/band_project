@@ -40,9 +40,6 @@
 	</c:if>
 	<tr>
 		<td colspan="4" align="right">
-		<c:if test="${sessionScope.ID == INFO[c].writer_id}">
-		<a href="sch/schwriteForm.jsp">등록</a></td>
-		</c:if>
 	</tr>
 </table>
 <c:if test="${count > 0 }">
@@ -66,6 +63,9 @@
 <c:if test="${endPage < pageCount }">
 	<a class="white" href="javascript:goPage(${startPage + 10 })">[다음]</a>
 </c:if>
+</c:if>
+<c:if test="${sessionScope.DIV == 'b'}">
+		<br/><a class="white" href="sch/schwriteForm.jsp">등록</a>
 </c:if>
 <script type="text/javascript">
 function goPage(pageNo){
