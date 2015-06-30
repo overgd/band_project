@@ -52,8 +52,7 @@ delete from sch_info where writing_id = #{writingid}
 delete from sch_content where writing_id = #{writingid}
 </delete>
 <update id="updateWritingInfo" parameterType="sch_model.Writing">
-update sch_info set writer_id = #{writerid},
-image_name = #{imagename}, title = #{title}
+update sch_info set image_name = #{imagename}, title = #{title}
 where writing_id = #{writingid}
 </update>
 <update id="updateWritingContent" parameterType="sch_model.Writing">

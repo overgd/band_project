@@ -45,9 +45,9 @@ public class SchUpdateWritingServlet extends HttpServlet {
 			multiPart = new MultipartUploading(request);
 		}catch(Exception e){}
 		Writing writing = new Writing();//���� ������ ������ ��
-		String writerid = multiPart.getParameter("id");
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("ID");
+		String writerid = multiPart.getParameter("id");
 		CrudProcess crud = new CrudProcess();
 		Writing oldWriting = crud.selectOneWritingInfo(
 				Integer.parseInt(writerid));//������ ���� �˻�
