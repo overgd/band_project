@@ -39,16 +39,17 @@ public class SchDeleteWritingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String id = (String)session.getAttribute("ID");
-		String writeId = request.getParameter("id");
-
+		String writerid = request.getParameter("id");
 		CrudProcess crud = new CrudProcess();
 		Writing orgWriting = 
-				crud.selectOneWritingInfo(Integer.parseInt(writeId));
-		if(orgWriting.getWriterid().equals(id)){//¾ÏÈ£ ÀÏÄ¡
-			crud.deleteWritingInfo(Integer.parseInt(writeId));
-			crud.deleteWritingContent(Integer.parseInt(writeId));
+				crud.selectOneWritingInfo(Integer.parseInt(writerid));
+
+		if(orgWriting.getWriterid().equals(id)){//ï¿½ï¿½È£ ï¿½ï¿½Ä¡
+		
+			crud.deleteWritingInfo(Integer.parseInt(writerid));
+			crud.deleteWritingContent(Integer.parseInt(writerid));
 		}else {
-			request.setAttribute("id", writeId);
+			request.setAttribute("id", writerid);
 		}
 		RequestDispatcher rd = request.getRequestDispatcher(
 				"index.jsp?MAIN=sch/schdelete_result.jsp");
@@ -59,7 +60,7 @@ public class SchDeleteWritingServlet extends HttpServlet {
 
 
 
-///////¹Ì¿Ï¼º ¾ÆÀÌµð ¼¼¼ÇÀ¸·Î ¹Þ¾Æ¿À´Â ºÎºÐ ¸¸µé¾î¾ß ÇÔ
+///////ï¿½Ì¿Ï¼ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
 
 

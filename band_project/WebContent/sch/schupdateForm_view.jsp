@@ -25,33 +25,26 @@ function validate(form){
 <form action="schupdate.do" method="post" enctype="multipart/form-data"
 			onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
-	<td>글제목</td>
+	<th>글제목</td>
 	<td><input type="text" name="title" size="20" 
 								value="${writing.title }"/></td>
 </tr>
 <tr>
-	<td>작성자</td>
-	<td><input type="text" name="name" size="20"
-								value="${writing.writerid }"/></td>
-</tr>
-<tr>
-	<td>이미지</td>
+	<th>이미지</td>
 	<td><input type="file" name="image_name"/><br/>
 	<img src="upload_files/${writing.imagename }" alt="이미지" 
 							width="250" border="0"/>
 	</td>
 </tr>
 <tr>
-	<td>글내용</td>
-	<td><textarea name="content" cols="40" rows="8">${writing.content }
-							</textarea></td>
+	<th>글내용</td>
+	<td><textarea name="content" cols="40" rows="8">${writing.content }</textarea></td>
 </tr>
 <tr>
-	<td>장소</td>
-	<td><textarea name="location" cols="40" rows="8">${writing.location }
-							</textarea></td>
+	<th>장소</td>
+	<td><textarea name="location" cols="40" rows="8">${writing.location }</textarea></td>
 </tr>
 <tr>
 	<td colspan="2">

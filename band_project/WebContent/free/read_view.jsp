@@ -12,10 +12,10 @@
 존재하지 않는 글입니다.
 </c:if>
 <c:if test="${! empty writing }">
-<h2>한마디 보기</h2>
+<h2>Free Board</h2>
 <table class="list" width="1000"border="1" cellpadding="1"  align="center">
 <tr>
-	<th>제목</th><th>작성자</th>
+	<th width="500">제목</th><th width="500">작성자</th>
 </tr>
 <tr>
 	<td align="center">${writing.title }</td><td align="center">${writing.writername}</td>
@@ -28,7 +28,7 @@
 </tr>
 
 <tr>
-	<td  colspan="2">
+	<td  colspan="4" align="right">
 		<a href="javascript:goReply()">[답글]</a>
 		<a href="javascript:goModify()">[수정]</a>
 		<a href="javascript:goDelete()">[삭제]</a>

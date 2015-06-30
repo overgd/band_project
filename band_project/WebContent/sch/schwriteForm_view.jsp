@@ -52,7 +52,7 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="100%" border="1" cellpadding="1">
 <tr>
 <td bgcolor="black"><font FACE="돋움" color="white" size="5">공연날짜</font></td>
 <td>
@@ -63,7 +63,8 @@ function validate(form){
 </tr>
 <tr>
 	<td bgcolor="black"><font FACE="돋움" color="white" size="5">작성 밴드명</font></td>
-	<td><input type="text" name="writerid" size="10"/></td>
+	<td><input disabled="disabled" type="text" size="10" value="${sessionScope.ID }"/></td>
+	
 </tr>
 <tr>
 	<td bgcolor="black"><font FACE="돋움" color="white" size="5">이미지</font></td>
@@ -84,7 +85,7 @@ function validate(form){
 					onClick="javascript:history.go(-1)"/></td>
 </tr>
 </table>
-<input type="hidden" value=""/>
+<input type="hidden" name="writerid" size="10" value="${sessionScope.ID }"/>
 </form>
 </body>
 </html>

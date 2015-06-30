@@ -11,20 +11,19 @@
 <c:if test="${! empty writing }">
 <form action="free.delete.do" method="post" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<h2>한마디 삭제하기</h2>
 <table class="list" width="1000" border="0" cellpadding="1"  align="center">
 <tr>
-	<th>글제목</th><td  align="left">${writing.title }</td>
+	<td width="20%"></td><th>글제목</th><td  align="left">${writing.title }</td>
 </tr>
 <tr>
-	<th>작성자</th><td  align="left">${writing.writername }</td>
+	<td width="20%"></td><th>작성자</th><td  align="left">${writing.writername }</td>
 </tr>
 <tr>
-	<th>이미지</th><td  align="left"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
+	<td width="20%"></td><th>이미지</th><td  align="left"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="250"/></td>
 </tr>
 
 <tr>
-	<td colspan="2"  align="right">
+	<td colspan="4"  align="right">
 		<input type="submit" value="삭제"/>
 		<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
