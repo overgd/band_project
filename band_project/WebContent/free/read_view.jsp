@@ -12,7 +12,7 @@
 존재하지 않는 글입니다.
 </c:if>
 <c:if test="${! empty writing }">
-<h2>한마디 보기</h2>
+<h2>Free Board</h2>
 <table class="list" width="1000"border="1" cellpadding="1"  align="center">
 <tr>
 	<th width="500">제목</th><th width="500">작성자</th>

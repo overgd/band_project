@@ -22,7 +22,6 @@ function validate(form){
 <c:if test="${! empty writing }">
 <form action="free.update.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
-<h2>한마디 수정하기</h2>
 <table class="list" width="1000" border="0" cellpadding="1"  align="center">
 <tr>
 	<td width="20%"></td><th>글제목</th>
