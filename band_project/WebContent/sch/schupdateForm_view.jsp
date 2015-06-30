@@ -32,11 +32,6 @@ function validate(form){
 								value="${writing.title }"/></td>
 </tr>
 <tr>
-	<th>작성자</td>
-	<td><input type="text" name="name" size="20"
-								value="${writing.writerid }"/></td>
-</tr>
-<tr>
 	<th>이미지</td>
 	<td><input type="file" name="image_name"/><br/>
 	<img src="upload_files/${writing.imagename }" alt="이미지" 
