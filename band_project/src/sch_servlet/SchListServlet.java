@@ -52,9 +52,6 @@ public class SchListServlet extends HttpServlet {
 		Condition condition = new Condition();
 		condition.setStartRow(startRow); condition.setEndRow(endRow);
 		List list = crud.selectWritingInfoWithRange(condition);
-		
-		Writing writing = (Writing)list.get(0);
-		
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("PAGE_SIZE", PAGE_SIZE);
 		request.setAttribute("endRow", endRow);
