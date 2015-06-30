@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<table class="list" width="100%" hegiht = "150%" cellpadding="1">
+<table class="list" width="100%" hegiht = "200%" cellpadding="1">
 	<tr>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>DATE</b></font></td>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>BAND</b></font></td>
@@ -21,20 +21,24 @@
 	</tr>
 	<c:if test="${empty list }">
 	<tr>
-		<td bgcolor="#f0f0f0" colspan="4" align="center">
+		<td bgcolor="#f0f0f0" colspan="4" align="center" height="200%">
 		등록된 일정이 없습니다.
 		</td>
 	</tr>
 	</c:if>
 	<c:if test="${ ! empty list }">
 		<c:forEach var="writing" items="${list }">
-		<tr bgcolor="#f0f0f0">
-			<td>${writing.writingdate }</td>
-			<td>${writing.writerid }</td>
-			<td><a href="javascript:goView(${writing.writingid })">${writing.title }</a></td>
-			<td>${writing.location }</td>
-			<td><img src="upload_files/small.${writing.imagename }" 
-				alt="이미지" width="50"/></td>
+		<tr
+		
+			bgcolor="#f0f0f0"  height="3" > 
+			<td><font FACE="Geneva, TAHOMA" color="Black" size="5">${writing.writingdate }</font></td>
+			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">${writing.writerid }</font></td>
+			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">
+			<a href="javascript:goView(${writing.writingid })">${writing.title }</a></font></td>
+			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">${writing.location }</font></td>
+			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">
+			<img src="upload_files/small.${writing.imagename }" 
+				alt="이미지" width="50"/></font></td>
 		</tr>		
 		</c:forEach>
 	</c:if>
@@ -70,6 +74,28 @@
 		<br/><a class="white" href="sch/schwriteForm.jsp">
 		<input type="submit"value="글 등록"></a></c:if></td>
 <script type="text/javascript">
+
+/* 색상 */
+var colors = new Array('#ffffff','#dddddd','#aaaaaa','#888888');
+
+
+function alternate(id){ 
+	  if(document.getElementsByTagName){  
+	    var table = document.getElementById(id);   
+	    var rows = table.getElementsByTagName("tr");   
+	    for(i = 0; i < rows.length; i++){           
+
+	  //manipulate rows 
+
+	      if(i % 2 == 0){ 
+	        rows[i].className = "even"; 
+	      }else{ 
+	        rows[i].className = "odd"; 
+	      }       
+	    } 
+	  } 
+	}
+
 function goPage(pageNo){
 	document.move.action="sch-list";
 	document.move.page.value=pageNo;
