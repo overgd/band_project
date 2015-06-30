@@ -15,13 +15,13 @@ BAND - ${BNAME }의 메뉴
 			<img alt="앨범음원" src="./images/um1.png" width="58px">
 			</a>
 			</td>
-			<td width="100px"></td>
+			<td width="50px"></td>
 			<td>
 			<a href="index.jsp?MAIN=qnalist.do?BID=${sessionScope.BID }">
 			<img alt="질의응답" src="./images/qna.png" width="58px">			
 			 </a>
 			</td>
-			<td width="100px"></td>
+			<td width="50px"></td>
 			<td>
 			<a href="index.jsp?MAIN=guest-list?ID=${sessionScope.BID }">
 			<img alt="방명록" src="./images/guest.png" width="58px">		

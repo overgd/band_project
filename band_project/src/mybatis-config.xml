@@ -3,9 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-      <typeAlias type="guest_model.Writing" alias="Writing"/>
-      <typeAlias type="guest_model.WritingContent" alias="WritingContent"/>
-      <typeAlias type="guest_model.IdSequence" alias="IdSequence"/>
+ 
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

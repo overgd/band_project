@@ -38,7 +38,7 @@ public class SchUpdateServlet extends HttpServlet {
 		writing.setContent(content);
 		request.setAttribute("writing", writing);
 		RequestDispatcher rd = request.getRequestDispatcher(
-				"template.jsp?CONTENTPAGE=updateForm_view.jsp");
+				"index.jsp?MAIN=sch/schupdateForm_view.jsp");
 		rd.forward(request, response);
 	}
 
