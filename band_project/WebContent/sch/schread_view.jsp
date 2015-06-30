@@ -12,22 +12,22 @@
 ±ÛÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.
 </c:if>
 <c:if test="${ ! empty writing }">
-<table class="list" width="1000" border="1" cellpadding="1">
+<table class="list" width="1000" border="1" cellpadding="1" align= "center">
 <tr>
-	<td bgcolor="black"><font color = "white" FACE= "µ¸¿ò" align="center">Á¦¸ñ</font></td><td>${writing.title }</td>
+	<td bgcolor="black" width="20%"><font color = "white" FACE= "µ¸¿ò">Á¦¸ñ</font></td><td>${writing.title }</td>
 </tr>
 <tr>
-	<td bgcolor="black"><font color = "white"  FACE= "µ¸¿ò">ÀÛ¼ºÀÚ</font></td><td>${writing.writerid }</td>
+	<td bgcolor="black" width="20%"><font color = "white"  FACE= "µ¸¿ò">ÀÛ¼ºÀÚ</font></td><td>${writing.writerid }</td>
 </tr>
 <tr>
 	<td colspan="2" align="center"><img src="upload_files/${writing.imagename }" 
 		alt="ÀÌ¹ÌÁö" width="350" border="0"/></td>
 </tr>
 <tr>
-	<td bgcolor="black"><font color = "white"  FACE= "µ¸¿ò">±Û³»¿ë</font></td><td>${writing.content }</td>
+	<td bgcolor="black" width="20%"><font color = "white"  FACE= "µ¸¿ò">±Û³»¿ë</font></td><td>${writing.content }</td>
 </tr>
 <tr>
-	<td bgcolor="black"><font color = "white"  FACE= "µ¸¿ò">Àå¼Ò</font></td><td>${writing.location }</td>
+	<td bgcolor="black" width="20%"><font color = "white"  FACE= "µ¸¿ò">Àå¼Ò</font></td><td>${writing.location }</td>
 </tr>
 <tr>
 	<td colspan="4" align="right">
