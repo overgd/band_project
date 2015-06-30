@@ -34,19 +34,19 @@ function validate(form){
 <table class="list" width="1000px" border="0" cellpadding="1"  align="center">
 
 <tr>
-	<th bgcolor = "#00bfff"><span style="color:#ffffff">글 제목</span></th>
-	<td align="left"><input type="text" name="title" size="40" value="${title }"/></td>
+	<td width="20%"></td><th bgcolor = "#00bfff" align="center"><span style="color:#ffffff">글 제목</span></th>
+	<td><input type="text" name="title" size="40" value="${title }"/></td>
 </tr>
 <tr>
-	<th bgcolor = "#00bfff"><span style="color:#ffffff">이미지</span></th>
-	<td  align="left"><input type="file" name="imagename" size="20"/></td>
+	<td width="20%"></td><th bgcolor = "#00bfff" align="center"><span style="color:#ffffff">이미지</span></th>
+	<td><input type="file" name="imagename" size="20"/></td>
 </tr>
 <tr>
-	<th bgcolor = "#00bfff"><span style="color:#ffffff">글내용</span></th>
-	<td  align="left"><textarea name="content" rows="8" cols="40"></textarea></td>
+	<td width="20%"></td><th bgcolor = "#00bfff" align="center"><span style="color:#ffffff">글내용</span></th>
+	<td><textarea name="content" rows="8" cols="40"></textarea></td>
 </tr>
 <tr>
-	<td colspan="2"  align="right"><input type="submit" value="글 올리기"/>
+	<td colspan="4" align="right"><input type="submit" value="글 올리기"/>
 	<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
 </tr>

@@ -25,22 +25,23 @@ function validate(form){
 <h2>한마디 수정하기</h2>
 <table class="list" width="1000" border="0" cellpadding="1"  align="center">
 <tr>
-	<th>글제목</th>
-	<td  align="left"><input type="text" name="title" size="20" value="${writing.title}"/></td>
+	<td width="20%"></td><th>글제목</th>
+	<td  align="left"><input type="text" name="title" size="30" value="${writing.title}"/></td>
 </tr>
 <tr>
-	<th>이미지</th>
+	<td width="20%"></td><th>이미지</th>
 	<td  align="left"><input type="file" name="image_name"/><br/>
 	<img src="free_upload_files/${writing.imagename }" alt="이미지" width="150" border="0"/>
 	</td>
 </tr>
 <tr>
-	<th>글내용</th>
+	<td width="20%"></td><th>글내용</th>
 	<td  align="left"><textarea name="content" rows="8" cols="40">${writing.content }</textarea></td>
 </tr>
 <tr>
-	<td colspan="2"  align="right">
+	<td colspan="4"  align="right">
 		<input type="submit" value="수정"/>
+		<a href = "free-list"><input type="button" value="홈"/></a>
 		<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
 </tr>
