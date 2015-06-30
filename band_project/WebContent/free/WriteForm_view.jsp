@@ -30,27 +30,26 @@ function validate(form){
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
 
-<table width="100%" border="1" cellpadding="1">
+<table class="list" width="1000px" border="1" cellpadding="1" align="center">
 <tr>
-	<td bgcolor = "#00bfff"align="center" width="30%"><span style="color:#ffffff">글 제목</span></td>
+	<th align="center" width="30%"><span style="color:#ffffff">글 제목</span></th>
 	<td><input type="text" name="title" size="100%" value="${title }"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff"align="center" width="30%"><span style="color:#ffffff">이미지</span></td>
+	<th align="center" width="30%"><span style="color:#ffffff">이미지</span></th>
 	<td><input type="file" name="imagename" size="100%"/></td>
 </tr>
 <tr>
-	<td bgcolor = "#00bfff" align="center" width="30%"><span style="color:#ffffff">글내용</span></td>
+	<th align="center" width="30%"><span style="color:#ffffff">글내용</span></th>
 	<td><textarea name="content" rows="8" cols="100%"></textarea></td>
 </tr>
 <tr>
-	<td colspan="2"><input type="submit" value="글 올리기"/>
+	<td colspan="4" align="right"><input type="submit" value="글 올리기"/>
 	<input type="button" value="취소" onClick="javascript:history.go(-1)"/>
 	</td>
 </tr>
 </table>	
-<input type="hidden" name="writername" value=""/>		
-<input type="hidden" name="email" size="30"/>	
+<input type="hidden" name="writername" size="10" value="session.getId()"/>		
 </form>				
 </body>
 </html>
