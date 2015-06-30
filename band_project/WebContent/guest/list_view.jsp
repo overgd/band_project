@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:if test="${count > 0 }">
-	<table class="list" width="65%" cellpadding="1" align="center">
+	<table class="list" width="1000px" cellpadding="1" align="center">
 		<tr>
 			<td align="right">
 				<b>${startRow} ~ ${endRow} / ${count }</b>
@@ -18,7 +18,7 @@
 		</tr>
 	</table>
 </c:if>
-<table class="list" width = "65%" cellpadding="1" align="center">
+<table class="list" width = "1000px" cellpadding="1" align="center">
    <tr>
    	  <th bgcolor = "#e9e9e9" width="30"><b>작성자</b></th>
       <th bgcolor = "#e9e9e9" width="30"><b>글제목</b></th>

@@ -21,15 +21,15 @@ function validate(form){
 <form action="guest.update.do" method="post" enctype="multipart/form-data"
 			onSubmit="return validate(this)">
 
-<table class="list" width="65%" border="1" cellpadding="1" align="center">
+<table class="list" width="1000px" border="1" cellpadding="1" align="center">
 <tr>
 	<th width="30%">글제목</th>
-	<td><input type="text" name="title" size="75"
+	<td align="center"><input type="text" name="title" size="100%" 
 								value="${writing.title }"/></td>
 </tr>
 <tr>
 	<th width="30%">글내용</th>
-	<td><textarea name="content" rows="8" cols="76">${writing.content }</textarea></td>
+	<td align="center"><textarea name="content" rows="8" cols="100%">${writing.content }</textarea></td>
 </tr>
 <tr>
 	<td colspan="2" align="right">

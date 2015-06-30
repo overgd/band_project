@@ -13,7 +13,7 @@
 <form action="guest.delete.do" method="post" onsubmit="return validate(this)">
 <input type="hidden" name="id" value="${writing.writingid }"/>
 <input type="hidden" name="title" value="${writing.title }"/>
-<table class="list" width="65%" border="1" cellpadding="1" align="center">
+<table class="list" width="1000px" border="1" cellpadding="1" align="center">
 <tr>
 	<th width="30%">±€¡¶∏Ò</th><td align="center">${writing.title }</td>
 </tr>

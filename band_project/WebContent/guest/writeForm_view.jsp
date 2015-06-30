@@ -19,14 +19,14 @@ function validate(form) {
 </script>
 <form action="guest.write.do" method="post" enctype="multipart/form-data" onSubmit="return validate(this)">
 
-<table class="list" width="65%" border="1" cellpadding="1" align="center">
+<table class="list" width="1000px" border="1" cellpadding="1" align="center">
 <tr>
 	<th width="30%">글 제목</th>
-	<td align="center"><input type="text" name="title" size="75" value="${title }" /></td>
+	<td align="center"><input type="text" name="title" size="100%" value="${title }" /></td>
 </tr>
 <tr>
 	<th width="30%">글내용</th>
-	<td align="center"><textarea name="content" rows="8" cols="76"></textarea></td>
+	<td align="center"><textarea name="content" rows="8" cols="100%"></textarea></td>
 </tr>
 <tr>
 	<td colspan="2" align="right"><input type="submit" value="등록"/>
