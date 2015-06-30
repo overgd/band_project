@@ -52,7 +52,8 @@ delete from sch_info where writing_id = #{writingid}
 delete from sch_content where writing_id = #{writingid}
 </delete>
 <update id="updateWritingInfo" parameterType="sch_model.Writing">
-update sch_info set image_name = #{imagename}, title = #{title}
+update sch_info set
+image_name = #{imagename}, title = #{title}
 where writing_id = #{writingid}
 </update>
 <update id="updateWritingContent" parameterType="sch_model.Writing">
@@ -65,9 +66,10 @@ select count(*) from sch_info
 <select id="selectWritingInfoWithRange" parameterType="sch_model.Condition"
 								resultType="sch_model.Writing">
 select <include refid="BaseColumns" /> from								
-(select a.*, rownum rn from 								
-(select * from sch_info order by group_id desc, order_no asc) a)
-where rn between #{startRow} and #{endRow}								
+(select a.*, rownum rn from (select writing_date, 
+writing_id, writer_id, image_name, parent_id,
+order_no, group_id, title, location from sch_info
+order by writing_date asc) a) where rn between #{startRow} and #{endRow}							
 </select>
 <select id="selectMaxOrderNo" parameterType="sch_model.Writing"
 								resultType="Integer">
