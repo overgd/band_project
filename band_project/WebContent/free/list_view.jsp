@@ -10,7 +10,7 @@
 </head>
 <body>
 <c:if test="${count > 0 }">
-<h2>한마디 list</h2>
+<h2>Free Board</h2>
 	<table width="100%" cellpadding="1">
 		<tr>
 			<td align="right">
@@ -30,7 +30,7 @@
    <c:if test = "${empty list }">
    <tr>
       <td bgcolor="#f0f0f0" colspan="4" align = "center">
-      등록된 한마디가 없습니다.
+      등록된 글이 없습니다.
       </td>
    </tr>
    </c:if>
@@ -46,7 +46,7 @@
    </c:if>
    <tr>
       <td colspan = "4" align = "right"><c:if test="${ ! empty sessionScope.ID }">
-      <a href = "free-write"><input type="submit"value="한마디 등록"></a></c:if></td>
+      <a href = "free-write"><input type="submit"value="글 등록"></a></c:if></td>
    </tr>
 </table>
 

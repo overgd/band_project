@@ -30,7 +30,7 @@ function validate(form){
 <c:if test="${! empty writing.parentid }">
 <input type="hidden" name="parentid" value="${writing.parentid }"/>
 </c:if>
-<h2>자유롭게 한마디 하기!</h2>
+<h2>Free Board</h2>
 <table class="list" width="1000px" border="0" cellpadding="1"  align="center">
 
 <tr>
