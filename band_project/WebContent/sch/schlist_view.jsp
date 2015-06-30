@@ -64,9 +64,11 @@
 	<a class="white" href="javascript:goPage(${startPage + 10 })">[다음]</a>
 </c:if>
 </c:if>
+<tr>
+      <td colspan = "4" align = "right">
 <c:if test="${sessionScope.DIV == 'b'}">
-		<br/><a class="white" href="sch/schwriteForm.jsp">등록</a>
-</c:if>
+		<br/><a class="white" href="sch/schwriteForm.jsp">
+		<input type="submit"value="글 등록"></a></c:if></td>
 <script type="text/javascript">
 function goPage(pageNo){
 	document.move.action="sch-list";

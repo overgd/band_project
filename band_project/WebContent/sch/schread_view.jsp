@@ -12,7 +12,7 @@
 글이 존재하지 않습니다.
 </c:if>
 <c:if test="${ ! empty writing }">
-<table class="list" width="100%" border="1" cellpadding="1">
+<table class="list" width="1000" border="1" cellpadding="1">
 <tr>
 	<td bgcolor="black"><font color = "white" FACE= "돋움" align="center">제목</font></td><td>${writing.title }</td>
 </tr>
@@ -30,7 +30,7 @@
 	<td bgcolor="black"><font color = "white"  FACE= "돋움">장소</font></td><td>${writing.location }</td>
 </tr>
 <tr>
-	<td colspan="2">
+	<td colspan="4" align="right">
 	
 		<a href="javascript:schReply">후기</a>
 		<a href="javascript:schModify()">수정</a>
