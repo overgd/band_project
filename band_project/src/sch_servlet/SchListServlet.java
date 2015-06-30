@@ -71,7 +71,7 @@ public class SchListServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		CrudProcess crud = new CrudProcess();
-		List list = crud.selectWritingInfo();
+//		List list = crud.selectWritingInfo();
 		String pageNum = request.getParameter("page");
 		if(pageNum == null) pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
@@ -87,6 +87,7 @@ public class SchListServlet extends HttpServlet {
 		}
 		Condition condition = new Condition();
 		condition.setStartRow(startRow); condition.setEndRow(endRow);
+		List list = crud.selectWritingInfoWithRange(condition);
 		request.setAttribute("currentPage", currentPage);
 		request.setAttribute("PAGE_SIZE", PAGE_SIZE);
 		request.setAttribute("endRow", endRow);

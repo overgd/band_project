@@ -88,10 +88,10 @@ public class CrudProcess {
 			sqlSession.close();
 		}
 	}
-	public List<Writing> selectWritingInfo(){
+	public List<Writing> selectWritingInfo(int writingid){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try{
-			return sqlSession.selectList(namespace+".selectBBSList");
+			return sqlSession.selectList(namespace+".selectBBSList", writingid);
 		}finally{ sqlSession.close();}
 	}
 	public Writing selectOneWritingInfo(int writingid){
