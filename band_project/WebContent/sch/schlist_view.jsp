@@ -5,6 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 		<style>
@@ -41,14 +42,14 @@
 			<td><font FACE="Geneva, TAHOMA" color="white" size="5">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			${writing.writerid }</a></font></td>
-			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.title }</a></font></td>
-			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.location }</a></font></td>
-			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			<img src="upload_files/small.${writing.imagename }" 
-				alt="이미지" width="50"/></a></font></td>
+				alt="image" width="50"/></a></font></td>
 		</tr>		
 		</c:forEach>
 	</c:if>
