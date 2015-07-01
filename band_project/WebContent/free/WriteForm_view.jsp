@@ -20,7 +20,7 @@ function validate(form){
 	
 }
 </script>
-<form action="write.do" method="post" enctype="multipart/form-data"
+<form action="free.write.do" method="post" enctype="multipart/form-data"
 				onSubmit="return validate(this)">
 <input type="hidden" name="orderno" value="${writing.orderno + 1 }"/>		
 <c:if test="${! empty writing.groupid }">
