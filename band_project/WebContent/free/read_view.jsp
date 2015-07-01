@@ -26,7 +26,7 @@
 <tr>
 	<td align="center"><img src="free_upload_files/${writing.imagename }" alt="이미지" width="150" border="0"></td><td align="center">${writing.content }</td>
 </tr>
-
+<c:if test="${ ! empty sessionScope.ID }">
 <tr>
 	<td  colspan="4" align="right">
 		<a href="javascript:goReply()">[답글]</a>
@@ -35,6 +35,15 @@
 		<a href="free-list">[목록]</a>
 	</td>
 </tr>
+</c:if>
+<c:if test="${  empty sessionScope.ID }">
+<tr>
+	<td  colspan="4" align="right">
+		
+		<a href="free-list">[목록]</a>
+	</td>
+</tr>
+</c:if>
 </table>
 </c:if>
 <script type="text/javascript">
