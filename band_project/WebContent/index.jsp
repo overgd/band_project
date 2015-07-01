@@ -17,7 +17,7 @@
 		<tr>
 			<td align="center" class="top.center">
 			<a href="index.html">
-				<img alt="logo" src="./images/logo.jpg" height="160px">
+				<img alt="logo" src="./images/logo.png" height="160px">
 			</a>
 			</td>
 		</tr> 
