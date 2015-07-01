@@ -39,7 +39,10 @@
 					<th>앨범가격</th>
 					<td>${album.price } 원</td>
 				</tr>
-			
+				<tr>
+					<th>샘플음원</th>
+					<td>${album.file_name }</td>
+				</tr>
 				<tr>
 					<th>앨범내용</th>
 					<td height="200px">${album.content }</td>
@@ -52,8 +55,8 @@
 					<td>담기</td>
 					</c:if>
 					<c:if test="${sessionScope.ID == album.band_id }">
-					<td>수정</td>
-					<td>삭제</td>
+					<td><a href="javascript:modify()">수정</a></td>
+					<td><a href="javascript:deletealbum()">삭제</a></td>
 					</c:if>
 					</tr></table>
 					</td>
@@ -62,5 +65,37 @@
 		</td>
 	</tr>
 </table>
+<script type="text/javascript">
+function modify(){
+	document.move.action="album_modify_form.do";
+	document.move.submit();
+}
+function deletealbum() {
+	
+	var choice;
+	
+	choice=confirm("정말로 삭제하시겠습니까?");
+	
+	if(choice) {
+		alert("삭제합니다.");
+		document.move.action="album_delete.do";
+		document.move.submit();
+	} else {
+		alert("취소하셨습니다.");
+	}
+	
+}
+</script>
+<form name="move" method="post">
+<input type="hidden" name="album_id" value="${album.album_id }"/>
+<input type="hidden" name="band_id" value="${album.band_id }"/>
+<input type="hidden" name="register_date" value="${album.register_date }"/>
+<input type="hidden" name="title" value="${album.title }"/>
+<input type="hidden" name="writer_id" value="${bbs.writer_id }"/>
+<input type="hidden" name="price" value="${album.price }"/>
+<input type="hidden" name="content" value="${album.content }"/>
+<input type="hidden" name="file_name" value="${album.file_name }"/>
+<input type="hidden" name="image_name" value="${album.image_name }"/>
+</form>
 </body>
 </html>

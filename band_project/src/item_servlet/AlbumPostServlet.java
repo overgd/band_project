@@ -110,7 +110,7 @@ public class AlbumPostServlet extends HttpServlet {
 			album.setImage_name(filename);
 		}else if(image_name == "") {
 			
-			album.setImage_name(mutipart.getParameter("org_image_name"));
+			album.setImage_name("");
 		}
 
 		album.setTitle(title);

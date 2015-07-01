@@ -9,7 +9,7 @@
 <body>
 <h2>앨범등록</h2>
 <form action="album-post" method="post" enctype="multipart/form-data">
-<table>
+<table class="list" width="1000px">
 <tr>
 <th>앨범이미지</th><td><input type="file" name="image_name"/></td>
 </tr>
@@ -25,8 +25,8 @@
 <tr>
 <th>앨범내용</th><td><textarea name="content" cols="80" rows="5"></textarea></td>
 </tr>
-</table>
-<input type="submit" value="앨범등록"/>
+</table><br/><br/>
+<input type="submit" value="앨범등록"/><input type="button" value="취소" onclick="javascript:history.go(-1)"/>
 </form>
 </body>
 </html>

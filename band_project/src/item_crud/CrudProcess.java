@@ -196,6 +196,45 @@ public class CrudProcess {
 			sqlsession.close();
 		}
 	}
+	
+	public Integer updateAlbumInfo(Album album) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		try{
+			String stmt = namespace+".updateAlbumInfo";
+			int result= sqlsession.update(stmt, album);
+			if(result>0){sqlsession.commit();
+			}else{sqlsession.rollback();}
+			return result;
+		}finally{sqlsession.close();}
+		
+	}
+	
+	public Integer deleteAlbumInfo(String album_id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		try{
+			String stmt = namespace+".deleteAlbumInfo";
+			int result= sqlsession.delete(stmt, album_id);
+			if(result>0){sqlsession.commit();
+			}else{sqlsession.rollback();}
+			return result;
+		}finally{sqlsession.close();}
+		
+	}
+	
+	public Integer deleteAlbumBBSInfo(String album_id) {
+		
+		SqlSession sqlsession = getSqlSessionFactory().openSession();
+		try{
+			String stmt = namespace+".deleteAlbumBBSInfo";
+			int result= sqlsession.delete(stmt, album_id);
+			if(result>0){sqlsession.commit();
+			}else{sqlsession.rollback();}
+			return result;
+		}finally{sqlsession.close();}
+		
+	}
 }
 
 

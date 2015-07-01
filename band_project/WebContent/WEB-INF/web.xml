@@ -489,4 +489,34 @@
     <servlet-name>AlbumReadServlet</servlet-name>
     <url-pattern>/albumread.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlbumMoveModifyServlet</display-name>
+    <servlet-name>AlbumMoveModifyServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumMoveModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumMoveModifyServlet</servlet-name>
+    <url-pattern>/album_modify_form.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlbumModifyServlet</display-name>
+    <servlet-name>AlbumModifyServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumModifyServlet</servlet-name>
+    <url-pattern>/album_modify.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlbumDeleteServlet</display-name>
+    <servlet-name>AlbumDeleteServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumDeleteServlet</servlet-name>
+    <url-pattern>/album_delete.do</url-pattern>
+  </servlet-mapping>
 </web-app>

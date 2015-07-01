@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h2>${sessionScope.BNAME }의 앨범</h2>
 <table align="center" class="list" width="1000px">
 	<tr>
 		<th width="80px">글번호</th>

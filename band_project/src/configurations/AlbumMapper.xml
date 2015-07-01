@@ -38,4 +38,13 @@
 	<select id="selectOneAlbumBBSInfo" parameterType="String" resultType="item_model.Albumbbs">
 	select * from albumbbs_info where album_id = #{album_id}
 	</select>
+	<update id="updateAlbumInfo" parameterType="item_model.Album">
+	update album_info set title=#{title}, price=#{price}, content=#{content}, file_name=#{file_name}, image_name=#{image_name} where album_id=#{album_id}
+	</update>
+	<delete id="deleteAlbumInfo" parameterType="String">
+	delete album_info where album_id = #{album_id}
+	</delete>
+	<delete id="deleteAlbumBBSInfo" parameterType="String">
+	delete albumbbs_info where album_id = #{album_id}
+	</delete>
 </mapper>
