@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 		<style>
 		tr:nth-child(3n).sch { background:#333333; }
-		tr:nth-child(3n+1).sch { background:#3333ff; }/*ÆÄ¶û*/
+		tr:nth-child(3n+1).sch { background:#333399; }/*ÆÄ¶û*/
 		tr:nth-child(3n+2).sch { background:#ff6699; }/*ÇÎÅ©*/
 		tr:nth-child(3n+3).sch { background:#663366; }/*º¸¶ó*/
 		</style>
