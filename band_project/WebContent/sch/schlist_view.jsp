@@ -7,10 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+		<style>
+		tr:nth-child(3n) { background:#333333; }
+		tr:nth-child(3n+1) { background:#3333ff; }/*파랑*/
+		tr:nth-child(3n+2) { background:#ff6699; }/*핑크*/
+		tr:nth-child(3n+3) { background:#663366; }/*보라*/
+		</style>
 </head>
 <body>
-
-<table class="list" width="100%" hegiht = "200%" cellpadding="1">
+<table class= "list" width="100%" height = "200%" cellpadding="0">
 	<tr>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>DATE</b></font></td>
 		<td bgcolor="black"><font FACE="Geneva, TAHOMA" color="white" size="5"><b>BAND</b></font></td>
@@ -31,14 +36,20 @@
 		<tr
 		
 			bgcolor="#f0f0f0"  height="3" > 
-			<td><font FACE="Geneva, TAHOMA" color="Black" size="5">${writing.writingdate }</font></td>
-			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">${writing.writerid }</font></td>
-			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">
-			<a href="javascript:goView(${writing.writingid })">${writing.title }</a></font></td>
-			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">${writing.location }</font></td>
-			<td><font FACE="Geneva, TAHOMA" color="Black" size="4">
+			<td><font FACE="Geneva, TAHOMA" color="white" size="6">
+						<a href="javascript:goView(${writing.writingid })" style="color: white">
+			${writing.writingdate }</a></font></td>
+			<td><font FACE="Geneva, TAHOMA" color="white" size="5">
+						<a href="javascript:goView(${writing.writingid })" style="color: white">
+			${writing.writerid }</a></font></td>
+			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.title }</a></font></td>
+			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.location }</a></font></td>
+			<td><font FACE="Geneva, TAHOMA" color="white" size="4">
+						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			<img src="upload_files/small.${writing.imagename }" 
-				alt="이미지" width="50"/></font></td>
+				alt="이미지" width="50"/></a></font></td>
 		</tr>		
 		</c:forEach>
 	</c:if>
@@ -75,26 +86,7 @@
 		<input type="submit"value="글 등록"></a></c:if></td>
 <script type="text/javascript">
 
-/* 색상 */
-var colors = new Array('#ffffff','#dddddd','#aaaaaa','#888888');
 
-
-function alternate(id){ 
-	  if(document.getElementsByTagName){  
-	    var table = document.getElementById(id);   
-	    var rows = table.getElementsByTagName("tr");   
-	    for(i = 0; i < rows.length; i++){           
-
-	  //manipulate rows 
-
-	      if(i % 2 == 0){ 
-	        rows[i].className = "even"; 
-	      }else{ 
-	        rows[i].className = "odd"; 
-	      }       
-	    } 
-	  } 
-	}
 
 function goPage(pageNo){
 	document.move.action="sch-list";
