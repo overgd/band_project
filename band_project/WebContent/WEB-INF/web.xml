@@ -37,7 +37,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AlbumPostServlet</servlet-name>
-    <url-pattern>/item/album-post</url-pattern>
+    <url-pattern>/album-post</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -389,7 +389,7 @@
     <servlet-name>PasswordCheckUserInfoServlet</servlet-name>
     <url-pattern>/pwdread.do</url-pattern>
   </servlet-mapping>
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>SchWriteFormServlet</display-name>
     <servlet-name>SchWriteFormServlet</servlet-name>
@@ -469,5 +469,24 @@
     <servlet-name>SchUpdateWritingServlet</servlet-name>
     <url-pattern>/schupdate.do</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>AlbumListServlet</display-name>
+    <servlet-name>AlbumListServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumListServlet</servlet-name>
+    <url-pattern>/albumlist.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlbumReadServlet</display-name>
+    <servlet-name>AlbumReadServlet</servlet-name>
+    <servlet-class>item_servlet.AlbumReadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumReadServlet</servlet-name>
+    <url-pattern>/albumread.do</url-pattern>
+  </servlet-mapping>
 </web-app>
