@@ -8,13 +8,25 @@
 </head>
 <body>
 <h2>앨범등록</h2>
-<form action="album-post" method="post" enctype="">
-앨범번호 : <input type="text" name="albumid"/><br/> 
-앨범이미지:<input type="file" name="imagename"/><br/> 
-앨범제목:<input type="text" name="title"/> <br/> 
-앨범가격:<input type="text" name="price"/> <br/> 
-앨범내용 :<textarea name="content" cols="80" rows="5"></textarea><br/> <br/> 
-<input type="submit" value="앨범등록"/>
+<form action="album-post" method="post" enctype="multipart/form-data">
+<table class="list" width="1000px">
+<tr>
+<th>앨범이미지</th><td><input type="file" name="image_name"/></td>
+</tr>
+<tr>
+<th>앨범제목</th><td><input type="text" name="title"/></td>
+</tr>
+<tr>
+<th>앨범가격</th><td><input type="text" name="price"/></td>
+</tr>
+<tr>
+<th>샘플음원</th><td><input type="file" name="file_name"/></td>
+</tr>
+<tr>
+<th>앨범내용</th><td><textarea name="content" cols="80" rows="5"></textarea></td>
+</tr>
+</table><br/><br/>
+<input type="submit" value="앨범등록"/><input type="button" value="취소" onclick="javascript:history.go(-1)"/>
 </form>
 </body>
 </html>

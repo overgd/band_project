@@ -11,7 +11,7 @@ BAND - ${BNAME }의 메뉴
 <table align="center">
 		<tr>
 			<td>
-			<a href="index.jsp">
+			<a href="index.jsp?MAIN=albumlist.do?BID=${sessionScope.BID }">
 			<img alt="앨범음원" src="./images/um1.png" width="58px">
 			</a>
 			</td>

@@ -3,8 +3,48 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="configurations.AlbumMapper">
 <cache/>
-	<insert id="insertAlbumInfo" parameterType="item_model.AInfo">
-	insert into album_info(album_id,title, price,content,band_id)
-	values(#{albumid},#{title},#{price},#{content},'void')
+	<insert id="insertAlbumInfo" parameterType="item_model.Album">
+	insert into album_info(album_id, title, price, content, band_id, register_date, image_name, file_name)
+	values(#{album_id}, #{title}, #{price}, #{content}, #{band_id}, #{register_date}, #{image_name}, #{file_name})
 	</insert>
+	<insert id="insertAlbumBBSInfo" parameterType="item_model.Albumbbs">
+	insert into albumbbs_info(writing_id, writer_id, album_id, band_id)
+	values(#{writing_id}, #{writer_id}, #{album_id}, #{band_id})
+	</insert>
+	<select id="selectAlbumBBSInfoToBandId" parameterType="String" resultType="item_model.Albumbbs">
+	select * from albumbbs_info where band_id = #{band_id} order by writing_id desc
+	</select>
+	<select id="selectAlbumInfoToBandId" parameterType="String" resultType="item_model.Album">
+	select a.*
+	from album_info a, albumbbs_info b
+	where a.album_id = b.album_id and a.band_id = #{band_id}
+	order by b.writing_id desc
+	</select>
+	<select id="selectLastAlbumId" resultType="Integer">
+	select count(album_id) from album_info
+	</select>
+	<select id="selectIdSequence" parameterType="String" resultType="item_model.Id_sequence">
+	select table_name, last_id from id_sequence where table_name=#{table_name}
+	</select>
+	<insert id="insertIdSequence" parameterType="item_model.Id_sequence">
+	insert into id_sequence values(#{table_name}, #{last_id})
+	</insert>
+	<update id="updateIdSequence" parameterType="item_model.Id_sequence">
+	update id_sequence set last_id=#{last_id} where table_name=#{table_name}
+	</update>
+	<select id="selectOneAlbumInfo" parameterType="String" resultType="item_model.Album">
+	select * from album_info where album_id = #{album_id}
+	</select>
+	<select id="selectOneAlbumBBSInfo" parameterType="String" resultType="item_model.Albumbbs">
+	select * from albumbbs_info where album_id = #{album_id}
+	</select>
+	<update id="updateAlbumInfo" parameterType="item_model.Album">
+	update album_info set title=#{title}, price=#{price}, content=#{content}, file_name=#{file_name}, image_name=#{image_name} where album_id=#{album_id}
+	</update>
+	<delete id="deleteAlbumInfo" parameterType="String">
+	delete album_info where album_id = #{album_id}
+	</delete>
+	<delete id="deleteAlbumBBSInfo" parameterType="String">
+	delete albumbbs_info where album_id = #{album_id}
+	</delete>
 </mapper>
