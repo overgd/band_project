@@ -8,10 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
 		<style>
-		tr:nth-child(3n) { background:#333333; }
-		tr:nth-child(3n+1) { background:#3333ff; }/*파랑*/
-		tr:nth-child(3n+2) { background:#ff6699; }/*핑크*/
-		tr:nth-child(3n+3) { background:#663366; }/*보라*/
+		tr:nth-child(3n).sch { background:#333333; }
+		tr:nth-child(3n+1).sch { background:#3333ff; }/*파랑*/
+		tr:nth-child(3n+2).sch { background:#ff6699; }/*핑크*/
+		tr:nth-child(3n+3).sch { background:#663366; }/*보라*/
 		</style>
 </head>
 <body>
@@ -33,8 +33,7 @@
 	</c:if>
 	<c:if test="${ ! empty list }">
 		<c:forEach var="writing" items="${list }">
-		<tr
-		
+		<tr class="sch"
 			bgcolor="#f0f0f0"  height="3" > 
 			<td><font FACE="Geneva, TAHOMA" color="white" size="6">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
