@@ -21,7 +21,7 @@
 		<a class="white" href="index.jsp?MAIN=login/mypage.jsp">마이페이지</a>
 		</td>
 		<td>
-		장바구니
+		<a class="white" href="index.jsp?MAIN=user/cart.jsp">장바구니</a>
 		</td>
 	</tr>
 </table>

@@ -519,4 +519,14 @@
     <servlet-name>AlbumDeleteServlet</servlet-name>
     <url-pattern>/album_delete.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartAddServlet</display-name>
+    <servlet-name>CartAddServlet</servlet-name>
+    <servlet-class>user.CartAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartAddServlet</servlet-name>
+    <url-pattern>/cartadd.do</url-pattern>
+  </servlet-mapping>
 </web-app>

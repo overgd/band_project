@@ -30,7 +30,7 @@
 			<td><a href="index.jsp?MAIN=albumread.do?AID=${bbs[c].album_id }">${album[c].title }</a></td>
 			<td>${album[c].price } 원</td>
 			<c:if test="${sessionScope.ID != null && sessionScope.ID != sessionScope.BID }">
-			<td><input type="button" name="cartadd" value="담기"/></td>
+			<td><input type="button" value="담기" onclick="cartadd('${album[c].album_id}')"/></td>
 			</c:if>
 		</tr>
 	</c:forEach>
@@ -43,4 +43,25 @@
 <br/><a class="white" href="index.jsp?MAIN=item/albumWriteForm.jsp">앨범등록</a>
 </c:if>
 </body>
+<script type="text/javascript">
+function cartadd(aid) {
+	
+	var choice;
+	
+	document.cart.album_id.value = aid;
+	
+	choice=confirm("장바구니에 담고 이동할까요?");
+	if(choice) {
+		document.cart.action="cartadd.do?movecart=yes";
+		document.cart.submit();
+	} else {
+		document.cart.action="cartadd.do?movecart=no";
+		document.cart.submit();
+	}
+	
+}
+</script>
+<form name="cart" method="post">
+<input type="hidden" name="album_id" value=""/>
+</form>
 </html>

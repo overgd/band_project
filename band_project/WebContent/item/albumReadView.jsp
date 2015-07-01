@@ -52,7 +52,7 @@
 					<td align="right">
 					<table align="right" class="list"><tr>
 					<c:if test="${sessionScope.ID != null && sessionScope.ID != sessionScope.BID }">
-					<td>담기</td>
+					<td><a href="javascript:cartaddbutton('${album.album_id }')">담기</a></td>
 					</c:if>
 					<c:if test="${sessionScope.ID == album.band_id }">
 					<td><a href="javascript:modify()">수정</a></td>
@@ -85,6 +85,22 @@ function deletealbum() {
 	}
 	
 }
+function cartaddbutton(aid) {
+	
+	var choice;
+	
+	document.cart.album_id.value = aid;
+	
+	choice=confirm("장바구니에 담고 장바구니로 이동할까요?");
+	if(choice) {
+		document.cart.action="cartadd.do?movecart=yes";
+		document.cart.submit();
+	} else {
+		document.cart.action="cartadd.do?movecart=no";
+		document.cart.submit();
+	}
+	
+}
 </script>
 <form name="move" method="post">
 <input type="hidden" name="album_id" value="${album.album_id }"/>
@@ -96,6 +112,9 @@ function deletealbum() {
 <input type="hidden" name="content" value="${album.content }"/>
 <input type="hidden" name="file_name" value="${album.file_name }"/>
 <input type="hidden" name="image_name" value="${album.image_name }"/>
+</form>
+<form name="cart" method="post">
+<input type="hidden" name="album_id" value=""/>
 </form>
 </body>
 </html>
