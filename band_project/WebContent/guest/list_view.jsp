@@ -46,6 +46,7 @@
 		<input type="submit" value="등록"/></a></td>
 	</tr>
 </table>
+<div align="center">
 <c:if test="${count > 0 }" >
 <c:set var="pageCount" 
 	value="${count / PAGE_SIZE + (count % PAGE_SIZE == 0 ? 0 : 1) }"/>
@@ -68,6 +69,7 @@
 	<a href="javascript:goPage(${startPage + 10 })">[다음]</a>
 </c:if>
 </c:if>
+</div>
 <script type="text/javascript">
 function goPage(pageNo){
 	document.move.action="index.jsp?MAIN=guest-list";

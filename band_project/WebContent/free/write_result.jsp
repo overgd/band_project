@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("새로운 한마디를 등록했습니다.");
+alert("새로운 글을 등록했습니다.");
 location.href="free-list";
 </script>
 </body>
