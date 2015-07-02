@@ -1,10 +1,12 @@
 package guest_servlet;
 
 
+import free_util.ImageUtility;
 import guest_crud.CrudProcess;
 import guest_model.Writing;
 import guest_util.MultipartUploading;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -80,3 +82,4 @@ public class UpdateWritingServlet extends HttpServlet {
 	}
 
 }
+

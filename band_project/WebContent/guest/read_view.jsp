@@ -24,8 +24,6 @@
 </tr>
 <tr>
 	<td colspan="2" align="right">
-	<a href="javascript:goReply()"><input type="submit" value="답글"/></a>
-	<a href="javascript:goModify()"><input type="submit" value="수정"/></a>
 	<a href="javascript:goDelete()"><input type="submit" value="삭제"/></a>
 	<a href="index.jsp?MAIN=guest-list"><input type="submit" value="목록"/></a>
 	</td>
