@@ -36,17 +36,17 @@
 		<c:forEach var="writing" items="${list }">
 		<tr class="sch"
 			bgcolor="#f0f0f0"  height="3" > 
-			<td><font FACE="Geneva, TAHOMA" color="white" size="6">
+			<td onMouseover="this.bgColor='#B9062F';" onmouseout="this.bgColor='';"><font FACE="Geneva, TAHOMA" color="white" size="6">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			${writing.writingdate }</a></font></td>
-			<td><font FACE="Geneva, TAHOMA" color="white" size="5">
+			<td onMouseover="this.bgColor='#B9062F';" onmouseout="this.bgColor='';"><font FACE="Geneva, TAHOMA" color="white" size="5">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			${writing.writerid }</a></font></td>
-			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
+			<td onMouseover="this.bgColor='#B9062F';" onmouseout="this.bgColor='';"><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.title }</a></font></td>
-			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
+			<td onMouseover="this.bgColor='#B9062F';" onmouseout="this.bgColor='';"><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 			<a href="javascript:goView(${writing.writingid })" style="color: white">${writing.location }</a></font></td>
-			<td><font FACE="Geneva, Nanum Gothic" color="white" size="4">
+			<td onMouseover="this.bgColor='#B9062F';" onmouseout="this.bgColor='';"><font FACE="Geneva, Nanum Gothic" color="white" size="4">
 						<a href="javascript:goView(${writing.writingid })" style="color: white">
 			<img src="upload_files/small.${writing.imagename }" 
 				alt="image" width="50"/></a></font></td>
