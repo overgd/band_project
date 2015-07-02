@@ -42,10 +42,7 @@ public class AlbumListServlet extends HttpServlet {
 		List<Album> albumlist = crud.selectAlbumInfoToBandId(band_id);
 		
 		int count = albumbbslist.size();
-		
-		System.out.println(count);
-		System.out.println(band_id);
-		
+			
 		request.setAttribute("COUNT", count);
 		request.setAttribute("album", albumlist);	
 		request.setAttribute("bbs", albumbbslist);
