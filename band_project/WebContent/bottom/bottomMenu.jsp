@@ -12,19 +12,22 @@ BAND - ${BNAME }의 메뉴
 		<tr>
 			<td>
 			<a href="index.jsp?MAIN=albumlist.do?BID=${sessionScope.BID }">
-			<img alt="앨범음원" src="./images/um1.png" width="58px">
+			<img src="./images/um1_1.png" onmouseover="this.src='./images/um1.png';"
+			onmouseout="this.src='./images/um1_1.png';" alt="logo" title="앨범음원" width="58px"/>
 			</a>
 			</td>
 			<td width="50px"></td>
 			<td>
 			<a href="index.jsp?MAIN=qnalist.do?BID=${sessionScope.BID }">
-			<img alt="질의응답" src="./images/qna.png" width="58px">			
+			<img src="./images/qna_1.png" onmouseover="this.src='./images/qna.png';"
+			onmouseout="this.src='./images/qna_1.png';" alt="logo" title="질의응답" width="58px"/>		
 			 </a>
 			</td>
 			<td width="50px"></td>
 			<td>
 			<a href="index.jsp?MAIN=guest-list?ID=${sessionScope.BID }">
-			<img alt="방명록" src="./images/guest.png" width="58px">		
+			<img src="./images/guest_1.png" onmouseover="this.src='./images/guest.png';"
+			onmouseout="this.src='./images/guest_1.png';" alt="logo" title="방명록" width="58px"/>		
 			 </a>
 			</td>
 		</tr>
