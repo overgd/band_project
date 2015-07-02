@@ -11,13 +11,23 @@
 ${sessionScope.NAME }님의 마이페이지<br/><br/>
 <c:choose>
 <c:when test="${sessionScope.DIV == 'f' }">
-	<a href="index.jsp?MAIN=pwdread.do">정보 수정</a>
+
+	<a href="index.jsp?MAIN=pwdread.do">
+		<img src="./images/edit_1.png" onmouseover="this.src='./images/edit.png';"
+		onmouseout="this.src='./images/edit_1.png';" alt="logo" title="정보수정" width="200px"/>
+		</a>
 </c:when>
 <c:when test="${sessionScope.DIV == 'b' }">
-	<a href="index.jsp?MAIN=pwdread.do">정보 수정</a>
+	<a href="index.jsp?MAIN=pwdread.do">
+		<img src="./images/edit_1.png" onmouseover="this.src='./images/edit.png';"
+		onmouseout="this.src='./images/edit_1.png';" alt="logo" title="정보수정" width="200px"/>
+		</a>
 </c:when>
 </c:choose>
-<a href="deleteuser.do" onclick="return deleteuser()">회원 탈퇴</a>
+<a href="deleteuser.do" onclick="return deleteuser()">
+<img src="./images/delete_1.png" onmouseover="this.src='./images/delete.png';"
+		onmouseout="this.src='./images/delete_1.png';" alt="logo" title="회원삭제" width="200px"/>
+		</a>
 </body>
 <script type="text/javascript">
 function deleteuser() {
