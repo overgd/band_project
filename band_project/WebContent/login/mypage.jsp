@@ -25,7 +25,7 @@ ${sessionScope.NAME }님의 마이페이지<br/><br/>
 </c:when>
 </c:choose>
 <a href="deleteuser.do" onclick="return deleteuser()">
-<img src="./images/delet.png" onmouseover="this.src='./images/delete_1.png';"
+<img src="./images/delete.png" onmouseover="this.src='./images/delete_1.png';"
 		onmouseout="this.src='./images/delete.png';" alt="logo" title="회원삭제" width="200px"/>
 		</a>
 </body>
