@@ -529,4 +529,14 @@
     <servlet-name>CartAddServlet</servlet-name>
     <url-pattern>/cartadd.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartModifyServlet</display-name>
+    <servlet-name>CartModifyServlet</servlet-name>
+    <servlet-class>user.CartModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartModifyServlet</servlet-name>
+    <url-pattern>/cartmodify.do</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -99,7 +99,6 @@ public class CartAddServlet extends HttpServlet {
 			
 		}
 		
-		
 		session.setAttribute("CP", list);
 		
 		if(move.equals("no")) {
